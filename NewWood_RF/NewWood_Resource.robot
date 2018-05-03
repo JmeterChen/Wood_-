@@ -105,7 +105,6 @@ ${wood_保存提示}                  xpath=//*[@id="confirm_dialog"]/div/div[1]
 ${wood_保存提示_是}               xpath=//*[@id="confirm_dialog"]/div/div[2]/div[1]
 ${wood_保存提示_否}               xpath=//*[@id="confirm_dialog"]/div/div[2]/div[2]
 
-${电站图标}                       xpath=//div[@class='echarts-title page-title-span']/span[@class='page-header-chart']
 
 
 *** Keywords ***
