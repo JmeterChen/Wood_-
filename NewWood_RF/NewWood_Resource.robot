@@ -19,7 +19,7 @@ ${test_browserdriver}      chromedriver
 #数据管理
 ${wood_username}           18682236985
 ${wood_password}           123456
-${test_py_dir}             C:\\Users\\ChenBolin\\Desktop\\NewWood_RF\\wood_Study
+${test_py_dir}             C:\Users\ChenBolin\Desktop\Wood_-\NewWood_RF\Wood_py_file
 ${wood_作品名称短}         test1
 ${wood_作品名称长}         13斐波那契数列_pytest
 ${wood_作品任意测试}       12天天向上_pytest
