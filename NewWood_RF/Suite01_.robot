@@ -3,7 +3,7 @@ Library           Selenium2Library
 Library           AutoItLibrary
 Library           RFTestLibrary
 Library           String
-Resource          NewWood_Resource.robot
+Resource          wood_resource.robot
 
 *** Variables ***
 
@@ -50,7 +50,7 @@ wood_zhiyin_002
     Sleep    0.5
     Teardown
 
-home_002
+home_003
     open_bs
     Click Element    ${tgzy_跳过指引}
     #验证首页hover显示正常
@@ -68,7 +68,7 @@ home_002
     Teardown
 
 
-login_003
+login_004
     open_bs
     Click Element    ${tgzy_跳过指引}
     #验证登录功能正常
@@ -125,7 +125,7 @@ login_003
     Teardown
 
 
-third_part_004
+third_part_005
     open bs
     Click Element    ${tgzy_跳过指引}
        Sleep    0.3
@@ -150,7 +150,7 @@ third_part_004
     Close Window
     Teardown
 
-open_file_005
+open_file_006
     open_bs
     Click Element    ${tgzy_跳过指引}
     ##未登录状态###
@@ -210,7 +210,7 @@ open_file_005
     Teardown
 
 
-file_button_006
+file_button_007
     open_bs
     Click Element    ${tgzy_跳过指引}
     Element Should Contain    ${bjym_编辑页面}    import
@@ -221,12 +221,17 @@ file_button_006
     Sleep    0.5
     assert_login_exist
     Element Should Contain    ${bjym_编辑页面}    import
-    # 验证未登录状态下点击【新建】弹出保存提示框
+    #修改默认作品的名称
+    Click Element    ${wood_作品名称}
+    Input Text    ${wood_作品名称默认}    ${wood_作品名称_科比}
+    Sleep    1
     Mouse over    ${wood_文件}
+    # 验证未登录未保存状态下点击【新建】弹出保存提示框
     Click Element    ${wood_文件_新建}
     Sleep    0.5
     Element Should Be Visible    ${wood_保存提示}
-    Element Should Contain    ${wood_保存提示}    当前作品还没有保存哦是否要继续
+    Element Should Contain    ${wood_保存提示}    当前作品还没有保存哦
+    Element Should Contain    ${wood_保存提示}    是否要继续
     #验证 点击【否】按钮-返回作品继续编辑
     Click Element    ${wood_保存提示_否}
     Sleep    0.2
@@ -238,25 +243,10 @@ file_button_006
     assert_login_exist
     Sleep    0.5
     Element Should Contain    ${bjym_编辑页面}    import
-    Mouse over    ${wood_文件}
-    #验证在未登录状态下点击【打开本地作品】弹出保存提示框
-    Click Element    ${wood_文件_打开本地作品}
-    Sleep    0.5
-    Element Should Be Visible    ${wood_保存提示}
-    Element Should Contain    ${wood_保存提示}    当前作品还没有保存哦是否要继续
-    # 验证未登录状态下点击【新建】弹出保存提示框
-    Mouse over    ${wood_文件}
-    Click Element    ${wood_文件_新建}
-    Sleep    0.5
-    Element Should Be Visible    ${wood_保存提示}
-    Element Should Contain    ${wood_保存提示}    当前作品还没有保存哦是否要继续
-    #验证 点击【否】按钮-打开默认空白作品
-    Click Element    ${wood_保存提示_是}
-    Sleep    0.2
-    Element Should Not Contain    ${bjym_编辑页面}    import
     Teardown
 
-open_py__007
+
+open_py__008
     open_bs
     Click Element    ${tgzy_跳过指引}
     #验证打开文件hover正常显示
@@ -294,7 +284,7 @@ open_py__007
     Teardown
 
 
-save__008
+save__009
     open bs
     Click Element    ${tgzy_跳过指引}
     #获取默认作品名称
@@ -325,7 +315,7 @@ save__008
     Teardown
 
 
-code_pattern_009
+code_pattern_010
     open_bs
     Click Element    ${tgzy_跳过指引}
     #验证切换模式按钮正常显示
@@ -360,7 +350,7 @@ code_pattern_009
     Teardown
 
 
-help_010
+help_011
     open_bs
     Click Element    ${tgzy_跳过指引}
     #将当前网址设为变量保存
@@ -388,7 +378,7 @@ help_010
     Sleep    1
     Teardown
 
-loginout&myfile_011
+loginout&myfile_012
     open_bs
     Click Element    ${tgzy_跳过指引}
     #这里login是上述登录封装起来的关键字
@@ -414,6 +404,7 @@ loginout&myfile_011
     Select Window    title=编程猫代码编辑器
     Title Should Be    编程猫代码编辑器
     #点击退出登录按钮
+    Mouse over     ${wood_登录入口}
     Click Element    ${wood_退出登录}
     Sleep    1
     #验证是否已经成功退出登录
@@ -422,7 +413,7 @@ loginout&myfile_011
     Select Window    title=编程猫代码编辑器
     Teardown
 
-sun_night_012
+sun_night_013
     open_bs
     Click Element    ${tgzy_跳过指引}
     Sleep    0.5
@@ -449,7 +440,7 @@ sun_night_012
     Teardown
 
 
-fold_unfold_013
+fold_unfold_014
     open_bs
     Click Element    ${tgzy_跳过指引}
     Sleep    0.5
@@ -477,7 +468,7 @@ fold_unfold_013
     Teardown
 
 
-full_screen_014
+full_screen_015
     open_bs
     Click Element    ${tgzy_跳过指引}
     Sleep    0.5
@@ -503,7 +494,7 @@ full_screen_014
     Teardown
 
 
-Run_stop_clear_015
+Run_stop_clear_016
     open_bs
     Click Element    ${tgzy_跳过指引}
     Sleep    0.5
