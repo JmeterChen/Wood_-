@@ -7,6 +7,8 @@ Resource          wood_resource.robot
 Test Setup       open_bs
 Test Teardown       Teardown
 
+
+
 *** Variables ***
 
 *** Test Cases ***
@@ -29,8 +31,8 @@ wood_zhiyin_002
     Element Should Contain    ${zhiyin_指引002}    这里是编程区，在这里输入python代码。
     Click Element    ${zhiyin_箭头}
     Sleep    0.2
-    Element Should Contain    ${zhiyin_指引003}    点击这里可以切换到积木模式哦！快来试试吧！
-    Click Element    ${整个页面}
+    Element Should Contain    ${zhiyin_指引003}    点击这里，可以在积木模式、代码模式间切换哦！快来试试吧！
+    Click Element    ${zhiyin_任意处}
     Sleep    0.2
     Element Should Contain    ${zhiyin_指引004}    这里是积木编码区，你可以在这里摆放积木。注意代码和积木之间是可以转换的哦！
     Click Element    ${zhiyin_指引004}
@@ -481,7 +483,6 @@ file_save
 
 i18n
     Click Element    ${tgzy_跳过指引}
-    Mouse Over    ${wood_切换语言}
     #使用自定义关键字，去匹配设定选择的语言参数
     Switch Language    zh-hant
     Sleep    0.5
@@ -518,6 +519,7 @@ i18n
     Sleep    0.2
     Element Text Should Be    ${wood_Variables}    Variables
     log    English OK！
+    Mouse Over    ${wood_切换语言}
 
 help
     Click Element    ${tgzy_跳过指引}
@@ -642,7 +644,6 @@ loginout
 
 third_part
     Click Element    ${tgzy_跳过指引}
-       Sleep    0.3
     Click Element    ${wood_登录入口}
     Sleep    0.5
     #验证登录页面含有第三方登录接口
@@ -662,148 +663,27 @@ third_part
     Select Window    NEW
     Title Should Be    微信登录
     Close Window
-
-code_pattern
-    Click Element    ${tgzy_跳过指引}
-    #默认模式为积木模式
-    Element Should Be Visible    ${wood_代码模式}
-    #验证切换模式按钮正常显示
-    Mouse over    ${wood_代码模式}
-    Element Should Contain    ${wood_代码模式}     代码模式
-    Element Should Be Visible    ${shijian_事件}
-    Element Should Contain    ${shijian_事件}    事件
-    Sleep    0.4
-    Page Should Not Contain Element    ${wood_白天}
-    #模式切换按钮功能正常（积木切换到代码）
-    Click Element    ${wood_代码模式}
+    Select Window    编程猫代码编辑器
+    Click Element    ${wood_登录入口}
+    Sleep    0.3
+    #验证通过QQ登录
+    Click Element    ${wood_QQ登录}
     Sleep    0.5
-    Mouse over    ${wood_太阳}
-    Element Should Be Visible    ${wood_白天}    白天
-    Sleep    0.4
-    Element Should Be Visible     ${wood_积木模式}
-    Element Should Contain    ${wood_积木模式}     积木模式
-
-sun_night
-    Click Element    ${tgzy_跳过指引}
-    Click Element    ${wood_代码模式}
-    Sleep    0.5
-    #验证太阳hover显示正常
-    Mouse over    ${wood_太阳}
-    #验证白天模式下只显示白天，夜间隐藏
-    Element Text Should Be    ${wood_白天}    白天
-    Element Should Not Be Visible    ${wood_月亮}
-    #点击太阳图标，切换到夜间模式
-    Click Element    ${wood_白天}
-    Sleep    0.5
-    #验证切换夜间模式成功，页面中月亮hover显示正常
-    Mouse over    ${wood_月亮}
-    #验证夜间模式下只显示夜间，白天隐藏
-    Element Text Should Be    ${wood_夜间}    夜间
-    Click Element    ${wood_月亮}
-    Sleep    0.5
-    #验证切换日间模式成功，页面中太阳hover显示正常
-    Element Should Be Visible    ${wood_太阳}
-    Mouse over    ${wood_太阳}
-    Element Should Contain    ${wood_白天}    白天
-    Element Should Not Be Visible    ${wood_月亮}
-
-fold_unfold
-    Click Element    ${tgzy_跳过指引}
-    Sleep    0.5
-    #验证收起hover显示正常
-    Mouse over    ${wood_收起按钮}
-    Element Should Be Visible    ${wood_收起}    收起
-    Element Should Be Visible    ${wood_运行}    运行
-    Element Text Should Be    ${wood_海龜圖}    海龟图
-    #点击收起按钮，验证功能
-    Click Element    ${wood_收起按钮}
-    Sleep    0.5
-    Element Should Not Be Visible    ${wood_收起按钮}
-    Element Should Not Be Visible    ${wood_运行}
-    Element Should Not Be Visible    ${wood_海龜圖}
-    Sleep    0.5
-    Click Element    ${wood_展开按钮}
-    Mouse over    ${wood_收起按钮}
-    Element Should Be Visible    ${wood_收起}
-    Element Text Should Be    ${wood_收起}    收起
-    Sleep    0.5
-
-full_screen
-    Click Element    ${tgzy_跳过指引}
-    Sleep    0.5
-    #验证全屏hover显示正常
-    Mouse over    ${wood_全屏按钮}
-    Element Should Be Visible    ${wood_全屏}
-    Element Should Contain    ${wood_全屏}    全屏
-    #验证全屏按钮功能正常
-    Click Element    ${wood_全屏按钮}
+    #跳转到QQ登录界面正常
+    Select Window    title=QQ帐号安全登录
+    Title Should Be    QQ帐号安全登录
+    Select Frame    ${wood_QQiframe}
+    Mouse Over    ${wood_QQ账号登录}
+    Click Element    ${wood_QQ账号登录}
+    Sleep    0.2
+    Input Text    ${wood_QQ账号框}    ${wood_qqusername}
+    Input Text    ${wood_QQ密码框}    ${wood_qqpassword}
+    Click Element    ${wood_QQ登录按钮}
     Sleep    1
-    #验证退出全屏hover显示正常
-    Mouse over    ${wood_退出全屏按钮}
-    Element Should Be Visible    ${wood_退出全屏}
-    Element Should Contain    ${wood_退出全屏}    退出全屏
-    #验证退出全屏按钮功能正常
-    Click Element   ${wood_退出全屏按钮}
-    Sleep    0.5
-    #验证退出全屏后全屏hover显示正常
-    Mouse over    ${wood_全屏按钮}
-    Element Should Be Visible    ${wood_全屏}
-    Element Should Contain    ${wood_全屏}    全屏
+    Select Window    title=编程猫代码编辑器
+    Mouse Over    ${wood_登录入口}
+    Element Should Contain    ${wood_退出登录}    退出登录
 
-Run_stop_clear
-    Click Element    ${tgzy_跳过指引}
-    Sleep    0.5
-    #运行区运行按钮功能正常
-    Mouse over    ${wood_运行}
-    Element Should Be Visible    ${wood_运行}
-    Element Text Should Be    ${wood_运行}    运行
-    #点击运行按钮
-    Click Element    ${wood_运行}
-    Sleep    0.5
-    #等待代码运行完毕
-    Wait Until Element Is Visible    ${wood_运行}
-    #验证代码中欢迎来到源码世界显示正常
-    Mouse over    ${wood_Run_area}
-    Element Should Contain    ${wood_welcome}    欢迎来到源码世界！
-    Sleep    0.5
-    #运行区运行按钮功能正常
-    Mouse over    ${wood_运行}
-    Element Should Be Visible    ${wood_运行}
-    Element Should Contain    ${wood_运行}    运行
-    #点击开始运行，等待停止按钮显示
-    Click Element    ${wood_运行}
-    ##运行区停止按钮功能正常
-    #点击运行按钮等待停止按钮出现
-    Wait Until Element Is Visible    ${wood_停止}
-    Mouse over    ${wood_停止}
-    Element Should Be Visible    ${wood_停止}
-    Element Should Contain    ${wood_停止}    停止
-    #点击停止按钮
-    Click Element    ${wood_停止}
-    Sleep   0.5
-    #验证代码没运行完毕，运行区应该没有输出
-    Mouse over    ${wood_Run_area}
-    Element Should Not Contain    ${wood_welcome}    欢迎来到源码世界！
-    Sleep    1
-    #验证清除按钮功能正常
-    #先运行代码
-    Mouse over    ${wood_运行}
-    Element Should Be Visible    ${wood_运行}
-    Element Should Contain    ${wood_运行}    运行
-    #点击运行按钮
-    Click Element    ${wood_运行}
-    Sleep    0.5
-    #等待代码运行完毕
-    Wait Until Element Is Visible    ${wood_运行}
-    #验证代码中欢迎来到源码世界显示正常
-    Mouse over    ${wood_Run_area}
-    Element Should Contain    ${wood_welcome}    欢迎来到源码世界！
-    Sleep    0.5
-    Mouse over    ${wood_清除}
-    Element Should Be Visible    ${wood_清除}
-    Element Should Contain    ${wood_清除}    清除
-    #点击清除按钮
-    Click Element    ${wood_清除}
-    Sleep    0.5
-    Element Should Not Contain    ${wood_welcome}    欢迎来到源码世界！
-    Sleep    0.5
+
+
+
