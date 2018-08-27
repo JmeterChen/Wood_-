@@ -12,7 +12,6 @@ Test Teardown       Teardown
 *** Variables ***
 
 *** Test Cases ***
-# 冒烟测试初次打开wood
 open_wood_001
     Title Should Be    编程猫代码编辑器
     #拥有新手指导
@@ -58,7 +57,7 @@ home_003
     Sleep    2
     #验证能够正常进入到首页
     Select Window    NEW
-    Title Should Be    编程猫-搭积木，学Python
+    Title Should Be    编程猫-海龟编辑器
     Run Keyword If    '${wood_URL}' == 'https://wood.codemao.cn/'    Location Should Contain    https://python.codemao.cn/
     ...    ELSE IF    '${wood_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Contain    https://dev-python.codemao.cn/
     ...    ELSE IF    '${wood_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Contain    https://staging-python.codemao.cn/
@@ -298,7 +297,7 @@ file_save_as
     Mouse Over    ${wood_登录入口}
     Click Element    ${wood_我的作品}
     Sleep    3
-    Select Window    title=编程猫-搭积木，学Python
+    Select Window    title=编程猫-海龟编辑器
     Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${myfile_URL_test}
     ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${myfile_URL}
     ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${myfile_URL_staging}
@@ -475,7 +474,7 @@ file_save
     Mouse Over    ${wood_登录入口}
     Click Element    ${wood_我的作品}
     Sleep    3
-    Select Window    title=编程猫-搭积木，学Python
+    Select Window    title=编程猫-海龟编辑器
     Mouse Over    ${python_我的作品_框框1}
     Click Element    ${python_我的作品_框框1_删除}
     Element Should Contain    ${python_我的作品_删除弹窗}    确定删除该作品吗？
@@ -622,7 +621,7 @@ loginout
     #验证点击我的作品按钮功能正常
     Click Element    ${wood_我的作品}
     Sleep    2
-    Select Window    编程猫-搭积木，学Python
+    Select Window    编程猫-海龟编辑器
     Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${myfile_URL_test}
     ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${myfile_URL}
     ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${myfile_URL_staging}
