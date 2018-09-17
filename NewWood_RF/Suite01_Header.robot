@@ -530,11 +530,11 @@ help
     Click Element    ${wood_图码源鉴}
     #点击帮助，进入到帮助页面
     Sleep    3
-    Select Window    title=Introduction · GitBook
+    Select Window    title=源码图鉴 | 源码图鉴
     Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${help_URL_test}
     ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${help_URL}
     ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${help_URL_staging}
-    ${wood_introduce}    Get Text    //*[@id="1-认识wood编辑器"]
+    ${wood_introduce}    Get Text    //*[@id="_1-认识wood编辑器"]
     should Contain    ${wood_introduce}    1. 认识Wood编辑器
     #关闭帮助窗口
     Close Window

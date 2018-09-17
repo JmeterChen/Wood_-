@@ -1,14 +1,15 @@
 *** Variables ***
 #测试地址
 # ${wood_URL}     https://wood.codemao.cn/
-${wood_URL}     https://dev-wood.codemao.cn/
-# ${wood_URL}       https://staging-wood.codemao.cn/
+# ${wood_URL}     https://dev-wood.codemao.cn/
+${wood_URL}       https://staging-wood.codemao.cn/
 # ${shouye_URL}    https://python.codemao.cn/
 # ${shouye_URL}    https://dev-python.codemao.cn/
 ${shouye_URL}     https://staging-python.codemao.cn/
 ${help_URL_test}    https://dev-wood.codemao.cn/docs/wood/
 ${help_URL}       https://wood.codemao.cn/docs/wood/
 ${help_URL_staging}    https://staging-wood.codemao.cn/docs/wood/
+
 ${myfile_URL_test}    https://dev-python.codemao.cn/work
 ${myfile_URL}     https://python.codemao.cn/work
 ${myfile_URL_staging}    https://staging-python.codemao.cn/work
