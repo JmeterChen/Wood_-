@@ -360,7 +360,7 @@ file_save_as
 #     # ${wood_zpm_pre}    add    saveTo_locally    .py
 #     # Element Should Be Equal As Strings    ${wood_zpm}    ${wood_zpm_pre}
 
-
+file_open_py01
     #未登录状态下打开本地文件
     Click Element    ${tgzy_跳过指引}
     #保证在代码模式下打开作品，不会弹出保存弹窗提示
