@@ -13,7 +13,7 @@ Test Teardown       Teardown
 
 *** Test Cases ***
 open_wood_001
-    Title Should Be    编程猫代码编辑器
+    Title Should Be    编程猫海龟编辑器
     #拥有新手指导
     Element Should Contain    ${zhiyin_指引001}    欢迎来到Wood编辑器！
     #点击跳过指引
@@ -22,7 +22,7 @@ open_wood_001
     Element Should Contain    ${bjym_编辑页面}    import
 
 wood_zhiyin_002
-    Title Should Be    编程猫代码编辑器
+    Title Should Be    编程猫海龟编辑器
     #拥有新手指导
     Element Should Contain    ${zhiyin_指引001}    欢迎来到Wood编辑器！
     Click Element    ${zhiyin_任意处}
@@ -57,13 +57,13 @@ home_003
     Sleep    2
     #验证能够正常进入到首页
     Select Window    NEW
-    Title Should Be    编程猫-海龟编辑器
+    Title Should Be    海龟编辑器官方下载_Python编辑器_少儿编程编辑器_图形化编程编辑器-编程猫
     Run Keyword If    '${wood_URL}' == 'https://wood.codemao.cn/'    Location Should Contain    https://python.codemao.cn/
     ...    ELSE IF    '${wood_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Contain    https://dev-python.codemao.cn/
     ...    ELSE IF    '${wood_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Contain    https://staging-python.codemao.cn/
     Close Window
-    Select Window    title=编程猫代码编辑器
-    Title Should Be    编程猫代码编辑器
+    Select Window    title=编程猫海龟编辑器
+    Title Should Be    编程猫海龟编辑器
 
 
 file_open_004
@@ -251,6 +251,7 @@ file_creat_002
      Should Contain    ${test_zpm}    新的作品
 
 
+
 file_save_as
     Click Element    ${tgzy_跳过指引}
     ${Current_URL}    Set Variable    Get Location
@@ -262,6 +263,7 @@ file_save_as
     Sleep    0.2
     login
     #将默认作品名称新建为另存为test
+    Clear Element Text    ${wood_作品名称}
     Input Text    ${wood_作品名称}    另存为test
     #获取默认作品新名称
     ${test_zpm01}    Get Value    ${wood_作品名称}
@@ -297,7 +299,7 @@ file_save_as
     Mouse Over    ${wood_登录入口}
     Click Element    ${wood_我的作品}
     Sleep    3
-    Select Window    title=编程猫-海龟编辑器
+    Select Window    title=海龟编辑器官方下载_Python编辑器_少儿编程编辑器_图形化编程编辑器-编程猫
     Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${myfile_URL_test}
     ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${myfile_URL}
     ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${myfile_URL_staging}
@@ -326,7 +328,7 @@ file_save_as
     Close Window
     Sleep    2
     #验证正常回到代码编辑器
-    Select Window    title=编程猫代码编辑器
+    Select Window    title=编程猫海龟编辑器
     #验证已删除成功
     Mouse over    ${wood_文件}
     Click Element    ${wood_文件_打开}
@@ -353,7 +355,7 @@ file_save_as
 #     Sleep    0.5
 #     Control Click    另存为    \    1
 #     Sleep    0.5
-#     # Control Click    编程猫代码编辑器 - Google Chrome    \    1
+#     # Control Click    编程猫海龟编辑器 - Google Chrome    \    1
 #     # Sleep   0.5
 #     # ${wood_zpm}    Control Get Text    \    1101
 #     # log    ${wood_zpm}
@@ -402,6 +404,7 @@ file_open_py01
 file_open_py02
     Click Element    ${tgzy_跳过指引}
     #未登录下更改作品名称
+    Clear Element Text    ${wood_作品名称}
     Input Text    ${wood_作品名称}    open_file
     Sleep    0.5
     Mouse Over    ${wood_未登录}
@@ -419,7 +422,7 @@ file_open_py02
     Click Element    ${wood_保存提示_取消}
     Sleep    0.2
     ${wood_zpm01}    Get Value    ${wood_作品名称}
-    Should Be Equal As Strings    ${wood_zpm01}    open_file
+    Element Should Contain    ${wood_zpm01}    open_file
     Mouse over    ${wood_文件}
     Click Element    ${wood_文件_从本地打开}
     Sleep    0.2
@@ -474,7 +477,7 @@ file_save
     Mouse Over    ${wood_登录入口}
     Click Element    ${wood_我的作品}
     Sleep    3
-    Select Window    title=编程猫-海龟编辑器
+    Select Window    title=海龟编辑器官方下载_Python编辑器_少儿编程编辑器_图形化编程编辑器-编程猫
     Mouse Over    ${python_我的作品_框框1}
     Click Element    ${python_我的作品_框框1_删除}
     Element Should Contain    ${python_我的作品_删除弹窗}    确定删除该作品吗？
@@ -540,8 +543,8 @@ help
     Close Window
     Sleep    2
     #验证正常回到代码编辑器
-    Select Window    title=编程猫代码编辑器
-    Title Should Be    编程猫代码编辑器
+    Select Window    title=编程猫海龟编辑器
+    Title Should Be    编程猫海龟编辑器
     Sleep    1
     log    图码源鉴OK
 
@@ -621,7 +624,7 @@ loginout
     #验证点击我的作品按钮功能正常
     Click Element    ${wood_我的作品}
     Sleep    2
-    Select Window    编程猫-海龟编辑器
+    Select Window    海龟编辑器官方下载_Python编辑器_少儿编程编辑器_图形化编程编辑器-编程猫
     Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${myfile_URL_test}
     ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${myfile_URL}
     ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${myfile_URL_staging}
@@ -630,8 +633,8 @@ loginout
     Close Window
     Sleep    0.5
     #验证正常回到代码编辑器
-    Select Window    title=编程猫代码编辑器
-    Title Should Be    编程猫代码编辑器
+    Select Window    title=编程猫海龟编辑器
+    Title Should Be    编程猫海龟编辑器
     #点击退出登录按钮
     Mouse over     ${wood_登录入口}
     Click Element    ${wood_退出登录}
@@ -639,7 +642,7 @@ loginout
     #验证是否已经成功退出登录
     Element Should Be Visible    ${wood_未登录}
     Element Should Contain    ${wood_未登录}    未登录
-    Select Window    title=编程猫代码编辑器
+    Select Window    title=编程猫海龟编辑器
 
 third_part
     Click Element    ${tgzy_跳过指引}
@@ -654,7 +657,7 @@ third_part
     Select Window    NEW
     Title Should Be    QQ帐号安全登录
     Close Window
-    Select Window    编程猫代码编辑器
+    Select Window    编程猫海龟编辑器
     Click Element    ${wood_登录入口}
     Sleep    0.3
     Click Element    ${wood_微信登录}
@@ -662,7 +665,7 @@ third_part
     Select Window    NEW
     Title Should Be    微信登录
     Close Window
-    Select Window    编程猫代码编辑器
+    Select Window    编程猫海龟编辑器
     Click Element    ${wood_登录入口}
     Sleep    0.3
     #验证通过QQ登录
@@ -679,7 +682,7 @@ third_part
     Input Text    ${wood_QQ密码框}    ${wood_qqpassword}
     Click Element    ${wood_QQ登录按钮}
     Sleep    1
-    Select Window    title=编程猫代码编辑器
+    Select Window    title=编程猫海龟编辑器
     Mouse Over    ${wood_登录入口}
     Element Should Contain    ${wood_退出登录}    退出登录
 
