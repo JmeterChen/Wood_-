@@ -70,7 +70,7 @@ ${wood_积木模式}      xpath=//div[text()='积木模式']
 ${wood_保存按钮}      xpath=//div[text()='保存']
 ${wood_文件_新建}     xpath=//div[text()='新建']
 ${wood_作品名称}      css=.style__project_name__2ADmE>input
-${wood_保存提示}      xpath=//div[4]/div/div/div/div[1]/div
+${wood_保存提示}      css=.style__text__15bKv
 ${wood_保存提示_取消}    css=.style__cancel__3EADI
 ${wood_保存提示_确定}    css=.style__confirm__ep4ll
 ${wood_保存提示_close}    css=.style__close_btn__1mONV

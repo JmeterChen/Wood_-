@@ -28,7 +28,7 @@ wood_zhiyin_002
     Click Element    ${zhiyin_任意处}
     Sleep    0.2
     Element Should Contain    ${zhiyin_指引002}    这里是编程区，在这里输入python代码。
-    Click Element    ${zhiyin_箭头}
+    Click Element    ${zhiyin_箭 头}
     Sleep    0.2
     Element Should Contain    ${zhiyin_指引003}    点击这里，可以在积木模式、代码模式间切换哦！快来试试吧！
     Click Element    ${zhiyin_任意处}
@@ -404,8 +404,8 @@ file_open_py01
 file_open_py02
     Click Element    ${tgzy_跳过指引}
     #未登录下更改作品名称
-    Clear Element Text    ${wood_作品名称}
-    Input Text    ${wood_作品名称}    open_file
+    Execute Javascript    document.getElementsByClassName('style__project_name__input__4kDDB')[0].value='open-file'
+    Click Element    css=.style__project_name__input__4kDDB
     Sleep    0.5
     Mouse Over    ${wood_未登录}
     #登录
@@ -422,7 +422,7 @@ file_open_py02
     Click Element    ${wood_保存提示_取消}
     Sleep    0.2
     ${wood_zpm01}    Get Value    ${wood_作品名称}
-    Element Should Contain    ${wood_zpm01}    open_file
+    Should Be Equal As Strings    ${wood_zpm01}    open-file
     Mouse over    ${wood_文件}
     Click Element    ${wood_文件_从本地打开}
     Sleep    0.2

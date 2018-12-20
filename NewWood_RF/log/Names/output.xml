@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181220 12:52:44.607" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
+<suite source="C:\Users\ChenBolin\Desktop\Wood_--master\NewWood_RF\Suite01_Header.robot" id="s1" name="Suite01 Header">
+<test id="s1-t1" name="file_open_py02">
+<kw type="setup" name="open_bs" library="wood_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${wood_URL}</arg>
+<arg>${test_browser}</arg>
+</arguments>
+<msg timestamp="20181220 12:52:44.837" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<status status="PASS" endtime="20181220 12:52:49.915" starttime="20181220 12:52:44.836"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20181220 12:52:51.161" starttime="20181220 12:52:49.915"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>.6 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20181220 12:52:51.162" starttime="20181220 12:52:51.161"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>10 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20181220 12:52:51.764" starttime="20181220 12:52:51.162"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20181220 12:52:54.766" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181220 12:52:54.766" starttime="20181220 12:52:51.764"></status>
+</kw>
+<status status="PASS" endtime="20181220 12:52:54.766" starttime="20181220 12:52:44.836"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${tgzy_跳过指引}</arg>
+</arguments>
+<msg timestamp="20181220 12:52:54.768" level="INFO">Clicking element 'xpath=//*[@id="root"]/div/div[3]/div[2]/div[5]'.</msg>
+<status status="PASS" endtime="20181220 12:52:56.158" starttime="20181220 12:52:54.767"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>document.getElementsByClassName('style__project_name__input__4kDDB')[0].value='open-file'</arg>
+</arguments>
+<msg timestamp="20181220 12:52:56.158" level="INFO">Executing JavaScript:
+document.getElementsByClassName('style__project_name__input__4kDDB')[0].value='open-file'</msg>
+<status status="PASS" endtime="20181220 12:52:56.764" starttime="20181220 12:52:56.158"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>css=.style__project_name__input__4kDDB</arg>
+</arguments>
+<msg timestamp="20181220 12:52:56.767" level="INFO">Clicking element 'css=.style__project_name__input__4kDDB'.</msg>
+<status status="PASS" endtime="20181220 12:52:58.060" starttime="20181220 12:52:56.766"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5</arg>
+</arguments>
+<msg timestamp="20181220 12:52:58.560" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20181220 12:52:58.560" starttime="20181220 12:52:58.060"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_未登录}</arg>
+</arguments>
+<msg timestamp="20181220 12:52:58.560" level="INFO">Simulating Mouse Over on element 'xpath=//div[text()='未登录']'.</msg>
+<status status="PASS" endtime="20181220 12:52:59.786" starttime="20181220 12:52:58.560"></status>
+</kw>
+<kw name="login" library="wood_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_未登录}</arg>
+</arguments>
+<msg timestamp="20181220 12:52:59.786" level="INFO">Clicking element 'xpath=//div[text()='未登录']'.</msg>
+<status status="PASS" endtime="20181220 12:53:01.042" starttime="20181220 12:52:59.786"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_01用户名}</arg>
+<arg>${wood_username}</arg>
+</arguments>
+<msg timestamp="20181220 12:53:01.042" level="INFO">Typing text '18682236985' into text field 'xpath=//*[@id="root"]//input[@placeholder='用户名' ]'.</msg>
+<status status="PASS" endtime="20181220 12:53:02.987" starttime="20181220 12:53:01.042"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_01密码}</arg>
+<arg>${wood_password}</arg>
+</arguments>
+<msg timestamp="20181220 12:53:02.987" level="INFO">Typing text '123456' into text field 'xpath=//*[@id="root"]//input[@placeholder='密码' ]'.</msg>
+<status status="PASS" endtime="20181220 12:53:04.875" starttime="20181220 12:53:02.987"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_01登录按钮}</arg>
+</arguments>
+<msg timestamp="20181220 12:53:04.875" level="INFO">Clicking element 'css=.asset-style__button__2KCHg.asset-style__base_button__2gZAA.asset-style__orange__1XF9N'.</msg>
+<status status="PASS" endtime="20181220 12:53:06.137" starttime="20181220 12:53:04.875"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${wood_退出登录}</arg>
+</arguments>
+<status status="PASS" endtime="20181220 12:53:06.751" starttime="20181220 12:53:06.137"></status>
+</kw>
+<status status="PASS" endtime="20181220 12:53:06.751" starttime="20181220 12:52:59.786"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_文件}</arg>
+</arguments>
+<msg timestamp="20181220 12:53:06.751" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
+<status status="PASS" endtime="20181220 12:53:07.978" starttime="20181220 12:53:06.751"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_文件_从本地打开}</arg>
+<arg>从本地打开</arg>
+</arguments>
+<msg timestamp="20181220 12:53:09.201" level="INFO">Element 'xpath=//div[text()='从本地打开']' is displayed.</msg>
+<status status="PASS" endtime="20181220 12:53:09.201" starttime="20181220 12:53:07.978"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_文件_从本地打开}</arg>
+</arguments>
+<msg timestamp="20181220 12:53:09.201" level="INFO">Clicking element 'xpath=//div[text()='从本地打开']'.</msg>
+<status status="PASS" endtime="20181220 12:53:10.453" starttime="20181220 12:53:09.201"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5</arg>
+</arguments>
+<msg timestamp="20181220 12:53:10.953" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20181220 12:53:10.953" starttime="20181220 12:53:10.453"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_保存提示}</arg>
+<arg>当前作品还没有保存哦</arg>
+</arguments>
+<msg timestamp="20181220 12:53:12.184" level="INFO">Element 'css=.style__text__15bKv' contains text '当前作品还没有保存哦'.</msg>
+<status status="PASS" endtime="20181220 12:53:12.184" starttime="20181220 12:53:10.953"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_保存提示}</arg>
+<arg>是否要继续</arg>
+</arguments>
+<msg timestamp="20181220 12:53:13.399" level="INFO">Element 'css=.style__text__15bKv' contains text '是否要继续'.</msg>
+<status status="PASS" endtime="20181220 12:53:13.399" starttime="20181220 12:53:12.184"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5</arg>
+</arguments>
+<msg timestamp="20181220 12:53:13.899" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20181220 12:53:13.899" starttime="20181220 12:53:13.399"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_保存提示_取消}</arg>
+</arguments>
+<msg timestamp="20181220 12:53:13.899" level="INFO">Clicking element 'css=.style__cancel__3EADI'.</msg>
+<status status="PASS" endtime="20181220 12:53:15.150" starttime="20181220 12:53:13.899"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.2</arg>
+</arguments>
+<msg timestamp="20181220 12:53:15.351" level="INFO">Slept 200 milliseconds</msg>
+<status status="PASS" endtime="20181220 12:53:15.351" starttime="20181220 12:53:15.150"></status>
+</kw>
+<kw name="Get Value" library="Selenium2Library">
+<doc>Returns the value attribute of element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_作品名称}</arg>
+</arguments>
+<assign>
+<var>${wood_zpm01}</var>
+</assign>
+<msg timestamp="20181220 12:53:16.575" level="INFO">${wood_zpm01} = open-file</msg>
+<status status="PASS" endtime="20181220 12:53:16.575" starttime="20181220 12:53:15.351"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${wood_zpm01}</arg>
+<arg>open-file</arg>
+</arguments>
+<status status="PASS" endtime="20181220 12:53:16.575" starttime="20181220 12:53:16.575"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_文件}</arg>
+</arguments>
+<msg timestamp="20181220 12:53:16.576" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
+<status status="PASS" endtime="20181220 12:53:17.794" starttime="20181220 12:53:16.575"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_文件_从本地打开}</arg>
+</arguments>
+<msg timestamp="20181220 12:53:17.794" level="INFO">Clicking element 'xpath=//div[text()='从本地打开']'.</msg>
+<status status="PASS" endtime="20181220 12:53:19.028" starttime="20181220 12:53:17.794"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.2</arg>
+</arguments>
+<msg timestamp="20181220 12:53:19.229" level="INFO">Slept 200 milliseconds</msg>
+<status status="PASS" endtime="20181220 12:53:19.229" starttime="20181220 12:53:19.028"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_保存提示_确定}</arg>
+</arguments>
+<msg timestamp="20181220 12:53:19.229" level="INFO">Clicking element 'css=.style__confirm__ep4ll'.</msg>
+<status status="PASS" endtime="20181220 12:53:20.485" starttime="20181220 12:53:19.229"></status>
+</kw>
+<kw name="Win Wait" library="AutoItLibrary">
+<doc>Direct wrapper for AutoIt's WinWait method.</doc>
+<arguments>
+<arg>打开</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20181220 12:53:20.765" level="INFO">AutoItLibrary.WinWait(WindowTitle='\u6253\u5f00', WindowText='', TimeOut='2')</msg>
+<status status="PASS" endtime="20181220 12:53:20.770" starttime="20181220 12:53:20.485"></status>
+</kw>
+<kw name="Win Exists" library="AutoItLibrary">
+<doc>method WinExists</doc>
+<arguments>
+<arg>打开</arg>
+</arguments>
+<status status="PASS" endtime="20181220 12:53:20.773" starttime="20181220 12:53:20.773"></status>
+</kw>
+<kw name="Win Active" library="AutoItLibrary">
+<doc>method WinActive</doc>
+<arguments>
+<arg>打开</arg>
+</arguments>
+<status status="PASS" endtime="20181220 12:53:20.775" starttime="20181220 12:53:20.774"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${py_file_dir_Newfile}</arg>
+</arguments>
+<msg timestamp="20181220 12:53:20.776" level="INFO">C:\Users\ChenBolin\Desktop\Wood_--master\NewWood_RF\Wood_PyFile\New_file</msg>
+<status status="PASS" endtime="20181220 12:53:20.776" starttime="20181220 12:53:20.776"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5</arg>
+</arguments>
+<msg timestamp="20181220 12:53:21.276" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20181220 12:53:21.276" starttime="20181220 12:53:20.776"></status>
+</kw>
+<kw name="Control Set Text" library="AutoItLibrary">
+<doc>method ControlSetText</doc>
+<arguments>
+<arg>打开</arg>
+<arg>1148</arg>
+<arg>${py_file_dir_Newfile}</arg>
+</arguments>
+<status status="PASS" endtime="20181220 12:53:21.283" starttime="20181220 12:53:21.277"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5</arg>
+</arguments>
+<msg timestamp="20181220 12:53:21.784" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20181220 12:53:21.784" starttime="20181220 12:53:21.283"></status>
+</kw>
+<kw name="Control Click" library="AutoItLibrary">
+<doc>method ControlClick</doc>
+<arguments>
+<arg>打开</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20181220 12:53:21.797" starttime="20181220 12:53:21.785"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5</arg>
+</arguments>
+<msg timestamp="20181220 12:53:22.299" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20181220 12:53:22.299" starttime="20181220 12:53:21.798"></status>
+</kw>
+<kw name="Control Set Text" library="AutoItLibrary">
+<doc>method ControlSetText</doc>
+<arguments>
+<arg>打开</arg>
+<arg>1148</arg>
+<arg>新的作品-204.py</arg>
+</arguments>
+<status status="PASS" endtime="20181220 12:53:22.301" starttime="20181220 12:53:22.299"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5</arg>
+</arguments>
+<msg timestamp="20181220 12:53:22.802" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20181220 12:53:22.802" starttime="20181220 12:53:22.301"></status>
+</kw>
+<kw name="Control Click" library="AutoItLibrary">
+<doc>method ControlClick</doc>
+<arguments>
+<arg>打开</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20181220 12:53:22.812" starttime="20181220 12:53:22.802"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5</arg>
+</arguments>
+<msg timestamp="20181220 12:53:23.314" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20181220 12:53:23.314" starttime="20181220 12:53:22.812"></status>
+</kw>
+<kw name="Get Value" library="Selenium2Library">
+<doc>Returns the value attribute of element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_作品名称}</arg>
+</arguments>
+<assign>
+<var>${wood_zpm02}</var>
+</assign>
+<msg timestamp="20181220 12:53:24.526" level="INFO">${wood_zpm02} = 新的作品-204</msg>
+<status status="PASS" endtime="20181220 12:53:24.526" starttime="20181220 12:53:23.314"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${wood_zpm02}</arg>
+<arg>新的作品-204</arg>
+</arguments>
+<status status="PASS" endtime="20181220 12:53:24.526" starttime="20181220 12:53:24.526"></status>
+</kw>
+<kw type="teardown" name="Teardown" library="wood_resource">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20181220 12:53:27.212" starttime="20181220 12:53:24.527"></status>
+</kw>
+<status status="PASS" endtime="20181220 12:53:27.212" starttime="20181220 12:53:24.527"></status>
+</kw>
+<status status="PASS" endtime="20181220 12:53:27.212" critical="yes" starttime="20181220 12:52:44.835"></status>
+</test>
+<status status="PASS" endtime="20181220 12:53:27.213" starttime="20181220 12:52:44.611"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Suite01 Header" pass="1">Suite01 Header</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
