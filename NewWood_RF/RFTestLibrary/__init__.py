@@ -1,4 +1,4 @@
-from mykeywords import Mykeywords
+from RFTestLibrary.mykeywords import Mykeywords
 
 __version__ = "0.1"
 
