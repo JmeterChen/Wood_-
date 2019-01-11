@@ -264,7 +264,8 @@ file_save_as
     login
     #将默认作品名称新建为另存为test
     Execute Javascript    document.getElementsByClassName('style__project_name__input__4kDDB')[0].value='另存为test'
-    Click Element    ${wood_保存按钮}
+    Click Element    css=.style__project_name__input__4kDDB
+    Sleep    0.5
     #获取默认作品新名称
     ${test_zpm01}    Get Value    ${wood_作品名称}
     Mouse over    ${wood_文件}
@@ -283,9 +284,10 @@ file_save_as
     Click Element    ${wood_文件_新建}
     Sleep    0.2
     Execute Javascript    document.getElementsByClassName('style__project_name__input__4kDDB')[0].value='另存为test'
-    Click Element    ${wood_保存按钮}
-    Mouse over    ${wood_文件}
+    Click Element    css=.style__project_name__input__4kDDB
+    Sleep    0.5
     #点击另存为操作
+    Mouse over    ${wood_文件}
     Click Element    ${wood_文件_另存为}
     Sleep    0.5
     #获取另存为成功后作品名称
