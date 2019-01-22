@@ -21,8 +21,8 @@ blocks_flyout
     Element Should Contain    ${wood_toolbox_operators}/div/span[2]    运算
     Click Element    ${wood_toolbox_operators}
     Page Should Contain Element    ${wood_blocks_num}    limit=25
-    ${operation_lib_num}    Get Matching Xpath Count    ${wood_blocks_XX库}
-    ${operation_line_num}    Get Matching Xpath Count    ${wood_lines}
+    ${operation_lib_num}    Get Element Count    ${wood_blocks_XX库}
+    ${operation_line_num}    Get Element Count    ${wood_lines}
     Should Be Equal    ${operation_lib_num}    ${operation_line_num}
     # 字符串积木盒
     Element Should Contain    ${wood_toolbox_strings}/div/span[2]    字符串
@@ -85,8 +85,8 @@ blocks_flyout
     Element Should Contain    ${wood_toolbox_turtle}/div/span[2]    海龟库
     Click Element    ${wood_toolbox_turtle}
     Page Should Contain Element    ${wood_blocks_num}    limit=46
-    ${operation_lib_num}    Get Matching Xpath Count    ${wood_blocks_XX库}
-    ${operation_line_num}    Get Matching Xpath Count    ${wood_lines}
+    ${operation_lib_num}    Get Element Count    ${wood_blocks_XX库}
+    ${operation_line_num}    Get Element Count    ${wood_lines}
     ${num}    Evaluate    ${operation_line_num} + 1
     Should Be Equal As Integers    ${num}    ${operation_lib_num}
     #--------回头检查变量积木盒积木个数

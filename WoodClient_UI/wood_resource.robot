@@ -1,7 +1,8 @@
 *** Variables ***
 # Client manage
 # ${wood_client_dir}               C:\\Users\\ChenBolin\\AppData\\Local\\Programs\\lizzy\\海龟编辑器.exe
-${wood_client_dir}               C:\\Pyblock_dev\\海龟编辑器-dev.exe
+# ${wood_client_dir}               C:\\Pyblock_dev\\海龟编辑器-dev.exe
+${wood_client_dir}                 C:\\Pyblock_staging\\海龟编辑器-staging.exe
 
 # data manage
 # ${test_username}                 czx-autotest-01
@@ -15,6 +16,7 @@ ${py_file_unnormal}              ${CURDIR}\\ResourceFile\\unNormalfile
 ${file_untrans}                  ${CURDIR}\\ResourceFile\\unTrans\\test.json
 ${download_file}                 ${CURDIR}\\ResourceFile\\downloadFile
 ${Save_to_cloud}                 ${CURDIR}\\ResourceFile\\Save_to_cloud
+${file_to_update}                ${CURDIR}\\ResourceFile\\updateFile
 
 # UI manage
 ${wood_guide_next_button}        css:   div[class^="vh-center style__footer"]>button[class^="style__btn"]
@@ -29,6 +31,7 @@ ${wood_QQ密码框}                 xpath=//*[@id="p"]
 ${wood_QQ登录按钮}               xpath=//*[@id="login_button"]
 ${wood_微信登录}                 xpath=//span[text()='第三方登录']//following-sibling::span[2]
 
+${wood_user_name}                xpath=//*[@id="header_click_area"]/div[1]/div[2]/div
 ${wood_ue_nickname}              ${wood_user_entrance}//div[contains(@class, "style__title")]
 ${wood_login_dialog}             css:   div[class^="asset-style__dialog-wrap"]
 ${wood_ue_logout_button}         xpath: //div[contains(@class, "style__dropdown_content")]/div
@@ -60,7 +63,7 @@ ${wood_file_open_cloud}          ${wood_file_dropdown}/div[1]/div[6]
 ${wood_file_save_to_cloud}       ${wood_file_dropdown}/div[1]/div[7]
 ${wood_ft_dialog}                css:   div[class^="style__dialog-wrap"]
 ${wood_ftd_title}                xpath:    //span[text()='模板作品']
-${wood_template_num}             //div[contains(@class, "style__item-wrapper")]/div
+${wood_template_num}             xpath=//div[contains(@class, "style__item-wrapper")]/div
 ${wood_ftd_close}                css:   span[class*="style__icon-client-close"]
 
 ${wood_cloud_list_title}         xpath:    //span[text()='打开文件']
@@ -126,7 +129,7 @@ ${wood_tabs_container}           css:   div[class^=tabs_container]
 ${wood_tab_current}              ${wood_tabs_container}>span[class*="style__current"]
 ${wood_tab_cur_close}            ${wood_tab_current}>span[class*="style__close-icon"]
 ${wood_tab_cur_name}             ${wood_tab_current}>span[class^="style__text"]
-${wood_error_file}               //div[@class='style__container__VJrU4']
+${wood_toast_file}               //div[@class='style__container__VJrU4']
 ${wood_tab_file_name}            css:   .style__text_input__1egqJ
 ${wood_tab_cur_textarea}         ${wood_tab_current}>input
 ${wood_tab_cur_name_hover}       ${wood_tab_current}>span[class*="fullname_container"]
@@ -163,10 +166,14 @@ ${wood_creat_var_close}          xpath=//*[@class="style__close_btn__2RsCq"]
 ${wood_creat_var_cancle}         xpath=//div[@class='style__btn-wrap__WnlnY']/span[1]
 ${wood_input_var_name}           xpath=//*[@class="style__input_element__4yD-w"]
 ${wood_creat_var_sure}           xpath=//div[@class='style__btn-wrap__WnlnY']/span[2]
-
-
 ${wood_workspace_textarea}       id:    SNAPE
 
+${python_我的作品}               xpath=//a[text()='我的作品']
+${python_login用户名}            xpath://input[@placeholder='用户名']
+${python_login密码}              xpath://input[@placeholder='密码']
+${python_登录按钮}               xpath://span[text()='登录']
+${python_frame[1]}               xpath=//div[@class='vh-center project-wrapper_uv7Es']/div[1]
+${python_delete_sure}            xpath=//span[text()='删除']
 
 
 
@@ -301,19 +308,17 @@ Open Template
 Setting Language
     Click Element    ${wood_setting_button}
     Mouse Over    ${wood_setting_language}
-    ${language_num}    Get Matching Xpath Count    ${wood_setting_language_xpath}
+    ${language_num}    Get Element Count    ${wood_setting_language_xpath}
     Should Be True    ${language_num}    3
 
-
-
 Open Local Test py
-    [Arguments]    ${py_name}
+    [Arguments]    ${files_path}    ${py_name}
     Click Element    ${wood_file_icon}
     Click Element    ${wood_file_open}
     Win Wait    打开    \    2
     Win Exists    打开
     Sleep    1
-    Control Set Text    打开    \    1148    ${py_file_normal}
+    Control Set Text    打开    \    1148    ${files_path}
     Sleep    1
     Control Click    打开    \    1
     Sleep    1
@@ -332,7 +337,7 @@ Open Cloud Test py
 Open Cloud Test py Random
     Click Element    ${wood_file_icon}
     Click Element    ${wood_file_open_cloud}
-    ${test_cf_count}    Get Matching Xpath Count    ${wood_cfd_list[7::]}/div
+    ${test_cf_count}    Get Element Count    ${wood_cfd_list[7::]}/div
     ${test_cf_count+1}    Evaluate    ${test_cf_count}+${1}
     @{test_file_list}    Create List
     Log Many    @{test_file_list}
@@ -350,7 +355,7 @@ Open Cloud Test py Random
 # Open Cloud Test py Random
 #     Click Element    ${wood_file_icon}
 #     Click Element    ${wood_file_open_cloud}
-#     ${test_cf_count}    Get Matching Xpath Count    ${wood_cfd_list[7::]}/div
+#     ${test_cf_count}    Get Element Count    ${wood_cfd_list[7::]}/div
 #     ${random}    Evaluate    random.randrange(${test_cf_count})    random
 #     Click Element    ${wood_cfd_list[7::]}/div[${random}]
 
@@ -380,3 +385,29 @@ Get Tab Save State
 #     : FOR    ${cell}    IN    @{row}
 #     \    log    ${cell}
 
+
+# Catch_Url
+#     ${user_name}    Get Text    ${wood_user_name}
+#     Run Keyword If    '${wood_user_name}' == '陈柏霖'   Return From Keyword    ${https://python.codemao.cn}
+#     ...   ELSE    Return From Keyword    ${https://test-python.codemao.cn}
+
+
+Delete_python_files
+    [Arguments]    ${num}    ${env}
+    Open Browser    ${env}    chrome
+    Maximize Browser Window
+    Set Selenium Speed    .6 seconds
+    Click Element    ${python_我的作品}
+    Sleep    0.5
+    input text    ${python_login用户名}    ${test_username}
+    input text    ${python_login密码}    ${test_password}
+    Click Element    ${python_登录按钮}
+    Sleep    2
+    Click Element    ${python_我的作品}
+    : FOR    ${i}    IN RANGE    ${num}
+    \    Mouse Over    ${python_frame[1]}
+    # 点击删除
+    \    Click Element    ${python_frame[1]}/div[2]
+    # 删除确认
+    \    Click Element    ${python_delete_sure}
+    Close Window

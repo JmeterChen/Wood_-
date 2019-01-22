@@ -7,18 +7,20 @@ Test Setup        Open Client With Login
 Test Teardown     Teardown
 
 *** Test Cases ***
-ver file name displaytest
+ver_file_name_displaytest
+    # 这里会产生一个新文件
     # 新建文件并验证标签页显示 新的作品
     New Built
     Element Should Contain    ${wood_tab_current}    新的作品
     # 从本地打开作品并验证标签页显示 所打开本地作品的名称
-    Open Local Test py    AutoTestFile01.py
+    Open Local Test py    ${py_file_normal}    AutoTestFile01.py
     Element Should Contain    ${wood_tab_cur_name}    AutoTestFile01
     # 从云端打开作品并验证标签页显示 所打开云端作品的名称
     ${test_selected_file_name}    Open Cloud Test py Random
     Element Text Should Be    ${wood_tab_cur_name}    ${test_selected_file_name}
 
-ver unsave state display
+ver_unsave_state_display
+    # 这里会产生一个新文件
     Click Element    ${wood_trans_button}
     Click Element    ${wood_workspace_textarea}
     # 验证未修改时显示已保存状态
@@ -27,13 +29,14 @@ ver unsave state display
     # 验证修改后显示未保存状态
     Send    test{ENTER}
     ${test_gtst1}    Get Tab Save State    1
+    log    ${test_gtst1}
     Should Not Be True    ${test_gtst1}
     # 验证保存到云端后显示已保存状态
     Save To Cloud
     ${test_gtst2}    Get Tab Save State    1
     Should Be True    ${test_gtst2}
     # 验证本地打开的文件显示已保存状态
-    Open Local Test py    AutoTestFile03.py
+    Open Local Test py    ${file_to_update}    AutoTestFile04.py
     ${test_gtst3}    Get Tab Save State    3
     Should Be True    ${test_gtst3}
     # 验证修改后显示未保存状态
@@ -45,6 +48,7 @@ ver unsave state display
     Save To Local
     ${test_gtst5}    Get Tab Save State    3
     Should Be True    ${test_gtst5}
+
 
 
 # 下面两个已经在Header  Open file 用例中以实现
@@ -76,3 +80,12 @@ ver unsave state display
 #     Click Element    ${wood_file_icon}
 #     Click Element    ${wood_file_open_cloud}
 #     Element Should Contain    ${test_first_cloud_file}    ${test_ranname}
+
+
+
+   # # 清楚垃圾数据 clear_rubblish_file
+   #  ${user_name}    Get Text    ${wood_user_name}
+   #  ${url}=    Set Variable If    '${user_name}' == '陈柏霖'    https://python.codemao.cn
+   #  ...    '${user_name}' != '陈柏霖'    https://test-python.codemao.cn
+   #  Delete_python_files    1    ${url}
+   #  Select Window    title='海龟编辑器'

@@ -17,7 +17,6 @@ def tree(branchLen,t):
             else :
                 t.pencolor('lightcoral')
             t.pensize((branchLen / 3))
-            test
         elif (branchLen < 8) :
             if (random.randint(0, 1) == 0) :
                 t.pencolor('snow')

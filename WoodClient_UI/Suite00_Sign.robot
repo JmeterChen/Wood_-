@@ -32,6 +32,7 @@ signup failed
     11111111111    abcdef      1           获取验证码失败，请重新尝试
     11111111111    abcdef      123456      获取验证码失败，请重新尝试
 
+
 login
     [tags]    kobe
     Click Element    ${wood_user_entrance}

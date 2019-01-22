@@ -36,7 +36,7 @@ fixedbug5
 fixedbug6
     ${a}    Set Variable    5
     ${b}    Set Variable    6
-    Run Keyword If    ${a}>${b}
+    Run Keyword If    ${a}>${b}    Log 'ok'
 
 
 fixedbug7
@@ -76,20 +76,6 @@ fixedbug12
     # \    LOG    @{c}[${i}]
     # \    Log    ${c[${i}]}
 
-fixedbug13
-    @{a}    Create List    aa    bb    cc
-    @{b}    Create List    11    22    33
-    @{table}    Create List    ${a}    ${b}
-    # log    ${table}
-    : FOR    ${row}    IN    @{table}
-    \    log    @{row}
-
-
-fixedbug14
-    ${a}    Set Variable    1
-    ${b}    Set Variable    2
-    Should Be Equal    ${a}    ${b} & 1
-
 fixedbug15
     @{a}    Create List    11    22    33
     # Log Many    @{a}
@@ -125,3 +111,9 @@ fixedbug19
     @{b}    Create List    55    66
     @{a}    Create List    @{a}    ${b}
     log    ${a}
+
+fixedbug20
+    ${a}    Set Variable    陈柏霖
+    Run Keyword If    '${a}' == '陈柏霖'    log    ok
+        ...   ELSE    log    gg
+
