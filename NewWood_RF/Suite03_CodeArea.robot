@@ -71,6 +71,7 @@ Run_stop_clear
 
 
 fold_unfold
+    [Tags]    test_tags
     Click Element    ${tgzy_跳过指引}
     Sleep    0.5
     #验证收起hover显示正常

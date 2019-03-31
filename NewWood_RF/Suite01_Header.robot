@@ -140,6 +140,7 @@ file_open_search_box
 
 
 file_open_filelist
+    [Tags]    fail
     Click Element    ${tgzy_跳过指引}
     ##未登录状态###
     #验证未登录状态下点击【打开】弹出登录框
@@ -163,7 +164,8 @@ file_open_filelist
     Click Element    ${wood_打开文件_框框3}
     Sleep    0.5
     ${test_zpm}    Get Value    ${wood_作品名称}
-    Should Contain    ${test_zpm}    ${test_zpm03}
+    # Should Contain    ${test_zpm[0:8]}    ${test_zpm03[]}
+    Should Be Equal    ${test_zpm[0:8]}    ${test_zpm03[0:8]}
     #对排序较后的作品进行更新
     Click Element    ${wood_保存按钮}
     Sleep     1
@@ -186,7 +188,7 @@ file_open_filelist
     Click Element    ${wood_打开文件_框框3}
     Sleep    0.5
     ${test_zpm}    Get Value    ${wood_作品名称}
-    Should Contain    ${test_zpm}    ${test_zpm03}
+    Should Be Equal    ${test_zpm[0:8]}    ${test_zpm03[0:8]}
     #对排序较后的作品进行更新
     Click Element    ${wood_保存按钮}
     Sleep     1
@@ -197,6 +199,7 @@ file_open_filelist
     Element Text Should Be    ${wood_打开文件_框框2作品名称}    ${test_zpm03}
 
 file_creat_001
+    [Tags]    creat_py
     Click Element    ${tgzy_跳过指引}
     Element Text Should Be    ${shijian_事件}    事件
     Click Element    ${wood_代码模式}
@@ -303,7 +306,8 @@ file_save_as
     Click Element    ${wood_我的作品}
     Sleep    3
     Select Window    title=海龟编辑器官方下载_Python编辑器_少儿编程编辑器_图形化编程编辑器-编程猫
-    Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${myfile_URL_test}
+    Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${myfile_URL_dev}
+    ...    ELSE IF    '${Current_URL}' == 'https://test-wood.codemao.cn/'    Location Should Be    ${myfile_URL_test}
     ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${myfile_URL}
     ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${myfile_URL_staging}
     Element Text Should Be    //a[text()='我的作品']    我的作品
@@ -366,6 +370,7 @@ file_save_as
 #     # Element Should Be Equal As Strings    ${wood_zpm}    ${wood_zpm_pre}
 
 file_open_py01
+    [Tags]    test_tags
     #未登录状态下打开本地文件
     Click Element    ${tgzy_跳过指引}
     #保证在代码模式下打开作品，不会弹出保存弹窗提示
@@ -537,7 +542,8 @@ help
     #点击帮助，进入到帮助页面
     Sleep    3
     Select Window    title=源码图鉴 | 源码图鉴
-    Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${help_URL_test}
+    Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${help_URL_dev}
+    ...    ELSE IF    '${Current_URL}' == 'https://test-wood.codemao.cn/'    Location Should Be    ${help_URL_test}
     ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${help_URL}
     ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${help_URL_staging}
     ${wood_introduce}    Get Text    //*[@id="_1-认识wood编辑器"]
@@ -628,7 +634,8 @@ loginout
     Click Element    ${wood_我的作品}
     Sleep    2
     Select Window    海龟编辑器官方下载_Python编辑器_少儿编程编辑器_图形化编程编辑器-编程猫
-    Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${myfile_URL_test}
+    Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${myfile_URL_dev}
+    ...    ELSE IF    '${Current_URL}' == 'https://test-wood.codemao.cn/'    Location Should Be    ${myfile_URL_test}
     ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${myfile_URL}
     ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${myfile_URL_staging}
     Element Text Should Be    //a[text()='我的作品']    我的作品    我的作品
