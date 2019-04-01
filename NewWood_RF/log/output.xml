@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181101 20:45:43.009" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
+<suite source="C:\Users\ChenBolin\Desktop\RF\Wood_-\NewWood_RF\SuiteXX_Fixedbugs.robot" id="s1" name="SuiteXX Fixedbugs">
+<test id="s1-t1" name="lala">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://www.baidu.com</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20181101 20:45:43.170" level="INFO">Opening browser 'chrome' to base url 'http://www.baidu.com'.</msg>
+<status status="PASS" endtime="20181101 20:45:45.843" starttime="20181101 20:45:43.170"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20181101 20:45:48.844" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20181101 20:45:48.844" starttime="20181101 20:45:45.843"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById('kw').value='科比'</arg>
+</arguments>
+<msg timestamp="20181101 20:45:48.845" level="INFO">Executing JavaScript:
+window.document.getElementById('kw').value='科比'</msg>
+<status status="PASS" endtime="20181101 20:45:48.853" starttime="20181101 20:45:48.844"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20181101 20:45:50.853" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20181101 20:45:50.853" starttime="20181101 20:45:48.853"></status>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.document.getElementById('su').Click</arg>
+</arguments>
+<msg timestamp="20181101 20:45:50.853" level="INFO">Executing JavaScript:
+window.document.getElementById('su').Click</msg>
+<status status="PASS" endtime="20181101 20:45:50.857" starttime="20181101 20:45:50.853"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20181101 20:45:55.857" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20181101 20:45:55.857" starttime="20181101 20:45:50.857"></status>
+</kw>
+<kw type="teardown" name="Teardown" library="wood_resource">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20181101 20:45:57.955" starttime="20181101 20:45:55.857"></status>
+</kw>
+<status status="PASS" endtime="20181101 20:45:57.956" starttime="20181101 20:45:55.857"></status>
+</kw>
+<status status="PASS" endtime="20181101 20:45:57.956" critical="yes" starttime="20181101 20:45:43.169"></status>
+</test>
+<status status="PASS" endtime="20181101 20:45:57.956" starttime="20181101 20:45:43.011"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="SuiteXX Fixedbugs" pass="1">SuiteXX Fixedbugs</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

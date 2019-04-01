@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180917 11:18:15.666" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
+<suite source="C:\Users\ChenBolin\Desktop\Wood_-\NewWood_RF" id="s1" name="NewWood RF">
+<suite source="C:\Users\ChenBolin\Desktop\Wood_-\NewWood_RF\Suite01_Header.robot" id="s1-s1" name="Suite01 Header">
+<test id="s1-s1-t1" name="open_wood_001">
+<kw type="setup" name="open_bs" library="wood_resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${wood_URL}</arg>
+<arg>${test_browser}</arg>
+</arguments>
+<msg timestamp="20180917 11:18:15.961" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<status status="PASS" endtime="20180917 11:18:21.241" starttime="20180917 11:18:15.961"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180917 11:18:22.388" starttime="20180917 11:18:21.241"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>.6 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20180917 11:18:22.391" starttime="20180917 11:18:22.389"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>10 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20180917 11:18:22.997" starttime="20180917 11:18:22.393"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20180917 11:18:25.997" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180917 11:18:25.997" starttime="20180917 11:18:22.997"></status>
+</kw>
+<status status="PASS" endtime="20180917 11:18:25.997" starttime="20180917 11:18:15.961"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>编程猫代码编辑器</arg>
+</arguments>
+<msg timestamp="20180917 11:18:26.604" level="INFO">Page title is '编程猫代码编辑器'.</msg>
+<status status="PASS" endtime="20180917 11:18:26.604" starttime="20180917 11:18:25.998"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${zhiyin_指引001}</arg>
+<arg>欢迎来到Wood编辑器！</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180917 11:18:38.169" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180917 11:18:38.169" starttime="20180917 11:18:37.268"></status>
+</kw>
+<msg timestamp="20180917 11:18:38.198" level="FAIL">Element with locator 'xpath=//*[@id="root"]/div/div[3]/div[2]' not found.</msg>
+<status status="FAIL" endtime="20180917 11:18:38.199" starttime="20180917 11:18:26.605"></status>
+</kw>
+<kw type="teardown" name="Teardown" library="wood_resource">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20180917 11:18:40.901" starttime="20180917 11:18:38.199"></status>
+</kw>
+<status status="PASS" endtime="20180917 11:18:40.901" starttime="20180917 11:18:38.199"></status>
+</kw>
+<status status="FAIL" endtime="20180917 11:18:40.901" critical="yes" starttime="20180917 11:18:15.960">Element with locator 'xpath=//*[@id="root"]/div/div[3]/div[2]' not found.</status>
+</test>
+<status status="FAIL" endtime="20180917 11:18:40.902" starttime="20180917 11:18:15.725"></status>
+</suite>
+<status status="FAIL" endtime="20180917 11:18:40.903" starttime="20180917 11:18:15.697"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="NewWood RF" pass="0">NewWood RF</stat>
+<stat fail="1" id="s1-s1" name="Suite01 Header" pass="0">NewWood RF.Suite01 Header</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
