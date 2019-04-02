@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.1 (Python 3.6.5 on win32)" generated="20190401 23:46:28.430" rpa="false">
-<suite id="s1" name="Suite01 Header" source="C:\Users\ChenBolin\Desktop\Wood_-\hex_wood\Suite01_Header.robot">
-<test id="s1-t1" name="button_file_open">
-<kw name="open_bs" library="hex_resource" type="setup">
+<robot generated="20190402 21:55:37.343" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
+<suite id="s1" name="Suite01 Header">
+<suite source="C:\Users\ChenBolin\Desktop\Wood_-\hex_wood\Suite01_Header.robot" id="s1-s1" name="Suite01 Header">
+<test id="s1-s1-t1" name="button_file_open_local_py">
+<kw type="setup" name="open_bs" library="hex_resource">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
 <arg>${wood_hex_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190401 23:46:28.643" level="INFO">Opening browser 'chrome' to base url 'https://wood.codemao.cn/?editor_mode=1'.</msg>
-<status status="PASS" starttime="20190401 23:46:28.643" endtime="20190401 23:46:31.700"></status>
+<msg timestamp="20190402 21:55:37.575" level="INFO">Opening browser 'chrome' to base url 'https://wood.codemao.cn/?editor_mode=1'.</msg>
+<status status="PASS" endtime="20190402 21:55:43.104" starttime="20190402 21:55:37.575"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20190401 23:46:31.701" endtime="20190401 23:46:32.866"></status>
+<status status="PASS" endtime="20190402 21:55:44.225" starttime="20190402 21:55:43.105"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>.2 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20190401 23:46:32.867" endtime="20190401 23:46:32.867"></status>
+<status status="PASS" endtime="20190402 21:55:44.226" starttime="20190402 21:55:44.225"></status>
 </kw>
 <kw name="Set Browser Implicit Wait" library="Selenium2Library">
 <doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
 <arg>10 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20190401 23:46:32.867" endtime="20190401 23:46:33.068"></status>
+<status status="PASS" endtime="20190402 21:55:44.428" starttime="20190402 21:55:44.226"></status>
 </kw>
 <kw name="Element Should Contain" library="Selenium2Library">
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
@@ -36,26 +37,26 @@
 <arg>${login_入口}</arg>
 <arg>未登录</arg>
 </arguments>
-<msg timestamp="20190401 23:46:33.491" level="INFO">Element 'xpath=//header/div[2]/div[3]' contains text '未登录'.</msg>
-<status status="PASS" starttime="20190401 23:46:33.068" endtime="20190401 23:46:33.491"></status>
+<msg timestamp="20190402 21:55:44.853" level="INFO">Element 'xpath=//header/div[2]/div[3]' contains text '未登录'.</msg>
+<status status="PASS" endtime="20190402 21:55:44.853" starttime="20190402 21:55:44.428"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1</arg>
 </arguments>
-<msg timestamp="20190401 23:46:34.492" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20190401 23:46:33.491" endtime="20190401 23:46:34.492"></status>
+<msg timestamp="20190402 21:55:45.853" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20190402 21:55:45.853" starttime="20190402 21:55:44.853"></status>
 </kw>
-<status status="PASS" starttime="20190401 23:46:28.643" endtime="20190401 23:46:34.493"></status>
+<status status="PASS" endtime="20190402 21:55:45.853" starttime="20190402 21:55:37.574"></status>
 </kw>
 <kw name="Mouse Over" library="Selenium2Library">
 <doc>Simulates hovering mouse over the element ``locator``.</doc>
 <arguments>
 <arg>${wood_文件}</arg>
 </arguments>
-<msg timestamp="20190401 23:46:34.495" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
-<status status="PASS" starttime="20190401 23:46:34.494" endtime="20190401 23:46:34.979"></status>
+<msg timestamp="20190402 21:55:45.854" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
+<status status="PASS" endtime="20190402 21:55:46.283" starttime="20190402 21:55:45.854"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -65,16 +66,16 @@
 <assign>
 <var>${num}</var>
 </assign>
-<msg timestamp="20190401 23:46:34.980" level="INFO">${num} = [1]</msg>
-<status status="PASS" starttime="20190401 23:46:34.979" endtime="20190401 23:46:34.980"></status>
+<msg timestamp="20190402 21:55:46.284" level="INFO">${num} = [1]</msg>
+<status status="PASS" endtime="20190402 21:55:46.284" starttime="20190402 21:55:46.284"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${wood_文件_choices}${num}</arg>
 </arguments>
-<msg timestamp="20190401 23:46:34.981" level="INFO">Clicking element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
-<status status="PASS" starttime="20190401 23:46:34.981" endtime="20190401 23:46:35.506"></status>
+<msg timestamp="20190402 21:55:46.285" level="INFO">Clicking element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
+<status status="PASS" endtime="20190402 21:55:46.747" starttime="20190402 21:55:46.284"></status>
 </kw>
 <kw name="assert_login_exist" library="hex_resource">
 <kw name="Element Should Be Visible" library="Selenium2Library">
@@ -82,22 +83,22 @@
 <arguments>
 <arg>${wood_登录页面01}</arg>
 </arguments>
-<msg timestamp="20190401 23:46:35.969" level="INFO">Element 'css=.asset-style__dialog-wrap__T7J3c' is displayed.</msg>
-<status status="PASS" starttime="20190401 23:46:35.507" endtime="20190401 23:46:35.970"></status>
+<msg timestamp="20190402 21:55:47.172" level="INFO">Element 'css=.asset-style__dialog-wrap__T7J3c' is displayed.</msg>
+<status status="PASS" endtime="20190402 21:55:47.172" starttime="20190402 21:55:46.748"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${wood_01close}</arg>
 </arguments>
-<msg timestamp="20190401 23:46:35.971" level="INFO">Clicking element 'css=.asset-style__icon__1TAph.asset-style__icon-close__1ErxI'.</msg>
-<status status="PASS" starttime="20190401 23:46:35.970" endtime="20190401 23:46:36.487"></status>
+<msg timestamp="20190402 21:55:47.172" level="INFO">Clicking element 'css=.asset-style__icon__1TAph.asset-style__icon-close__1ErxI'.</msg>
+<status status="PASS" endtime="20190402 21:55:47.622" starttime="20190402 21:55:47.172"></status>
 </kw>
-<status status="PASS" starttime="20190401 23:46:35.507" endtime="20190401 23:46:36.488"></status>
+<status status="PASS" endtime="20190402 21:55:47.622" starttime="20190402 21:55:46.748"></status>
 </kw>
 <kw name="Login" library="hex_resource">
 <arguments>
-<arg>${wood_username1}</arg>
+<arg>${wood_username2}</arg>
 <arg>${wood_password}</arg>
 </arguments>
 <kw name="Click Element" library="Selenium2Library">
@@ -105,8 +106,8 @@
 <arguments>
 <arg>${login_入口}</arg>
 </arguments>
-<msg timestamp="20190401 23:46:36.489" level="INFO">Clicking element 'xpath=//header/div[2]/div[3]'.</msg>
-<status status="PASS" starttime="20190401 23:46:36.489" endtime="20190401 23:46:36.994"></status>
+<msg timestamp="20190402 21:55:47.624" level="INFO">Clicking element 'xpath=//header/div[2]/div[3]'.</msg>
+<status status="PASS" endtime="20190402 21:55:48.070" starttime="20190402 21:55:47.623"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -114,8 +115,8 @@
 <arg>${wood_01用户名}</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20190401 23:46:36.995" level="INFO">Typing text '18123874372' into text field 'xpath=//input[@placeholder='用户名']'.</msg>
-<status status="PASS" starttime="20190401 23:46:36.994" endtime="20190401 23:46:37.786"></status>
+<msg timestamp="20190402 21:55:48.070" level="INFO">Typing text '18682236985' into text field 'xpath=//input[@placeholder='用户名']'.</msg>
+<status status="PASS" endtime="20190402 21:55:48.782" starttime="20190402 21:55:48.070"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -123,409 +124,590 @@
 <arg>${wood_01密码}</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20190401 23:46:37.787" level="INFO">Typing text '123456' into text field 'xpath=//input[@placeholder='密码']'.</msg>
-<status status="PASS" starttime="20190401 23:46:37.787" endtime="20190401 23:46:38.583"></status>
+<msg timestamp="20190402 21:55:48.782" level="INFO">Typing text '123456' into text field 'xpath=//input[@placeholder='密码']'.</msg>
+<status status="PASS" endtime="20190402 21:55:49.460" starttime="20190402 21:55:48.782"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${wood_01登录按钮}</arg>
 </arguments>
-<msg timestamp="20190401 23:46:38.584" level="INFO">Clicking element 'css=div[class*='asset-style__base_button__2gZAA asset-style__orang']'.</msg>
-<status status="PASS" starttime="20190401 23:46:38.583" endtime="20190401 23:46:39.091"></status>
+<msg timestamp="20190402 21:55:49.460" level="INFO">Clicking element 'css=div[class*='asset-style__base_button__2gZAA asset-style__orang']'.</msg>
+<status status="PASS" endtime="20190402 21:55:49.907" starttime="20190402 21:55:49.460"></status>
 </kw>
 <kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
 <doc>Waits until ``text`` disappears from current page.</doc>
 <arguments>
 <arg>未登录</arg>
 </arguments>
-<status status="PASS" starttime="20190401 23:46:39.092" endtime="20190401 23:46:49.324"></status>
+<status status="PASS" endtime="20190402 21:56:00.122" starttime="20190402 21:55:49.907"></status>
 </kw>
-<status status="PASS" starttime="20190401 23:46:36.488" endtime="20190401 23:46:49.325"></status>
-</kw>
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${wood_文件}</arg>
-</arguments>
-<msg timestamp="20190401 23:46:49.326" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
-<status status="PASS" starttime="20190401 23:46:49.325" endtime="20190401 23:46:49.806"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_文件_choices}${num}</arg>
-</arguments>
-<msg timestamp="20190401 23:46:49.808" level="INFO">Clicking element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
-<status status="PASS" starttime="20190401 23:46:49.807" endtime="20190401 23:46:50.386"></status>
-</kw>
-<kw name="Element Should Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${wood_打开文件页面}</arg>
-</arguments>
-<msg timestamp="20190401 23:46:50.830" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' is displayed.</msg>
-<status status="PASS" starttime="20190401 23:46:50.386" endtime="20190401 23:46:50.831"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${cloud_title}</arg>
-<arg>打开文件</arg>
-</arguments>
-<msg timestamp="20190401 23:46:50.833" level="INFO">Verifying element 'css=.style__title__Zu2yi' contains exact text '打开文件'.</msg>
-<status status="PASS" starttime="20190401 23:46:50.832" endtime="20190401 23:46:51.313"></status>
-</kw>
-<kw name="Element Attribute Value Should Be" library="Selenium2Library">
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<arguments>
-<arg>${cloud_search_text}</arg>
-<arg>placeholder</arg>
-<arg>关键词搜索作品</arg>
-</arguments>
-<msg timestamp="20190401 23:46:51.762" level="INFO">Element 'css=span[class^='style__input-client__2dfqF']&gt;input' attribute 'placeholder' contains value '关键词搜索作品'.</msg>
-<status status="PASS" starttime="20190401 23:46:51.315" endtime="20190401 23:46:51.762"></status>
-</kw>
-<kw name="Element Should Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${cloud_close}</arg>
-</arguments>
-<msg timestamp="20190401 23:46:52.218" level="INFO">Element 'css=span[class*='style__icon-client-close']' is displayed.</msg>
-<status status="PASS" starttime="20190401 23:46:51.763" endtime="20190401 23:46:52.218"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${clodu_frame}</arg>
-<arg>limit=1</arg>
-</arguments>
-<msg timestamp="20190401 23:46:52.442" level="INFO">Current page contains 1 element(s).</msg>
-<status status="PASS" starttime="20190401 23:46:52.219" endtime="20190401 23:46:52.442"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${clodu_frame}/span[2]</arg>
-<arg>从本地打开</arg>
-</arguments>
-<msg timestamp="20190401 23:46:52.443" level="INFO">Verifying element 'xpath=//div[starts-with(@class,'style__file_client_item__')]/span[2]' contains exact text '从本地打开'.</msg>
-<status status="PASS" starttime="20190401 23:46:52.443" endtime="20190401 23:46:52.895"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${cloud_close}</arg>
-</arguments>
-<msg timestamp="20190401 23:46:52.897" level="INFO">Clicking element 'css=span[class*='style__icon-client-close']'.</msg>
-<status status="PASS" starttime="20190401 23:46:52.896" endtime="20190401 23:46:53.411"></status>
-</kw>
-<kw name="Element Should Not Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<arguments>
-<arg>${wood_打开文件页面}</arg>
-</arguments>
-<msg timestamp="20190401 23:47:03.638" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' did not exist.</msg>
-<status status="PASS" starttime="20190401 23:46:53.411" endtime="20190401 23:47:03.638"></status>
-</kw>
-<kw name="Switch Language" library="hex_resource">
-<arguments>
-<arg>zh-hant</arg>
-</arguments>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_切换语言}</arg>
-</arguments>
-<msg timestamp="20190401 23:47:03.641" level="INFO">Clicking element 'xpath=//*[@id="translate_button"]/div'.</msg>
-<status status="PASS" starttime="20190401 23:47:03.640" endtime="20190401 23:47:04.173"></status>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>"${wood_language}" == "zh"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[1]</arg>
-<arg>ELSE IF</arg>
-<arg>"${wood_language}" == "zh-hant"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[2]</arg>
-<arg>ELSE IF</arg>
-<arg>"${wood_language}" == "en"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[3]</arg>
-</arguments>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_切换语言}/div[3]/div/div[2]</arg>
-</arguments>
-<msg timestamp="20190401 23:47:04.179" level="INFO">Clicking element 'xpath=//*[@id="translate_button"]/div/div[3]/div/div[2]'.</msg>
-<status status="PASS" starttime="20190401 23:47:04.177" endtime="20190401 23:47:04.795"></status>
-</kw>
-<status status="PASS" starttime="20190401 23:47:04.174" endtime="20190401 23:47:04.796"></status>
-</kw>
-<status status="PASS" starttime="20190401 23:47:03.639" endtime="20190401 23:47:04.796"></status>
+<status status="PASS" endtime="20190402 21:56:00.122" starttime="20190402 21:55:47.623"></status>
 </kw>
 <kw name="Mouse Over" library="Selenium2Library">
 <doc>Simulates hovering mouse over the element ``locator``.</doc>
 <arguments>
 <arg>${wood_文件}</arg>
 </arguments>
-<msg timestamp="20190401 23:47:04.799" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
-<status status="PASS" starttime="20190401 23:47:04.798" endtime="20190401 23:47:05.258"></status>
+<msg timestamp="20190402 21:56:00.123" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
+<status status="PASS" endtime="20190402 21:56:00.559" starttime="20190402 21:56:00.123"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${wood_文件_choices}${num}</arg>
 </arguments>
-<msg timestamp="20190401 23:47:05.260" level="INFO">Clicking element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
-<status status="PASS" starttime="20190401 23:47:05.259" endtime="20190401 23:47:05.769"></status>
+<msg timestamp="20190402 21:56:00.563" level="INFO">Clicking element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
+<status status="PASS" endtime="20190402 21:56:01.045" starttime="20190402 21:56:00.561"></status>
 </kw>
 <kw name="Element Should Be Visible" library="Selenium2Library">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${wood_打开文件页面}</arg>
 </arguments>
-<msg timestamp="20190401 23:47:06.228" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' is displayed.</msg>
-<status status="PASS" starttime="20190401 23:47:05.771" endtime="20190401 23:47:06.228"></status>
+<msg timestamp="20190402 21:56:01.482" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' is displayed.</msg>
+<status status="PASS" endtime="20190402 21:56:01.482" starttime="20190402 21:56:01.047"></status>
 </kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>${cloud_title}</arg>
-<arg>打開文件</arg>
+<arg>${cloud_frame}[1]</arg>
 </arguments>
-<msg timestamp="20190401 23:47:06.230" level="INFO">Verifying element 'css=.style__title__Zu2yi' contains exact text '打開文件'.</msg>
-<status status="PASS" starttime="20190401 23:47:06.229" endtime="20190401 23:47:06.689"></status>
+<msg timestamp="20190402 21:56:01.483" level="INFO">Clicking element 'xpath=//div[starts-with(@class,'style__file_client_item__')][1]'.</msg>
+<status status="PASS" endtime="20190402 21:56:01.934" starttime="20190402 21:56:01.483"></status>
+</kw>
+<kw name="Win Wait" library="AutoItLibrary">
+<doc>Direct wrapper for AutoIt's WinWait method.</doc>
+<arguments>
+<arg>打开</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190402 21:56:02.201" level="INFO">AutoItLibrary.WinWait(WindowTitle='\u6253\u5f00', WindowText='', TimeOut='2')</msg>
+<status status="PASS" endtime="20190402 21:56:02.201" starttime="20190402 21:56:01.935"></status>
+</kw>
+<kw name="Win Activate" library="AutoItLibrary">
+<doc>method WinActivate</doc>
+<arguments>
+<arg>打开</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:02.731" starttime="20190402 21:56:02.202"></status>
+</kw>
+<kw name="Control Set Text" library="AutoItLibrary">
+<doc>method ControlSetText</doc>
+<arguments>
+<arg>Edit1</arg>
+<arg>${py_normal3}</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:02.734" starttime="20190402 21:56:02.731"></status>
+</kw>
+<kw name="Control Click" library="AutoItLibrary">
+<doc>method ControlClick</doc>
+<arguments>
+<arg>Button1</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:02.748" starttime="20190402 21:56:02.734"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190402 21:56:03.763" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20190402 21:56:03.763" starttime="20190402 21:56:02.762"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>NEW</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:04.578" starttime="20190402 21:56:03.765"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>编程猫海龟编辑器</arg>
+</arguments>
+<msg timestamp="20190402 21:56:05.801" level="INFO">Page title is '编程猫海龟编辑器'.</msg>
+<status status="PASS" endtime="20190402 21:56:05.801" starttime="20190402 21:56:04.578"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${tgzy_跳过指引}</arg>
+</arguments>
+<msg timestamp="20190402 21:56:05.803" level="INFO">Clicking element 'css=div[class^='style__user-guide-cat-exit__']'.</msg>
+<status status="PASS" endtime="20190402 21:56:06.251" starttime="20190402 21:56:05.802"></status>
 </kw>
 <kw name="Element Attribute Value Should Be" library="Selenium2Library">
 <doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
 <arguments>
-<arg>${cloud_search_text}</arg>
-<arg>placeholder</arg>
-<arg>關鍵詞搜索作品</arg>
+<arg>${wood_input_file_name}</arg>
+<arg>value</arg>
+<arg>normal03</arg>
 </arguments>
-<msg timestamp="20190401 23:47:07.127" level="INFO">Element 'css=span[class^='style__input-client__2dfqF']&gt;input' attribute 'placeholder' contains value '關鍵詞搜索作品'.</msg>
-<status status="PASS" starttime="20190401 23:47:06.690" endtime="20190401 23:47:07.127"></status>
-</kw>
-<kw name="Element Should Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${cloud_close}</arg>
-</arguments>
-<msg timestamp="20190401 23:47:07.582" level="INFO">Element 'css=span[class*='style__icon-client-close']' is displayed.</msg>
-<status status="PASS" starttime="20190401 23:47:07.128" endtime="20190401 23:47:07.582"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${clodu_frame}</arg>
-<arg>limit=1</arg>
-</arguments>
-<msg timestamp="20190401 23:47:07.799" level="INFO">Current page contains 1 element(s).</msg>
-<status status="PASS" starttime="20190401 23:47:07.583" endtime="20190401 23:47:07.799"></status>
+<msg timestamp="20190402 21:56:06.668" level="INFO">Element 'css=input[class^='style__project_name__input__']' attribute 'value' contains value 'normal03'.</msg>
+<status status="PASS" endtime="20190402 21:56:06.668" starttime="20190402 21:56:06.251"></status>
 </kw>
 <kw name="Element Text Should Be" library="Selenium2Library">
 <doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
 <arguments>
-<arg>${clodu_frame}/span[2]</arg>
-<arg>從本地打開</arg>
+<arg>${wood_模式切换按钮}</arg>
+<arg>代码模式</arg>
 </arguments>
-<msg timestamp="20190401 23:47:07.801" level="INFO">Verifying element 'xpath=//div[starts-with(@class,'style__file_client_item__')]/span[2]' contains exact text '從本地打開'.</msg>
-<status status="PASS" starttime="20190401 23:47:07.800" endtime="20190401 23:47:08.266"></status>
+<msg timestamp="20190402 21:56:06.669" level="INFO">Verifying element 'css=div[class^='style__switch-client-btn__']' contains exact text '代码模式'.</msg>
+<status status="PASS" endtime="20190402 21:56:07.091" starttime="20190402 21:56:06.669"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_模式切换按钮}</arg>
+</arguments>
+<msg timestamp="20190402 21:56:07.092" level="INFO">Clicking element 'css=div[class^='style__switch-client-btn__']'.</msg>
+<status status="PASS" endtime="20190402 21:56:07.570" starttime="20190402 21:56:07.091"></status>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
+<arguments>
+<arg>${wood_模式切换按钮}</arg>
+<arg>积木模式</arg>
+</arguments>
+<msg timestamp="20190402 21:56:07.571" level="INFO">Verifying element 'css=div[class^='style__switch-client-btn__']' contains exact text '积木模式'.</msg>
+<status status="PASS" endtime="20190402 21:56:07.986" starttime="20190402 21:56:07.571"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>print('欢迎来到源码世界！')</arg>
+</arguments>
+<msg timestamp="20190402 21:56:08.402" level="INFO">Current page contains text 'print('欢迎来到源码世界！')'.</msg>
+<status status="PASS" endtime="20190402 21:56:08.402" starttime="20190402 21:56:07.987"></status>
+</kw>
+<kw name="Close Window" library="Selenium2Library">
+<doc>Closes currently opened pop-up window.</doc>
+<status status="PASS" endtime="20190402 21:56:08.629" starttime="20190402 21:56:08.403"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>title=编程猫海龟编辑器</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:09.851" starttime="20190402 21:56:08.630"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_打开文件页面}</arg>
+</arguments>
+<msg timestamp="20190402 21:56:10.265" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' is displayed.</msg>
+<status status="PASS" endtime="20190402 21:56:10.265" starttime="20190402 21:56:09.851"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${cloud_frame}[1]</arg>
+</arguments>
+<msg timestamp="20190402 21:56:10.266" level="INFO">Clicking element 'xpath=//div[starts-with(@class,'style__file_client_item__')][1]'.</msg>
+<status status="PASS" endtime="20190402 21:56:10.700" starttime="20190402 21:56:10.266"></status>
+</kw>
+<kw name="Win Wait" library="AutoItLibrary">
+<doc>Direct wrapper for AutoIt's WinWait method.</doc>
+<arguments>
+<arg>打开</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190402 21:56:10.974" level="INFO">AutoItLibrary.WinWait(WindowTitle='\u6253\u5f00', WindowText='', TimeOut='2')</msg>
+<status status="PASS" endtime="20190402 21:56:10.974" starttime="20190402 21:56:10.703"></status>
+</kw>
+<kw name="Win Activate" library="AutoItLibrary">
+<doc>method WinActivate</doc>
+<arguments>
+<arg>打开</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:11.480" starttime="20190402 21:56:10.976"></status>
+</kw>
+<kw name="Control Set Text" library="AutoItLibrary">
+<doc>method ControlSetText</doc>
+<arguments>
+<arg>Edit1</arg>
+<arg>${py_untrans}</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:11.491" starttime="20190402 21:56:11.482"></status>
+</kw>
+<kw name="Control Click" library="AutoItLibrary">
+<doc>method ControlClick</doc>
+<arguments>
+<arg>Button1</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:11.502" starttime="20190402 21:56:11.492"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190402 21:56:12.504" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20190402 21:56:12.504" starttime="20190402 21:56:11.503"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>NEW</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:13.311" starttime="20190402 21:56:12.504"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>编程猫海龟编辑器</arg>
+</arguments>
+<msg timestamp="20190402 21:56:14.534" level="INFO">Page title is '编程猫海龟编辑器'.</msg>
+<status status="PASS" endtime="20190402 21:56:14.534" starttime="20190402 21:56:13.313"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${wood_untrans_toast}</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:14.749" starttime="20190402 21:56:14.535"></status>
+</kw>
+<kw name="Element Attribute Value Should Be" library="Selenium2Library">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${wood_input_file_name}</arg>
+<arg>value</arg>
+<arg>decorator</arg>
+</arguments>
+<msg timestamp="20190402 21:56:15.163" level="INFO">Element 'css=input[class^='style__project_name__input__']' attribute 'value' contains value 'decorator'.</msg>
+<status status="PASS" endtime="20190402 21:56:15.163" starttime="20190402 21:56:14.749"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>print('the func run time is %s'%(end_time - start_time))</arg>
+</arguments>
+<msg timestamp="20190402 21:56:15.579" level="INFO">Current page contains text 'print('the func run time is %s'%(end_time - start_time))'.</msg>
+<status status="PASS" endtime="20190402 21:56:15.579" starttime="20190402 21:56:15.164"></status>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
+<arguments>
+<arg>${wood_模式切换按钮}</arg>
+<arg>积木模式</arg>
+</arguments>
+<msg timestamp="20190402 21:56:15.579" level="INFO">Verifying element 'css=div[class^='style__switch-client-btn__']' contains exact text '积木模式'.</msg>
+<status status="PASS" endtime="20190402 21:56:16.003" starttime="20190402 21:56:15.579"></status>
+</kw>
+<kw name="Close Window" library="Selenium2Library">
+<doc>Closes currently opened pop-up window.</doc>
+<status status="PASS" endtime="20190402 21:56:16.260" starttime="20190402 21:56:16.003"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>title=编程猫海龟编辑器</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:17.483" starttime="20190402 21:56:16.261"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_打开文件页面}</arg>
+</arguments>
+<msg timestamp="20190402 21:56:17.904" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' is displayed.</msg>
+<status status="PASS" endtime="20190402 21:56:17.905" starttime="20190402 21:56:17.483"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${cloud_close}</arg>
 </arguments>
-<msg timestamp="20190401 23:47:08.266" level="INFO">Clicking element 'css=span[class*='style__icon-client-close']'.</msg>
-<status status="PASS" starttime="20190401 23:47:08.266" endtime="20190401 23:47:08.812"></status>
+<msg timestamp="20190402 21:56:17.912" level="INFO">Clicking element 'css=span[class*='style__icon-client-close']'.</msg>
+<status status="PASS" endtime="20190402 21:56:18.371" starttime="20190402 21:56:17.910"></status>
 </kw>
-<kw name="Element Should Not Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<arguments>
-<arg>${wood_打开文件页面}</arg>
-</arguments>
-<msg timestamp="20190401 23:47:19.083" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' did not exist.</msg>
-<status status="PASS" starttime="20190401 23:47:08.813" endtime="20190401 23:47:19.084"></status>
-</kw>
-<kw name="Switch Language" library="hex_resource">
-<arguments>
-<arg>en</arg>
-</arguments>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>${wood_切换语言}</arg>
+<arg>${wood_模式切换按钮}</arg>
 </arguments>
-<msg timestamp="20190401 23:47:19.086" level="INFO">Clicking element 'xpath=//*[@id="translate_button"]/div'.</msg>
-<status status="PASS" starttime="20190401 23:47:19.086" endtime="20190401 23:47:19.579"></status>
+<msg timestamp="20190402 21:56:18.372" level="INFO">Clicking element 'css=div[class^='style__switch-client-btn__']'.</msg>
+<status status="PASS" endtime="20190402 21:56:18.819" starttime="20190402 21:56:18.372"></status>
 </kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
 <arguments>
-<arg>"${wood_language}" == "zh"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[1]</arg>
-<arg>ELSE IF</arg>
-<arg>"${wood_language}" == "zh-hant"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[2]</arg>
-<arg>ELSE IF</arg>
-<arg>"${wood_language}" == "en"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[3]</arg>
+<arg>${wood_模式切换按钮}</arg>
+<arg>积木模式</arg>
 </arguments>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_切换语言}/div[3]/div/div[3]</arg>
-</arguments>
-<msg timestamp="20190401 23:47:19.582" level="INFO">Clicking element 'xpath=//*[@id="translate_button"]/div/div[3]/div/div[3]'.</msg>
-<status status="PASS" starttime="20190401 23:47:19.581" endtime="20190401 23:47:20.212"></status>
-</kw>
-<status status="PASS" starttime="20190401 23:47:19.579" endtime="20190401 23:47:20.212"></status>
-</kw>
-<status status="PASS" starttime="20190401 23:47:19.085" endtime="20190401 23:47:20.212"></status>
+<msg timestamp="20190402 21:56:18.820" level="INFO">Verifying element 'css=div[class^='style__switch-client-btn__']' contains exact text '积木模式'.</msg>
+<status status="PASS" endtime="20190402 21:56:19.239" starttime="20190402 21:56:18.820"></status>
 </kw>
 <kw name="Mouse Over" library="Selenium2Library">
 <doc>Simulates hovering mouse over the element ``locator``.</doc>
 <arguments>
 <arg>${wood_文件}</arg>
 </arguments>
-<msg timestamp="20190401 23:47:20.213" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
-<status status="PASS" starttime="20190401 23:47:20.213" endtime="20190401 23:47:20.666"></status>
+<msg timestamp="20190402 21:56:19.239" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
+<status status="PASS" endtime="20190402 21:56:19.664" starttime="20190402 21:56:19.239"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${wood_文件_choices}${num}</arg>
 </arguments>
-<msg timestamp="20190401 23:47:20.669" level="INFO">Clicking element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
-<status status="PASS" starttime="20190401 23:47:20.667" endtime="20190401 23:47:21.190"></status>
+<msg timestamp="20190402 21:56:19.665" level="INFO">Clicking element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
+<status status="PASS" endtime="20190402 21:56:20.130" starttime="20190402 21:56:19.664"></status>
 </kw>
 <kw name="Element Should Be Visible" library="Selenium2Library">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${wood_打开文件页面}</arg>
 </arguments>
-<msg timestamp="20190401 23:47:21.638" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' is displayed.</msg>
-<status status="PASS" starttime="20190401 23:47:21.191" endtime="20190401 23:47:21.638"></status>
+<msg timestamp="20190402 21:56:20.550" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' is displayed.</msg>
+<status status="PASS" endtime="20190402 21:56:20.550" starttime="20190402 21:56:20.131"></status>
 </kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>${cloud_title}</arg>
-<arg>Open</arg>
+<arg>${cloud_frame}[1]</arg>
 </arguments>
-<msg timestamp="20190401 23:47:21.640" level="INFO">Verifying element 'css=.style__title__Zu2yi' contains exact text 'Open'.</msg>
-<status status="PASS" starttime="20190401 23:47:21.639" endtime="20190401 23:47:22.104"></status>
+<msg timestamp="20190402 21:56:20.550" level="INFO">Clicking element 'xpath=//div[starts-with(@class,'style__file_client_item__')][1]'.</msg>
+<status status="PASS" endtime="20190402 21:56:21.012" starttime="20190402 21:56:20.550"></status>
+</kw>
+<kw name="Win Wait" library="AutoItLibrary">
+<doc>Direct wrapper for AutoIt's WinWait method.</doc>
+<arguments>
+<arg>打开</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190402 21:56:21.276" level="INFO">AutoItLibrary.WinWait(WindowTitle='\u6253\u5f00', WindowText='', TimeOut='2')</msg>
+<status status="PASS" endtime="20190402 21:56:21.276" starttime="20190402 21:56:21.013"></status>
+</kw>
+<kw name="Win Activate" library="AutoItLibrary">
+<doc>method WinActivate</doc>
+<arguments>
+<arg>打开</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:21.790" starttime="20190402 21:56:21.282"></status>
+</kw>
+<kw name="Control Set Text" library="AutoItLibrary">
+<doc>method ControlSetText</doc>
+<arguments>
+<arg>Edit1</arg>
+<arg>${py_normal3}</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:21.794" starttime="20190402 21:56:21.790"></status>
+</kw>
+<kw name="Control Click" library="AutoItLibrary">
+<doc>method ControlClick</doc>
+<arguments>
+<arg>Button1</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:21.805" starttime="20190402 21:56:21.795"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190402 21:56:22.810" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20190402 21:56:22.810" starttime="20190402 21:56:21.806"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>NEW</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:23.620" starttime="20190402 21:56:22.810"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>编程猫海龟编辑器</arg>
+</arguments>
+<msg timestamp="20190402 21:56:24.838" level="INFO">Page title is '编程猫海龟编辑器'.</msg>
+<status status="PASS" endtime="20190402 21:56:24.838" starttime="20190402 21:56:23.621"></status>
 </kw>
 <kw name="Element Attribute Value Should Be" library="Selenium2Library">
 <doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
 <arguments>
-<arg>${cloud_search_text}</arg>
-<arg>placeholder</arg>
-<arg>Search</arg>
+<arg>${wood_input_file_name}</arg>
+<arg>value</arg>
+<arg>normal03</arg>
 </arguments>
-<msg timestamp="20190401 23:47:22.538" level="INFO">Element 'css=span[class^='style__input-client__2dfqF']&gt;input' attribute 'placeholder' contains value 'Search'.</msg>
-<status status="PASS" starttime="20190401 23:47:22.105" endtime="20190401 23:47:22.539"></status>
-</kw>
-<kw name="Element Should Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${cloud_close}</arg>
-</arguments>
-<msg timestamp="20190401 23:47:22.994" level="INFO">Element 'css=span[class*='style__icon-client-close']' is displayed.</msg>
-<status status="PASS" starttime="20190401 23:47:22.540" endtime="20190401 23:47:22.994"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${clodu_frame}</arg>
-<arg>limit=1</arg>
-</arguments>
-<msg timestamp="20190401 23:47:23.216" level="INFO">Current page contains 1 element(s).</msg>
-<status status="PASS" starttime="20190401 23:47:22.995" endtime="20190401 23:47:23.216"></status>
+<msg timestamp="20190402 21:56:25.250" level="INFO">Element 'css=input[class^='style__project_name__input__']' attribute 'value' contains value 'normal03'.</msg>
+<status status="PASS" endtime="20190402 21:56:25.250" starttime="20190402 21:56:24.839"></status>
 </kw>
 <kw name="Element Text Should Be" library="Selenium2Library">
 <doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
 <arguments>
-<arg>${clodu_frame}/span[2]</arg>
-<arg>Open a local file</arg>
+<arg>${wood_模式切换按钮}</arg>
+<arg>积木模式</arg>
 </arguments>
-<msg timestamp="20190401 23:47:23.218" level="INFO">Verifying element 'xpath=//div[starts-with(@class,'style__file_client_item__')]/span[2]' contains exact text 'Open a local file'.</msg>
-<status status="PASS" starttime="20190401 23:47:23.216" endtime="20190401 23:47:23.678"></status>
+<msg timestamp="20190402 21:56:25.250" level="INFO">Verifying element 'css=div[class^='style__switch-client-btn__']' contains exact text '积木模式'.</msg>
+<status status="PASS" endtime="20190402 21:56:25.670" starttime="20190402 21:56:25.250"></status>
 </kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
 <arguments>
-<arg>${cloud_close}</arg>
+<arg>print('欢迎来到源码世界！')</arg>
 </arguments>
-<msg timestamp="20190401 23:47:23.680" level="INFO">Clicking element 'css=span[class*='style__icon-client-close']'.</msg>
-<status status="PASS" starttime="20190401 23:47:23.679" endtime="20190401 23:47:24.161"></status>
+<msg timestamp="20190402 21:56:26.087" level="INFO">Current page contains text 'print('欢迎来到源码世界！')'.</msg>
+<status status="PASS" endtime="20190402 21:56:26.087" starttime="20190402 21:56:25.671"></status>
 </kw>
-<kw name="Element Should Not Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<kw name="Close Window" library="Selenium2Library">
+<doc>Closes currently opened pop-up window.</doc>
+<status status="PASS" endtime="20190402 21:56:26.345" starttime="20190402 21:56:26.088"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>title=编程猫海龟编辑器</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:27.562" starttime="20190402 21:56:26.346"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${wood_打开文件页面}</arg>
 </arguments>
-<msg timestamp="20190401 23:47:34.401" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' did not exist.</msg>
-<status status="PASS" starttime="20190401 23:47:24.162" endtime="20190401 23:47:34.402"></status>
-</kw>
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${login_入口}</arg>
-</arguments>
-<msg timestamp="20190401 23:47:34.403" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[2]/div[3]'.</msg>
-<status status="PASS" starttime="20190401 23:47:34.403" endtime="20190401 23:47:34.882"></status>
+<msg timestamp="20190402 21:56:27.975" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' is displayed.</msg>
+<status status="PASS" endtime="20190402 21:56:27.975" starttime="20190402 21:56:27.562"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>${login_退出登录}</arg>
+<arg>${cloud_frame}[1]</arg>
 </arguments>
-<msg timestamp="20190401 23:47:34.884" level="INFO">Clicking element 'xpath=//header/div[2]/div[3]/div[3]/div/div[2]'.</msg>
-<status status="PASS" starttime="20190401 23:47:34.883" endtime="20190401 23:47:35.420"></status>
+<msg timestamp="20190402 21:56:27.976" level="INFO">Clicking element 'xpath=//div[starts-with(@class,'style__file_client_item__')][1]'.</msg>
+<status status="PASS" endtime="20190402 21:56:28.409" starttime="20190402 21:56:27.976"></status>
 </kw>
-<kw name="Element Text Should Be Visible">
+<kw name="Win Wait" library="AutoItLibrary">
+<doc>Direct wrapper for AutoIt's WinWait method.</doc>
 <arguments>
-<arg>${wood_未登录}</arg>
-<arg>未登录</arg>
+<arg>打开</arg>
+<arg>2</arg>
 </arguments>
-<msg timestamp="20190401 23:47:35.429" level="FAIL">No keyword with name 'Element Text Should Be Visible' found. Did you mean:
-    Selenium2Library.Element Should Be Visible</msg>
-<status status="FAIL" starttime="20190401 23:47:35.429" endtime="20190401 23:47:35.429"></status>
+<msg timestamp="20190402 21:56:28.673" level="INFO">AutoItLibrary.WinWait(WindowTitle='\u6253\u5f00', WindowText='', TimeOut='2')</msg>
+<status status="PASS" endtime="20190402 21:56:28.674" starttime="20190402 21:56:28.409"></status>
 </kw>
-<kw name="Teardown" library="hex_resource" type="teardown">
+<kw name="Win Activate" library="AutoItLibrary">
+<doc>method WinActivate</doc>
+<arguments>
+<arg>打开</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:29.180" starttime="20190402 21:56:28.675"></status>
+</kw>
+<kw name="Control Set Text" library="AutoItLibrary">
+<doc>method ControlSetText</doc>
+<arguments>
+<arg>Edit1</arg>
+<arg>${py_untrans}</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:29.183" starttime="20190402 21:56:29.180"></status>
+</kw>
+<kw name="Control Click" library="AutoItLibrary">
+<doc>method ControlClick</doc>
+<arguments>
+<arg>Button1</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:29.195" starttime="20190402 21:56:29.185"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190402 21:56:30.196" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20190402 21:56:30.196" starttime="20190402 21:56:29.196"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>NEW</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:31.003" starttime="20190402 21:56:30.196"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>编程猫海龟编辑器</arg>
+</arguments>
+<msg timestamp="20190402 21:56:32.231" level="INFO">Page title is '编程猫海龟编辑器'.</msg>
+<status status="PASS" endtime="20190402 21:56:32.231" starttime="20190402 21:56:31.003"></status>
+</kw>
+<kw name="Element Attribute Value Should Be" library="Selenium2Library">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${wood_input_file_name}</arg>
+<arg>value</arg>
+<arg>decorator</arg>
+</arguments>
+<msg timestamp="20190402 21:56:32.642" level="INFO">Element 'css=input[class^='style__project_name__input__']' attribute 'value' contains value 'decorator'.</msg>
+<status status="PASS" endtime="20190402 21:56:32.642" starttime="20190402 21:56:32.232"></status>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
+<arguments>
+<arg>${wood_模式切换按钮}</arg>
+<arg>积木模式</arg>
+</arguments>
+<msg timestamp="20190402 21:56:32.643" level="INFO">Verifying element 'css=div[class^='style__switch-client-btn__']' contains exact text '积木模式'.</msg>
+<status status="PASS" endtime="20190402 21:56:33.063" starttime="20190402 21:56:32.642"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>print('the func run time is %s'%(end_time - start_time))</arg>
+</arguments>
+<msg timestamp="20190402 21:56:33.476" level="INFO">Current page contains text 'print('the func run time is %s'%(end_time - start_time))'.</msg>
+<status status="PASS" endtime="20190402 21:56:33.476" starttime="20190402 21:56:33.063"></status>
+</kw>
+<kw name="Close Window" library="Selenium2Library">
+<doc>Closes currently opened pop-up window.</doc>
+<status status="PASS" endtime="20190402 21:56:33.734" starttime="20190402 21:56:33.477"></status>
+</kw>
+<kw name="Select Window" library="Selenium2Library">
+<doc>Selects browser window matching ``locator``.</doc>
+<arguments>
+<arg>title=编程猫海龟编辑器</arg>
+</arguments>
+<status status="PASS" endtime="20190402 21:56:34.955" starttime="20190402 21:56:33.734"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_打开文件页面}</arg>
+</arguments>
+<msg timestamp="20190402 21:56:35.368" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' is displayed.</msg>
+<status status="PASS" endtime="20190402 21:56:35.368" starttime="20190402 21:56:34.955"></status>
+</kw>
+<kw type="teardown" name="Teardown" library="hex_resource">
 <kw name="Close All Browsers" library="Selenium2Library">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20190401 23:47:35.431" endtime="20190401 23:47:37.668"></status>
+<status status="PASS" endtime="20190402 21:56:38.697" starttime="20190402 21:56:35.371"></status>
 </kw>
-<status status="PASS" starttime="20190401 23:47:35.430" endtime="20190401 23:47:37.668"></status>
+<status status="PASS" endtime="20190402 21:56:38.697" starttime="20190402 21:56:35.370"></status>
 </kw>
 <tags>
-<tag>debug</tag>
+<tag>open_local_py</tag>
 </tags>
-<status status="FAIL" starttime="20190401 23:46:28.642" endtime="20190401 23:47:37.669" critical="yes">No keyword with name 'Element Text Should Be Visible' found. Did you mean:
-    Selenium2Library.Element Should Be Visible</status>
+<status status="PASS" endtime="20190402 21:56:38.698" critical="yes" starttime="20190402 21:55:37.573"></status>
 </test>
-<status status="FAIL" starttime="20190401 23:46:28.431" endtime="20190401 23:47:37.676"></status>
+<status status="PASS" endtime="20190402 21:56:38.702" starttime="20190402 21:55:37.361"></status>
+</suite>
+<status status="PASS" endtime="20190402 21:56:38.704" starttime="20190402 21:55:37.344"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1">debug</stat>
+<stat fail="0" pass="1">open_local_py</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="Suite01 Header">Suite01 Header</stat>
+<stat fail="0" id="s1" name="Suite01 Header" pass="1">Suite01 Header</stat>
+<stat fail="0" id="s1-s1" name="Suite01 Header" pass="1">Suite01 Header.Suite01 Header</stat>
 </suite>
 </statistics>
 <errors>

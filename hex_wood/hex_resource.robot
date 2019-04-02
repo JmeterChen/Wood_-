@@ -30,13 +30,17 @@ ${wood_username1}    18123874372
 ${wood_username2}    18682236985
 ${wood_password}     123456
 
-
-
+#资源管理
+${hex_normal1}                    ${CURDIR}\\AutomationFiles\\normal01.hex
+${hex_normal2}                    ${CURDIR}\\AutomationFiles\\normal02.hex
+${hex_untrans}                    ${CURDIR}\\AutomationFiles\\decorator.hex
+${py_normal3}                     ${CURDIR}\\AutomationFiles\\normal03.py
+${py_untrans}                     ${CURDIR}\\AutomationFiles\\decorator.py
 
 ${Microbit}                       xpath=//*[@id="tb_10"]/div[1]/span[2]
 ${hex_基本}                       xpath=//*[@id="tb_11"]/div/span[2]
 ${login_入口}                     xpath=//header/div[2]/div[3]
-${wood_未登录}                     ${login_入口}/div[2]div
+${wood_未登录}                    ${login_入口}/div[2]div
 ${wood_首页按钮}                   css=.style__icon__A7fu1.style__icon-home__3yTuw
 ${wood_文件}                      xpath=//*[@id="root"]//div[@style='padding-right: 0px;']
 ${wood_文件_choices}              xpath=//header/div[1]/div[2]/div[3]/div/div
@@ -50,10 +54,13 @@ ${wood_打开文件页面}               css=div[class^='style__dialog-wrap__'
 ${cloud_title}                   css=.style__title__Zu2yi
 ${cloud_search_text}             css=span[class^='style__input-client__2dfqF']>input
 ${cloud_close}                   css=span[class*='style__icon-client-close']
-${clodu_frame}                   xpath=//div[starts-with(@class,'style__file_client_item__')]
+${cloud_frame}                   xpath=//div[starts-with(@class,'style__file_client_item__')]
 ${login_我的作品}                 ${login_入口}/div[3]/div/div[1]
 ${login_退出登录}                 ${login_入口}/div[3]/div/div[2]
-
+${wood_input_file_name}          css=input[class^='style__project_name__input__']
+${wood_模式切换按钮}               css=div[class^='style__switch-client-btn__']
+${wood_untrans_toast}            css=div[class='midi-panel_RL1Pk']+div
+${tgzy_跳过指引}                  css=div[class^='style__user-guide-cat-exit__']
 
 *** Keywords ***
 open_bs

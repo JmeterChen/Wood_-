@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20190401 19:39:19.189" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
-<suite source="C:\Users\ChenBolin\Desktop\hex_wood\Suite01_Header.robot" id="s1" name="Suite01 Header">
-<test id="s1-t1" name="button_file_18n">
+<robot generated="20190402 22:30:47.432" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
+<suite source="C:\Users\ChenBolin\Desktop\Wood_-\hex_wood\Suite01_Header.robot" id="s1" name="Suite01 Header">
+<test id="s1-t1" name="button_file_search">
 <kw type="setup" name="open_bs" library="hex_resource">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -9,26 +9,26 @@
 <arg>${wood_hex_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190401 19:39:19.392" level="INFO">Opening browser 'chrome' to base url 'https://wood.codemao.cn/?editor_mode=1'.</msg>
-<status status="PASS" endtime="20190401 19:39:24.736" starttime="20190401 19:39:19.392"></status>
+<msg timestamp="20190402 22:30:47.655" level="INFO">Opening browser 'chrome' to base url 'https://wood.codemao.cn/?editor_mode=1'.</msg>
+<status status="PASS" endtime="20190402 22:30:53.504" starttime="20190402 22:30:47.654"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20190401 19:39:25.852" starttime="20190401 19:39:24.736"></status>
+<status status="PASS" endtime="20190402 22:30:54.627" starttime="20190402 22:30:53.504"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>.2 seconds</arg>
 </arguments>
-<status status="PASS" endtime="20190401 19:39:25.852" starttime="20190401 19:39:25.852"></status>
+<status status="PASS" endtime="20190402 22:30:54.628" starttime="20190402 22:30:54.627"></status>
 </kw>
 <kw name="Set Browser Implicit Wait" library="Selenium2Library">
 <doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
 <arg>10 seconds</arg>
 </arguments>
-<status status="PASS" endtime="20190401 19:39:26.055" starttime="20190401 19:39:25.853"></status>
+<status status="PASS" endtime="20190402 22:30:54.830" starttime="20190402 22:30:54.628"></status>
 </kw>
 <kw name="Element Should Contain" library="Selenium2Library">
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
@@ -36,796 +36,199 @@
 <arg>${login_入口}</arg>
 <arg>未登录</arg>
 </arguments>
-<msg timestamp="20190401 19:39:26.485" level="INFO">Element 'xpath=//header/div[2]/div[3]' contains text '未登录'.</msg>
-<status status="PASS" endtime="20190401 19:39:26.485" starttime="20190401 19:39:26.055"></status>
+<msg timestamp="20190402 22:30:55.366" level="INFO">Element 'xpath=//header/div[2]/div[3]' contains text '未登录'.</msg>
+<status status="PASS" endtime="20190402 22:30:55.366" starttime="20190402 22:30:54.830"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1</arg>
 </arguments>
-<msg timestamp="20190401 19:39:27.485" level="INFO">Slept 1 second</msg>
-<status status="PASS" endtime="20190401 19:39:27.485" starttime="20190401 19:39:26.485"></status>
+<msg timestamp="20190402 22:30:56.366" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20190402 22:30:56.366" starttime="20190402 22:30:55.366"></status>
 </kw>
-<status status="PASS" endtime="20190401 19:39:27.485" starttime="20190401 19:39:19.391"></status>
+<status status="PASS" endtime="20190402 22:30:56.366" starttime="20190402 22:30:47.654"></status>
 </kw>
 <kw name="Mouse Over" library="Selenium2Library">
 <doc>Simulates hovering mouse over the element ``locator``.</doc>
 <arguments>
 <arg>${wood_文件}</arg>
 </arguments>
-<msg timestamp="20190401 19:39:27.485" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
-<status status="PASS" endtime="20190401 19:39:27.913" starttime="20190401 19:39:27.485"></status>
+<msg timestamp="20190402 22:30:56.367" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
+<status status="PASS" endtime="20190402 22:30:56.796" starttime="20190402 22:30:56.366"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>[1]</arg>
+</arguments>
+<assign>
+<var>${num}</var>
+</assign>
+<msg timestamp="20190402 22:30:56.796" level="INFO">${num} = [1]</msg>
+<status status="PASS" endtime="20190402 22:30:56.796" starttime="20190402 22:30:56.796"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_文件_choices}${num}</arg>
+</arguments>
+<msg timestamp="20190402 22:30:56.796" level="INFO">Clicking element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
+<status status="PASS" endtime="20190402 22:30:57.267" starttime="20190402 22:30:56.796"></status>
+</kw>
+<kw name="assert_login_exist" library="hex_resource">
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_登录页面01}</arg>
+</arguments>
+<msg timestamp="20190402 22:30:57.695" level="INFO">Element 'css=.asset-style__dialog-wrap__T7J3c' is displayed.</msg>
+<status status="PASS" endtime="20190402 22:30:57.695" starttime="20190402 22:30:57.267"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_01close}</arg>
+</arguments>
+<msg timestamp="20190402 22:30:57.695" level="INFO">Clicking element 'css=.asset-style__icon__1TAph.asset-style__icon-close__1ErxI'.</msg>
+<status status="PASS" endtime="20190402 22:30:58.143" starttime="20190402 22:30:57.695"></status>
+</kw>
+<status status="PASS" endtime="20190402 22:30:58.143" starttime="20190402 22:30:57.267"></status>
+</kw>
+<kw name="Login" library="hex_resource">
+<arguments>
+<arg>${wood_username2}</arg>
+<arg>${wood_password}</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${login_入口}</arg>
+</arguments>
+<msg timestamp="20190402 22:30:58.147" level="INFO">Clicking element 'xpath=//header/div[2]/div[3]'.</msg>
+<status status="PASS" endtime="20190402 22:30:58.615" starttime="20190402 22:30:58.146"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_01用户名}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20190402 22:30:58.615" level="INFO">Typing text '18682236985' into text field 'xpath=//input[@placeholder='用户名']'.</msg>
+<status status="PASS" endtime="20190402 22:30:59.350" starttime="20190402 22:30:58.615"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_01密码}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20190402 22:30:59.350" level="INFO">Typing text '123456' into text field 'xpath=//input[@placeholder='密码']'.</msg>
+<status status="PASS" endtime="20190402 22:31:00.044" starttime="20190402 22:30:59.350"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_01登录按钮}</arg>
+</arguments>
+<msg timestamp="20190402 22:31:00.044" level="INFO">Clicking element 'css=div[class*='asset-style__base_button__2gZAA asset-style__orang']'.</msg>
+<status status="PASS" endtime="20190402 22:31:00.489" starttime="20190402 22:31:00.044"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until ``text`` disappears from current page.</doc>
+<arguments>
+<arg>未登录</arg>
+</arguments>
+<status status="PASS" endtime="20190402 22:31:11.126" starttime="20190402 22:31:00.489"></status>
+</kw>
+<status status="PASS" endtime="20190402 22:31:11.126" starttime="20190402 22:30:58.144"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_文件}</arg>
+</arguments>
+<msg timestamp="20190402 22:31:11.126" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
+<status status="PASS" endtime="20190402 22:31:11.554" starttime="20190402 22:31:11.126"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_文件_choices}${num}</arg>
+</arguments>
+<msg timestamp="20190402 22:31:11.554" level="INFO">Clicking element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
+<status status="PASS" endtime="20190402 22:31:12.014" starttime="20190402 22:31:11.554"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_打开文件页面}</arg>
+</arguments>
+<msg timestamp="20190402 22:31:12.438" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' is displayed.</msg>
+<status status="PASS" endtime="20190402 22:31:12.438" starttime="20190402 22:31:12.014"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${cloud_search_text}</arg>
+<arg>新的</arg>
+</arguments>
+<msg timestamp="20190402 22:31:12.438" level="INFO">Typing text '新的' into text field 'css=span[class^='style__input-client__2dfqF']&gt;input'.</msg>
+<status status="PASS" endtime="20190402 22:31:13.106" starttime="20190402 22:31:12.438"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${cloud_title}</arg>
+</arguments>
+<msg timestamp="20190402 22:31:13.107" level="INFO">Simulating Mouse Over on element 'css=.style__title__Zu2yi'.</msg>
+<status status="PASS" endtime="20190402 22:31:13.530" starttime="20190402 22:31:13.106"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${cloud_title}</arg>
+</arguments>
+<msg timestamp="20190402 22:31:13.530" level="INFO">Clicking element 'css=.style__title__Zu2yi'.</msg>
+<status status="PASS" endtime="20190402 22:31:13.969" starttime="20190402 22:31:13.530"></status>
 </kw>
 <kw name="Page Should Contain Element" library="Selenium2Library">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
-<arg>${wood_文件_choices}</arg>
-<arg>limit=6</arg>
+<arg>${cloud_frame}</arg>
+<arg>limit&gt;1</arg>
 </arguments>
-<msg timestamp="20190401 19:39:28.126" level="INFO">Current page contains 6 element(s).</msg>
-<status status="PASS" endtime="20190401 19:39:28.126" starttime="20190401 19:39:27.913"></status>
+<msg timestamp="20190402 22:31:14.183" level="INFO">Current page contains element 'xpath=//div[starts-with(@class,'style__file_client_item__')]'.</msg>
+<status status="PASS" endtime="20190402 22:31:14.183" starttime="20190402 22:31:13.969"></status>
 </kw>
-<kw name="Create List" library="BuiltIn">
-<doc>Returns a list containing given items.</doc>
+<kw name="Element Should Not Contain" library="Selenium2Library">
+<doc>Verifies that element ``locator`` does not contains text ``expected``.</doc>
 <arguments>
-<arg>打开</arg>
-<arg>新建</arg>
-<arg>另存为</arg>
-<arg>模板作品</arg>
-<arg>保存到本地</arg>
+<arg>${cloud_frame}[1]/div</arg>
 <arg>从本地打开</arg>
 </arguments>
-<assign>
-<var>@{file_choices_ch}</var>
-</assign>
-<msg timestamp="20190401 19:39:28.126" level="INFO">@{file_choices_ch} = [ 打开 | 新建 | 另存为 | 模板作品 | 保存到本地 | 从本地打开 ]</msg>
-<status status="PASS" endtime="20190401 19:39:28.126" starttime="20190401 19:39:28.126"></status>
+<msg timestamp="20190402 22:31:14.609" level="INFO">Element 'xpath=//div[starts-with(@class,'style__file_client_item__')][1]/div' does not contain text '从本地打开'.</msg>
+<status status="PASS" endtime="20190402 22:31:14.609" starttime="20190402 22:31:14.183"></status>
 </kw>
-<kw name="Create List" library="BuiltIn">
-<doc>Returns a list containing given items.</doc>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
 <arguments>
-<arg>打開</arg>
-<arg>新建</arg>
-<arg>另存為</arg>
-<arg>模板作品</arg>
-<arg>保存到本地</arg>
-<arg>從本地打開</arg>
+<arg>${cloud_frame}[1]/div</arg>
+<arg>新的</arg>
 </arguments>
-<assign>
-<var>@{file_choices_com_ch}</var>
-</assign>
-<msg timestamp="20190401 19:39:28.127" level="INFO">@{file_choices_com_ch} = [ 打開 | 新建 | 另存為 | 模板作品 | 保存到本地 | 從本地打開 ]</msg>
-<status status="PASS" endtime="20190401 19:39:28.127" starttime="20190401 19:39:28.126"></status>
-</kw>
-<kw name="Create List" library="BuiltIn">
-<doc>Returns a list containing given items.</doc>
-<arguments>
-<arg>Open</arg>
-<arg>New</arg>
-<arg>Save as</arg>
-<arg>Templates</arg>
-<arg>Save to local</arg>
-<arg>Local project</arg>
-</arguments>
-<assign>
-<var>@{file_choices_en}</var>
-</assign>
-<msg timestamp="20190401 19:39:28.127" level="INFO">@{file_choices_en} = [ Open | New | Save as | Templates | Save to local | Local project ]</msg>
-<status status="PASS" endtime="20190401 19:39:28.127" starttime="20190401 19:39:28.127"></status>
-</kw>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${file_choices_ch}</arg>
-</arguments>
-<assign>
-<var>${len_choice_list}</var>
-</assign>
-<msg timestamp="20190401 19:39:28.127" level="INFO">Length is 6</msg>
-<msg timestamp="20190401 19:39:28.128" level="INFO">${len_choice_list} = 6</msg>
-<status status="PASS" endtime="20190401 19:39:28.128" starttime="20190401 19:39:28.127"></status>
-</kw>
-<kw type="for" name="${i} IN RANGE [ ${len_choice_list} ]">
-<kw type="foritem" name="${i} = 0">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${wood_文件_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:28.128" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
-<status status="PASS" endtime="20190401 19:39:28.554" starttime="20190401 19:39:28.128"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${wood_文件_choices}[${i+1}]</arg>
-<arg>@{file_choices_ch}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:28.555" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]' contains exact text '打开'.</msg>
-<status status="PASS" endtime="20190401 19:39:28.976" starttime="20190401 19:39:28.554"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:28.976" starttime="20190401 19:39:28.128"></status>
-</kw>
-<kw type="foritem" name="${i} = 1">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${wood_文件_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:28.976" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[2]'.</msg>
-<status status="PASS" endtime="20190401 19:39:29.402" starttime="20190401 19:39:28.976"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${wood_文件_choices}[${i+1}]</arg>
-<arg>@{file_choices_ch}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:29.403" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[2]' contains exact text '新建'.</msg>
-<status status="PASS" endtime="20190401 19:39:29.823" starttime="20190401 19:39:29.402"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:29.823" starttime="20190401 19:39:28.976"></status>
-</kw>
-<kw type="foritem" name="${i} = 2">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${wood_文件_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:29.823" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[3]'.</msg>
-<status status="PASS" endtime="20190401 19:39:30.255" starttime="20190401 19:39:29.823"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${wood_文件_choices}[${i+1}]</arg>
-<arg>@{file_choices_ch}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:30.256" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[3]' contains exact text '另存为'.</msg>
-<status status="PASS" endtime="20190401 19:39:30.676" starttime="20190401 19:39:30.255"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:30.676" starttime="20190401 19:39:29.823"></status>
-</kw>
-<kw type="foritem" name="${i} = 3">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${wood_文件_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:30.676" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[4]'.</msg>
-<status status="PASS" endtime="20190401 19:39:31.100" starttime="20190401 19:39:30.676"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${wood_文件_choices}[${i+1}]</arg>
-<arg>@{file_choices_ch}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:31.100" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[4]' contains exact text '模板作品'.</msg>
-<status status="PASS" endtime="20190401 19:39:31.522" starttime="20190401 19:39:31.100"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:31.522" starttime="20190401 19:39:30.676"></status>
-</kw>
-<kw type="foritem" name="${i} = 4">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${wood_文件_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:31.522" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[5]'.</msg>
-<status status="PASS" endtime="20190401 19:39:31.944" starttime="20190401 19:39:31.522"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${wood_文件_choices}[${i+1}]</arg>
-<arg>@{file_choices_ch}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:31.944" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[5]' contains exact text '保存到本地'.</msg>
-<status status="PASS" endtime="20190401 19:39:32.365" starttime="20190401 19:39:31.944"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:32.365" starttime="20190401 19:39:31.522"></status>
-</kw>
-<kw type="foritem" name="${i} = 5">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${wood_文件_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:32.365" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[6]'.</msg>
-<status status="PASS" endtime="20190401 19:39:32.789" starttime="20190401 19:39:32.365"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${wood_文件_choices}[${i+1}]</arg>
-<arg>@{file_choices_ch}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:32.789" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[6]' contains exact text '从本地打开'.</msg>
-<status status="PASS" endtime="20190401 19:39:33.209" starttime="20190401 19:39:32.789"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:33.209" starttime="20190401 19:39:32.365"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:33.209" starttime="20190401 19:39:28.128"></status>
-</kw>
-<kw name="Switch Language" library="hex_resource">
-<arguments>
-<arg>zh-hant</arg>
-</arguments>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_切换语言}</arg>
-</arguments>
-<msg timestamp="20190401 19:39:33.209" level="INFO">Clicking element 'xpath=//*[@id="translate_button"]/div'.</msg>
-<status status="PASS" endtime="20190401 19:39:33.658" starttime="20190401 19:39:33.209"></status>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>"${wood_language}" == "zh"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[1]</arg>
-<arg>ELSE IF</arg>
-<arg>"${wood_language}" == "zh-hant"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[2]</arg>
-<arg>ELSE IF</arg>
-<arg>"${wood_language}" == "en"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[3]</arg>
-</arguments>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_切换语言}/div[3]/div/div[2]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:33.659" level="INFO">Clicking element 'xpath=//*[@id="translate_button"]/div/div[3]/div/div[2]'.</msg>
-<status status="PASS" endtime="20190401 19:39:34.230" starttime="20190401 19:39:33.658"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:34.230" starttime="20190401 19:39:33.658"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:34.230" starttime="20190401 19:39:33.209"></status>
-</kw>
-<kw name="Mouse File Button" library="hex_resource">
-<arguments>
-<arg>${file_choices_com_ch}</arg>
-<arg>${wood_文件_choices}</arg>
-</arguments>
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${wood_文件}</arg>
-</arguments>
-<msg timestamp="20190401 19:39:34.231" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
-<status status="PASS" endtime="20190401 19:39:34.651" starttime="20190401 19:39:34.231"></status>
-</kw>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${file_choices}</arg>
-</arguments>
-<assign>
-<var>${len_choice_list}</var>
-</assign>
-<msg timestamp="20190401 19:39:34.652" level="INFO">Length is 6</msg>
-<msg timestamp="20190401 19:39:34.652" level="INFO">${len_choice_list} = 6</msg>
-<status status="PASS" endtime="20190401 19:39:34.652" starttime="20190401 19:39:34.651"></status>
-</kw>
-<kw type="for" name="${i} IN RANGE [ ${len_choice_list} ]">
-<kw type="foritem" name="${i} = 0">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:34.652" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
-<status status="PASS" endtime="20190401 19:39:35.069" starttime="20190401 19:39:34.652"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:35.069" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]' contains exact text '打開'.</msg>
-<status status="PASS" endtime="20190401 19:39:35.486" starttime="20190401 19:39:35.069"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:35.486" starttime="20190401 19:39:34.652"></status>
-</kw>
-<kw type="foritem" name="${i} = 1">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:35.486" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[2]'.</msg>
-<status status="PASS" endtime="20190401 19:39:35.905" starttime="20190401 19:39:35.486"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:35.905" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[2]' contains exact text '新建'.</msg>
-<status status="PASS" endtime="20190401 19:39:36.320" starttime="20190401 19:39:35.905"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:36.320" starttime="20190401 19:39:35.486"></status>
-</kw>
-<kw type="foritem" name="${i} = 2">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:36.320" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[3]'.</msg>
-<status status="PASS" endtime="20190401 19:39:36.736" starttime="20190401 19:39:36.320"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:36.736" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[3]' contains exact text '另存為'.</msg>
-<status status="PASS" endtime="20190401 19:39:37.152" starttime="20190401 19:39:36.736"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:37.152" starttime="20190401 19:39:36.320"></status>
-</kw>
-<kw type="foritem" name="${i} = 3">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:37.152" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[4]'.</msg>
-<status status="PASS" endtime="20190401 19:39:37.567" starttime="20190401 19:39:37.152"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:37.568" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[4]' contains exact text '模板作品'.</msg>
-<status status="PASS" endtime="20190401 19:39:37.984" starttime="20190401 19:39:37.567"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:37.984" starttime="20190401 19:39:37.152"></status>
-</kw>
-<kw type="foritem" name="${i} = 4">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:37.984" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[5]'.</msg>
-<status status="PASS" endtime="20190401 19:39:38.401" starttime="20190401 19:39:37.984"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:38.401" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[5]' contains exact text '保存到本地'.</msg>
-<status status="PASS" endtime="20190401 19:39:38.815" starttime="20190401 19:39:38.401"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:38.815" starttime="20190401 19:39:37.984"></status>
-</kw>
-<kw type="foritem" name="${i} = 5">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:38.815" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[6]'.</msg>
-<status status="PASS" endtime="20190401 19:39:39.232" starttime="20190401 19:39:38.815"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:39.232" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[6]' contains exact text '從本地打開'.</msg>
-<status status="PASS" endtime="20190401 19:39:39.645" starttime="20190401 19:39:39.232"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:39.645" starttime="20190401 19:39:38.815"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:39.645" starttime="20190401 19:39:34.652"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:39.646" starttime="20190401 19:39:34.230"></status>
-</kw>
-<kw name="Switch Language" library="hex_resource">
-<arguments>
-<arg>en</arg>
-</arguments>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_切换语言}</arg>
-</arguments>
-<msg timestamp="20190401 19:39:39.648" level="INFO">Clicking element 'xpath=//*[@id="translate_button"]/div'.</msg>
-<status status="PASS" endtime="20190401 19:39:40.086" starttime="20190401 19:39:39.648"></status>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>"${wood_language}" == "zh"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[1]</arg>
-<arg>ELSE IF</arg>
-<arg>"${wood_language}" == "zh-hant"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[2]</arg>
-<arg>ELSE IF</arg>
-<arg>"${wood_language}" == "en"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[3]</arg>
-</arguments>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_切换语言}/div[3]/div/div[3]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:40.087" level="INFO">Clicking element 'xpath=//*[@id="translate_button"]/div/div[3]/div/div[3]'.</msg>
-<status status="PASS" endtime="20190401 19:39:40.668" starttime="20190401 19:39:40.087"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:40.668" starttime="20190401 19:39:40.086"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:40.668" starttime="20190401 19:39:39.646"></status>
-</kw>
-<kw name="Mouse File Button" library="hex_resource">
-<arguments>
-<arg>${file_choices_en}</arg>
-<arg>${wood_文件_choices}</arg>
-</arguments>
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${wood_文件}</arg>
-</arguments>
-<msg timestamp="20190401 19:39:40.669" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
-<status status="PASS" endtime="20190401 19:39:41.091" starttime="20190401 19:39:40.669"></status>
-</kw>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${file_choices}</arg>
-</arguments>
-<assign>
-<var>${len_choice_list}</var>
-</assign>
-<msg timestamp="20190401 19:39:41.091" level="INFO">Length is 6</msg>
-<msg timestamp="20190401 19:39:41.091" level="INFO">${len_choice_list} = 6</msg>
-<status status="PASS" endtime="20190401 19:39:41.091" starttime="20190401 19:39:41.091"></status>
-</kw>
-<kw type="for" name="${i} IN RANGE [ ${len_choice_list} ]">
-<kw type="foritem" name="${i} = 0">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:41.092" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
-<status status="PASS" endtime="20190401 19:39:41.511" starttime="20190401 19:39:41.092"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:41.511" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]' contains exact text 'Open'.</msg>
-<status status="PASS" endtime="20190401 19:39:41.928" starttime="20190401 19:39:41.511"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:41.928" starttime="20190401 19:39:41.091"></status>
-</kw>
-<kw type="foritem" name="${i} = 1">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:41.928" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[2]'.</msg>
-<status status="PASS" endtime="20190401 19:39:42.347" starttime="20190401 19:39:41.928"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:42.347" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[2]' contains exact text 'New'.</msg>
-<status status="PASS" endtime="20190401 19:39:42.763" starttime="20190401 19:39:42.347"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:42.763" starttime="20190401 19:39:41.928"></status>
-</kw>
-<kw type="foritem" name="${i} = 2">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:42.763" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[3]'.</msg>
-<status status="PASS" endtime="20190401 19:39:43.178" starttime="20190401 19:39:42.763"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:43.178" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[3]' contains exact text 'Save as'.</msg>
-<status status="PASS" endtime="20190401 19:39:43.595" starttime="20190401 19:39:43.178"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:43.595" starttime="20190401 19:39:42.763"></status>
-</kw>
-<kw type="foritem" name="${i} = 3">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:43.595" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[4]'.</msg>
-<status status="PASS" endtime="20190401 19:39:44.013" starttime="20190401 19:39:43.595"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:44.013" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[4]' contains exact text 'Templates'.</msg>
-<status status="PASS" endtime="20190401 19:39:44.427" starttime="20190401 19:39:44.013"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:44.427" starttime="20190401 19:39:43.595"></status>
-</kw>
-<kw type="foritem" name="${i} = 4">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:44.427" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[5]'.</msg>
-<status status="PASS" endtime="20190401 19:39:44.844" starttime="20190401 19:39:44.427"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:44.844" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[5]' contains exact text 'Save to local'.</msg>
-<status status="PASS" endtime="20190401 19:39:45.260" starttime="20190401 19:39:44.844"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:45.260" starttime="20190401 19:39:44.427"></status>
-</kw>
-<kw type="foritem" name="${i} = 5">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:45.260" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[6]'.</msg>
-<status status="PASS" endtime="20190401 19:39:45.675" starttime="20190401 19:39:45.260"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:45.675" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[6]' contains exact text 'Local project'.</msg>
-<status status="PASS" endtime="20190401 19:39:46.090" starttime="20190401 19:39:45.675"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:46.090" starttime="20190401 19:39:45.260"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:46.090" starttime="20190401 19:39:41.091"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:46.090" starttime="20190401 19:39:40.668"></status>
-</kw>
-<kw name="Switch Language" library="hex_resource">
-<arguments>
-<arg>zh</arg>
-</arguments>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_切换语言}</arg>
-</arguments>
-<msg timestamp="20190401 19:39:46.091" level="INFO">Clicking element 'xpath=//*[@id="translate_button"]/div'.</msg>
-<status status="PASS" endtime="20190401 19:39:46.531" starttime="20190401 19:39:46.091"></status>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<arguments>
-<arg>"${wood_language}" == "zh"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[1]</arg>
-<arg>ELSE IF</arg>
-<arg>"${wood_language}" == "zh-hant"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[2]</arg>
-<arg>ELSE IF</arg>
-<arg>"${wood_language}" == "en"</arg>
-<arg>Click Element</arg>
-<arg>${wood_切换语言}/div[3]/div/div[3]</arg>
-</arguments>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_切换语言}/div[3]/div/div[1]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:46.532" level="INFO">Clicking element 'xpath=//*[@id="translate_button"]/div/div[3]/div/div[1]'.</msg>
-<status status="PASS" endtime="20190401 19:39:47.095" starttime="20190401 19:39:46.531"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:47.095" starttime="20190401 19:39:46.531"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:47.095" starttime="20190401 19:39:46.090"></status>
-</kw>
-<kw name="Mouse File Button" library="hex_resource">
-<arguments>
-<arg>${file_choices_ch}</arg>
-<arg>${wood_文件_choices}</arg>
-</arguments>
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${wood_文件}</arg>
-</arguments>
-<msg timestamp="20190401 19:39:47.096" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
-<status status="PASS" endtime="20190401 19:39:47.515" starttime="20190401 19:39:47.095"></status>
-</kw>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<arguments>
-<arg>${file_choices}</arg>
-</arguments>
-<assign>
-<var>${len_choice_list}</var>
-</assign>
-<msg timestamp="20190401 19:39:47.515" level="INFO">Length is 6</msg>
-<msg timestamp="20190401 19:39:47.515" level="INFO">${len_choice_list} = 6</msg>
-<status status="PASS" endtime="20190401 19:39:47.515" starttime="20190401 19:39:47.515"></status>
-</kw>
-<kw type="for" name="${i} IN RANGE [ ${len_choice_list} ]">
-<kw type="foritem" name="${i} = 0">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:47.515" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
-<status status="PASS" endtime="20190401 19:39:47.934" starttime="20190401 19:39:47.515"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:47.935" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]' contains exact text '打开'.</msg>
-<status status="PASS" endtime="20190401 19:39:48.349" starttime="20190401 19:39:47.934"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:48.349" starttime="20190401 19:39:47.515"></status>
-</kw>
-<kw type="foritem" name="${i} = 1">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:48.350" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[2]'.</msg>
-<status status="PASS" endtime="20190401 19:39:48.766" starttime="20190401 19:39:48.349"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:48.766" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[2]' contains exact text '新建'.</msg>
-<status status="PASS" endtime="20190401 19:39:49.190" starttime="20190401 19:39:48.766"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:49.190" starttime="20190401 19:39:48.349"></status>
-</kw>
-<kw type="foritem" name="${i} = 2">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:49.190" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[3]'.</msg>
-<status status="PASS" endtime="20190401 19:39:49.608" starttime="20190401 19:39:49.190"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:49.608" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[3]' contains exact text '另存为'.</msg>
-<status status="PASS" endtime="20190401 19:39:50.023" starttime="20190401 19:39:49.608"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:50.023" starttime="20190401 19:39:49.190"></status>
-</kw>
-<kw type="foritem" name="${i} = 3">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:50.023" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[4]'.</msg>
-<status status="PASS" endtime="20190401 19:39:50.439" starttime="20190401 19:39:50.023"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:50.439" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[4]' contains exact text '模板作品'.</msg>
-<status status="PASS" endtime="20190401 19:39:50.854" starttime="20190401 19:39:50.439"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:50.854" starttime="20190401 19:39:50.023"></status>
-</kw>
-<kw type="foritem" name="${i} = 4">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:50.854" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[5]'.</msg>
-<status status="PASS" endtime="20190401 19:39:51.272" starttime="20190401 19:39:50.854"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:51.272" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[5]' contains exact text '保存到本地'.</msg>
-<status status="PASS" endtime="20190401 19:39:51.686" starttime="20190401 19:39:51.272"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:51.686" starttime="20190401 19:39:50.854"></status>
-</kw>
-<kw type="foritem" name="${i} = 5">
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:51.686" level="INFO">Simulating Mouse Over on element 'xpath=//header/div[1]/div[2]/div[3]/div/div[6]'.</msg>
-<status status="PASS" endtime="20190401 19:39:52.105" starttime="20190401 19:39:51.686"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>${xpaht_of_choices}[${i+1}]</arg>
-<arg>@{file_choices}[${i}]</arg>
-</arguments>
-<msg timestamp="20190401 19:39:52.105" level="INFO">Verifying element 'xpath=//header/div[1]/div[2]/div[3]/div/div[6]' contains exact text '从本地打开'.</msg>
-<status status="PASS" endtime="20190401 19:39:52.519" starttime="20190401 19:39:52.105"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:52.519" starttime="20190401 19:39:51.686"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:52.519" starttime="20190401 19:39:47.515"></status>
-</kw>
-<status status="PASS" endtime="20190401 19:39:52.519" starttime="20190401 19:39:47.095"></status>
+<msg timestamp="20190402 22:31:15.027" level="INFO">Element 'xpath=//div[starts-with(@class,'style__file_client_item__')][1]/div' contains text '新的'.</msg>
+<status status="PASS" endtime="20190402 22:31:15.027" starttime="20190402 22:31:14.610"></status>
 </kw>
 <kw type="teardown" name="Teardown" library="hex_resource">
 <kw name="Close All Browsers" library="Selenium2Library">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" endtime="20190401 19:39:55.815" starttime="20190401 19:39:52.519"></status>
+<status status="PASS" endtime="20190402 22:31:18.322" starttime="20190402 22:31:15.028"></status>
 </kw>
-<status status="PASS" endtime="20190401 19:39:55.815" starttime="20190401 19:39:52.519"></status>
+<status status="PASS" endtime="20190402 22:31:18.322" starttime="20190402 22:31:15.028"></status>
 </kw>
-<status status="PASS" endtime="20190401 19:39:55.815" critical="yes" starttime="20190401 19:39:19.391"></status>
+<status status="PASS" endtime="20190402 22:31:18.322" critical="yes" starttime="20190402 22:30:47.653"></status>
 </test>
-<status status="PASS" endtime="20190401 19:39:55.816" starttime="20190401 19:39:19.192"></status>
+<status status="PASS" endtime="20190402 22:31:18.323" starttime="20190402 22:30:47.437"></status>
 </suite>
 <statistics>
 <total>
