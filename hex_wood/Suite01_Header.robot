@@ -300,13 +300,90 @@ button_file_search
     Click Element    ${wood_文件_choices}${num}
     Element Should Be Visible    ${wood_打开文件页面}
     Input Text    ${cloud_search_text}    新的
-    # 这里鼠标焦点一定需要改变，不然页面局部刷新，rf链是不知道的，所以下面进行鼠标点击事件进行元素重新链接
+    # 这里鼠标焦点一定需要改变，不然页面局部刷新，rf是不知道的，所以下面进行鼠标点击事件进行元素重新链接
     Mouse Over    ${cloud_title}
     Click Element    ${cloud_title}
     Page Should Contain Element    ${cloud_frame}    limit>1
     Element Should Not Contain    ${cloud_frame}[1]/div    从本地打开
-    Element Should Contain    ${cloud_frame}[1]/div/spanp[1]    新的
-    ${frame_name1}    Get Text    ${cloud_frame}[1]/div/spanp[1]
-    Clear Element Text    ${cloud_search_text}
-    Element Text Should Be    ${cloud_frame}[2]    从本地打开
+    Element Should Contain    ${cloud_frame}[1]/div    新的
+    ${frame_name1}    Get Text    ${cloud_frame}[1]/div/span[1]
+    # 使用删除键回退删除刚才所填内容
+    Press Key   ${cloud_search_text}    \\8
+    Press Key   ${cloud_search_text}    \\8
+    # 同理，这里页面局部刷新，也需要进行重连
+    Mouse Over    ${cloud_title}
+    Click Element    ${cloud_title}
+    Element Text Should Be    ${cloud_frame}[1]/span[2]    从本地打开
+    # 输入py作品名称
+    Input Text    ${cloud_search_text}    樱花树
+    Mouse Over    ${cloud_title}
+    Click Element    ${cloud_title}
+    Element Text Should Be    ${cloud_search_noresult}    无搜索结果
+    # 切换语言繁体查看
+    Click Element    ${cloud_close}
+    Switch Language    hant
+    Mouse Over    ${wood_文件}
+    # 已登录点击打开选项
+    Click Element    ${wood_文件_choices}${num}
+    Element Should Be Visible    ${wood_打开文件页面}
+    Input Text    ${cloud_search_text}    樱花树
+    Mouse Over    ${cloud_title}
+    Click Element    ${cloud_title}
+    Element Text Should Be    ${cloud_search_noresult}    無搜索結果
+    Press Key   ${cloud_search_text}    \\8
+    Press Key   ${cloud_search_text}    \\8
+    Mouse Over    ${cloud_title}
+    Click Element    ${cloud_title}
+    Element Text Should Be    ${cloud_frame}[1]/span[2]    從本地打開
+    # 切换语言英文查看
+    Click Element    ${cloud_close}
+    Switch Language    en
+    Mouse Over    ${wood_文件}
+    # 已登录点击打开选项
+    Click Element    ${wood_文件_choices}${num}
+    Element Should Be Visible    ${wood_打开文件页面}
+    Input Text    ${cloud_search_text}    樱花树
+    Mouse Over    ${cloud_title}
+    Click Element    ${cloud_title}
+    Element Text Should Be    ${cloud_search_noresult}
+    Press Key   ${cloud_search_text}    \\8
+    Press Key   ${cloud_search_text}    \\8
+    Mouse Over    ${cloud_title}
+    Click Element    ${cloud_title}
+    Element Text Should Be    ${cloud_frame}[1]/span[2]    Open a local file
+
+
+button_file_New
+    Mouse Over    ${wood_文件}
+    # 未登录点击打开选项
+    ${num1}    Set Variable    [1]
+    ${num2}    Set Variable    [2]
+    Click Element    ${wood_文件_choices}${num1}
+    # 打开本地已保存的作品
+    Element Should Be Visible    ${wood_打开文件页面}
+    Click Element    ${cloud_frame}[1]
+    Win Wait    打开    \    2
+    Win Activate    打开
+    Control Set Text    \    \    Edit1    ${hex_normal1}
+    Control Click    \    \    Button1
+    Element Should Not Be Visible    ${wood_打开文件页面}
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    normal01
+    Mouse Over   ${wood_文件}
+    Click Element    ${wood_文件_choices}[2]
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    新的作品
+    Mouse Over   ${wood_文件}
+    Click Element    ${wood_文件_choices}${num1}
+    # 打开本地已保存的作品
+    Element Should Be Visible    ${wood_打开文件页面}
+    Click Element    ${cloud_frame}[1]
+    Win Wait    打开    \    2
+    Win Activate    打开
+    Control Set Text    \    \    Edit1    ${hex_auto_change}
+    Control Click    \    \    Button1
+    Element Should Not Be Visible    ${wood_打开文件页面}
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change
+    Mouse Over   ${wood_文件}
+    Click Element    ${wood_文件_choices}[2]
+    Element Should Be Visible    locator    message
+
 

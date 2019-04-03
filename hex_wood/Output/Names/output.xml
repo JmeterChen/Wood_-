@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20190402 22:30:47.432" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
+<robot generated="20190403 14:55:22.855" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
 <suite source="C:\Users\ChenBolin\Desktop\Wood_-\hex_wood\Suite01_Header.robot" id="s1" name="Suite01 Header">
 <test id="s1-t1" name="button_file_search">
 <kw type="setup" name="open_bs" library="hex_resource">
@@ -9,26 +9,26 @@
 <arg>${wood_hex_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190402 22:30:47.655" level="INFO">Opening browser 'chrome' to base url 'https://wood.codemao.cn/?editor_mode=1'.</msg>
-<status status="PASS" endtime="20190402 22:30:53.504" starttime="20190402 22:30:47.654"></status>
+<msg timestamp="20190403 14:55:23.117" level="INFO">Opening browser 'chrome' to base url 'https://wood.codemao.cn/?editor_mode=1'.</msg>
+<status status="PASS" endtime="20190403 14:55:40.005" starttime="20190403 14:55:23.117"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20190402 22:30:54.627" starttime="20190402 22:30:53.504"></status>
+<status status="PASS" endtime="20190403 14:55:46.026" starttime="20190403 14:55:40.005"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>.2 seconds</arg>
 </arguments>
-<status status="PASS" endtime="20190402 22:30:54.628" starttime="20190402 22:30:54.627"></status>
+<status status="PASS" endtime="20190403 14:55:46.027" starttime="20190403 14:55:46.026"></status>
 </kw>
 <kw name="Set Browser Implicit Wait" library="Selenium2Library">
 <doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
 <arg>10 seconds</arg>
 </arguments>
-<status status="PASS" endtime="20190402 22:30:54.830" starttime="20190402 22:30:54.628"></status>
+<status status="PASS" endtime="20190403 14:55:46.228" starttime="20190403 14:55:46.027"></status>
 </kw>
 <kw name="Element Should Contain" library="Selenium2Library">
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
@@ -36,211 +36,61 @@
 <arg>${login_入口}</arg>
 <arg>未登录</arg>
 </arguments>
-<msg timestamp="20190402 22:30:55.366" level="INFO">Element 'xpath=//header/div[2]/div[3]' contains text '未登录'.</msg>
-<status status="PASS" endtime="20190402 22:30:55.366" starttime="20190402 22:30:54.830"></status>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190403 14:55:46.234" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=73.0.3683.86)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+</msg>
+<status status="FAIL" endtime="20190403 14:55:46.235" starttime="20190403 14:55:46.230"></status>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1</arg>
-</arguments>
-<msg timestamp="20190402 22:30:56.366" level="INFO">Slept 1 second</msg>
-<status status="PASS" endtime="20190402 22:30:56.366" starttime="20190402 22:30:55.366"></status>
+<msg timestamp="20190403 14:55:46.235" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=73.0.3683.86)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+</msg>
+<msg timestamp="20190403 14:55:46.236" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=73.0.3683.86)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+</msg>
+<status status="FAIL" endtime="20190403 14:55:46.236" starttime="20190403 14:55:46.228"></status>
 </kw>
-<status status="PASS" endtime="20190402 22:30:56.366" starttime="20190402 22:30:47.654"></status>
-</kw>
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${wood_文件}</arg>
-</arguments>
-<msg timestamp="20190402 22:30:56.367" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
-<status status="PASS" endtime="20190402 22:30:56.796" starttime="20190402 22:30:56.366"></status>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>[1]</arg>
-</arguments>
-<assign>
-<var>${num}</var>
-</assign>
-<msg timestamp="20190402 22:30:56.796" level="INFO">${num} = [1]</msg>
-<status status="PASS" endtime="20190402 22:30:56.796" starttime="20190402 22:30:56.796"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_文件_choices}${num}</arg>
-</arguments>
-<msg timestamp="20190402 22:30:56.796" level="INFO">Clicking element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
-<status status="PASS" endtime="20190402 22:30:57.267" starttime="20190402 22:30:56.796"></status>
-</kw>
-<kw name="assert_login_exist" library="hex_resource">
-<kw name="Element Should Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${wood_登录页面01}</arg>
-</arguments>
-<msg timestamp="20190402 22:30:57.695" level="INFO">Element 'css=.asset-style__dialog-wrap__T7J3c' is displayed.</msg>
-<status status="PASS" endtime="20190402 22:30:57.695" starttime="20190402 22:30:57.267"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_01close}</arg>
-</arguments>
-<msg timestamp="20190402 22:30:57.695" level="INFO">Clicking element 'css=.asset-style__icon__1TAph.asset-style__icon-close__1ErxI'.</msg>
-<status status="PASS" endtime="20190402 22:30:58.143" starttime="20190402 22:30:57.695"></status>
-</kw>
-<status status="PASS" endtime="20190402 22:30:58.143" starttime="20190402 22:30:57.267"></status>
-</kw>
-<kw name="Login" library="hex_resource">
-<arguments>
-<arg>${wood_username2}</arg>
-<arg>${wood_password}</arg>
-</arguments>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${login_入口}</arg>
-</arguments>
-<msg timestamp="20190402 22:30:58.147" level="INFO">Clicking element 'xpath=//header/div[2]/div[3]'.</msg>
-<status status="PASS" endtime="20190402 22:30:58.615" starttime="20190402 22:30:58.146"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_01用户名}</arg>
-<arg>${username}</arg>
-</arguments>
-<msg timestamp="20190402 22:30:58.615" level="INFO">Typing text '18682236985' into text field 'xpath=//input[@placeholder='用户名']'.</msg>
-<status status="PASS" endtime="20190402 22:30:59.350" starttime="20190402 22:30:58.615"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_01密码}</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20190402 22:30:59.350" level="INFO">Typing text '123456' into text field 'xpath=//input[@placeholder='密码']'.</msg>
-<status status="PASS" endtime="20190402 22:31:00.044" starttime="20190402 22:30:59.350"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_01登录按钮}</arg>
-</arguments>
-<msg timestamp="20190402 22:31:00.044" level="INFO">Clicking element 'css=div[class*='asset-style__base_button__2gZAA asset-style__orang']'.</msg>
-<status status="PASS" endtime="20190402 22:31:00.489" starttime="20190402 22:31:00.044"></status>
-</kw>
-<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
-<doc>Waits until ``text`` disappears from current page.</doc>
-<arguments>
-<arg>未登录</arg>
-</arguments>
-<status status="PASS" endtime="20190402 22:31:11.126" starttime="20190402 22:31:00.489"></status>
-</kw>
-<status status="PASS" endtime="20190402 22:31:11.126" starttime="20190402 22:30:58.144"></status>
-</kw>
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${wood_文件}</arg>
-</arguments>
-<msg timestamp="20190402 22:31:11.126" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="root"]//div[@style='padding-right: 0px;']'.</msg>
-<status status="PASS" endtime="20190402 22:31:11.554" starttime="20190402 22:31:11.126"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${wood_文件_choices}${num}</arg>
-</arguments>
-<msg timestamp="20190402 22:31:11.554" level="INFO">Clicking element 'xpath=//header/div[1]/div[2]/div[3]/div/div[1]'.</msg>
-<status status="PASS" endtime="20190402 22:31:12.014" starttime="20190402 22:31:11.554"></status>
-</kw>
-<kw name="Element Should Be Visible" library="Selenium2Library">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${wood_打开文件页面}</arg>
-</arguments>
-<msg timestamp="20190402 22:31:12.438" level="INFO">Element 'css=div[class^='style__dialog-wrap__'' is displayed.</msg>
-<status status="PASS" endtime="20190402 22:31:12.438" starttime="20190402 22:31:12.014"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${cloud_search_text}</arg>
-<arg>新的</arg>
-</arguments>
-<msg timestamp="20190402 22:31:12.438" level="INFO">Typing text '新的' into text field 'css=span[class^='style__input-client__2dfqF']&gt;input'.</msg>
-<status status="PASS" endtime="20190402 22:31:13.106" starttime="20190402 22:31:12.438"></status>
-</kw>
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${cloud_title}</arg>
-</arguments>
-<msg timestamp="20190402 22:31:13.107" level="INFO">Simulating Mouse Over on element 'css=.style__title__Zu2yi'.</msg>
-<status status="PASS" endtime="20190402 22:31:13.530" starttime="20190402 22:31:13.106"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${cloud_title}</arg>
-</arguments>
-<msg timestamp="20190402 22:31:13.530" level="INFO">Clicking element 'css=.style__title__Zu2yi'.</msg>
-<status status="PASS" endtime="20190402 22:31:13.969" starttime="20190402 22:31:13.530"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>${cloud_frame}</arg>
-<arg>limit&gt;1</arg>
-</arguments>
-<msg timestamp="20190402 22:31:14.183" level="INFO">Current page contains element 'xpath=//div[starts-with(@class,'style__file_client_item__')]'.</msg>
-<status status="PASS" endtime="20190402 22:31:14.183" starttime="20190402 22:31:13.969"></status>
-</kw>
-<kw name="Element Should Not Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` does not contains text ``expected``.</doc>
-<arguments>
-<arg>${cloud_frame}[1]/div</arg>
-<arg>从本地打开</arg>
-</arguments>
-<msg timestamp="20190402 22:31:14.609" level="INFO">Element 'xpath=//div[starts-with(@class,'style__file_client_item__')][1]/div' does not contain text '从本地打开'.</msg>
-<status status="PASS" endtime="20190402 22:31:14.609" starttime="20190402 22:31:14.183"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>${cloud_frame}[1]/div</arg>
-<arg>新的</arg>
-</arguments>
-<msg timestamp="20190402 22:31:15.027" level="INFO">Element 'xpath=//div[starts-with(@class,'style__file_client_item__')][1]/div' contains text '新的'.</msg>
-<status status="PASS" endtime="20190402 22:31:15.027" starttime="20190402 22:31:14.610"></status>
+<status status="FAIL" endtime="20190403 14:55:46.236" starttime="20190403 14:55:23.115"></status>
 </kw>
 <kw type="teardown" name="Teardown" library="hex_resource">
 <kw name="Close All Browsers" library="Selenium2Library">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" endtime="20190402 22:31:18.322" starttime="20190402 22:31:15.028"></status>
+<status status="PASS" endtime="20190403 14:55:49.447" starttime="20190403 14:55:46.237"></status>
 </kw>
-<status status="PASS" endtime="20190402 22:31:18.322" starttime="20190402 22:31:15.028"></status>
+<status status="PASS" endtime="20190403 14:55:49.447" starttime="20190403 14:55:46.237"></status>
 </kw>
-<status status="PASS" endtime="20190402 22:31:18.322" critical="yes" starttime="20190402 22:30:47.653"></status>
+<status status="FAIL" endtime="20190403 14:55:49.447" critical="yes" starttime="20190403 14:55:23.114">Setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=73.0.3683.86)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+</status>
 </test>
-<status status="PASS" endtime="20190402 22:31:18.323" starttime="20190402 22:30:47.437"></status>
+<status status="FAIL" endtime="20190403 14:55:49.448" starttime="20190403 14:55:22.858"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Suite01 Header" pass="1">Suite01 Header</stat>
+<stat fail="1" id="s1" name="Suite01 Header" pass="0">Suite01 Header</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20190403 14:55:46.235" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=73.0.3683.86)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.17134 x86_64)
+</msg>
 </errors>
 </robot>

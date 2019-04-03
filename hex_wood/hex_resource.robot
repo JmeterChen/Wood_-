@@ -36,6 +36,7 @@ ${hex_normal2}                    ${CURDIR}\\AutomationFiles\\normal02.hex
 ${hex_untrans}                    ${CURDIR}\\AutomationFiles\\decorator.hex
 ${py_normal3}                     ${CURDIR}\\AutomationFiles\\normal03.py
 ${py_untrans}                     ${CURDIR}\\AutomationFiles\\decorator.py
+${hex_auto_change}                ${CURDIR}\\AutomationFiles\\Auto_change.hex
 
 ${Microbit}                       xpath=//*[@id="tb_10"]/div[1]/span[2]
 ${hex_基本}                       xpath=//*[@id="tb_11"]/div/span[2]
@@ -61,6 +62,7 @@ ${wood_input_file_name}          css=input[class^='style__project_name__input__'
 ${wood_模式切换按钮}               css=div[class^='style__switch-client-btn__']
 ${wood_untrans_toast}            css=div[class='midi-panel_RL1Pk']+div
 ${tgzy_跳过指引}                  css=div[class^='style__user-guide-cat-exit__']
+${cloud_search_noresult}         css=span[class^='style__no_result__']
 
 *** Keywords ***
 open_bs
@@ -100,7 +102,8 @@ Login
     input text    ${wood_01用户名}    ${username}
     input text    ${wood_01密码}    ${password}
     Click Element    ${wood_01登录按钮}
-    Wait Until Page Does Not Contain    未登录
+    Mouse Over    ${login_入口}
+    Element Should Be Visible    ${login_我的作品}    我的作品
 
 Logout
     P
