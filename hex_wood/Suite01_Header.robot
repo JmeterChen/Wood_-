@@ -2,6 +2,7 @@
 Library           Selenium2Library
 Library           AutoItLibrary
 Library           RFTestLibrary
+Library           OperatingSystem
 Library           String
 Resource          hex_resource.robot
 Test Setup        open_bs
@@ -15,7 +16,7 @@ open_wood_hex_001
     #断言title显示正确
     Title Should Be    编程猫海龟编辑器
     #确定是硬件模式
-    Element Text Should Be    Microbit
+    Element Text Should Be    ${Microbit}    Microbit
     Element Should Be Visible    ${hex_基本}    基本
 
 home_002
@@ -288,6 +289,7 @@ button_file_open_local_py
 
 
 button_file_search
+    [tags]    search
     Mouse Over    ${wood_文件}
     # 未登录点击打开选项
     ${num}    Set Variable    [1]
@@ -321,7 +323,7 @@ button_file_search
     Element Text Should Be    ${cloud_search_noresult}    无搜索结果
     # 切换语言繁体查看
     Click Element    ${cloud_close}
-    Switch Language    hant
+    Switch Language    zh-hant
     Mouse Over    ${wood_文件}
     # 已登录点击打开选项
     Click Element    ${wood_文件_choices}${num}
@@ -330,6 +332,7 @@ button_file_search
     Mouse Over    ${cloud_title}
     Click Element    ${cloud_title}
     Element Text Should Be    ${cloud_search_noresult}    無搜索結果
+    Press Key   ${cloud_search_text}    \\8
     Press Key   ${cloud_search_text}    \\8
     Press Key   ${cloud_search_text}    \\8
     Mouse Over    ${cloud_title}
@@ -345,7 +348,8 @@ button_file_search
     Input Text    ${cloud_search_text}    樱花树
     Mouse Over    ${cloud_title}
     Click Element    ${cloud_title}
-    Element Text Should Be    ${cloud_search_noresult}
+    Element Text Should Be    ${cloud_search_noresult}    No result
+    Press Key   ${cloud_search_text}    \\8
     Press Key   ${cloud_search_text}    \\8
     Press Key   ${cloud_search_text}    \\8
     Mouse Over    ${cloud_title}
@@ -354,8 +358,9 @@ button_file_search
 
 
 button_file_New
+    Login    ${wood_username2}    ${wood_password}
     Mouse Over    ${wood_文件}
-    # 未登录点击打开选项
+    # 已登录点击打开选项
     ${num1}    Set Variable    [1]
     ${num2}    Set Variable    [2]
     Click Element    ${wood_文件_choices}${num1}
@@ -366,6 +371,7 @@ button_file_New
     Win Activate    打开
     Control Set Text    \    \    Edit1    ${hex_normal1}
     Control Click    \    \    Button1
+    Sleep    1
     Element Should Not Be Visible    ${wood_打开文件页面}
     Element Attribute Value Should Be    ${wood_input_file_name}    value    normal01
     Mouse Over   ${wood_文件}
@@ -373,17 +379,306 @@ button_file_New
     Element Attribute Value Should Be    ${wood_input_file_name}    value    新的作品
     Mouse Over   ${wood_文件}
     Click Element    ${wood_文件_choices}${num1}
-    # 打开本地已保存的作品
+    # 打开本地已保存的作品,该作品在积木模式下打开会自动修改
     Element Should Be Visible    ${wood_打开文件页面}
     Click Element    ${cloud_frame}[1]
     Win Wait    打开    \    2
     Win Activate    打开
     Control Set Text    \    \    Edit1    ${hex_auto_change}
     Control Click    \    \    Button1
+    Sleep    1
     Element Should Not Be Visible    ${wood_打开文件页面}
     Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change
     Mouse Over   ${wood_文件}
+    # 由于积木模式下打开作品自动修改后，点击新建会弹出保存toast
     Click Element    ${wood_文件_choices}[2]
-    Element Should Be Visible    locator    message
+    Element Should Be Visible    ${save_toast}
+    Element Should Contain    ${save_toast_text}    当前作品还没有保存哦
+    Element Text Should Be    ${save_toast_text}>div>div+div+div    是否要继续
+    # 校验toast关闭功能
+    Click Element    ${save_toast_close}
+    Element Should Not Be Visible    ${save_toast}
+    # 再次触发保存toast
+    Mouse Over   ${wood_文件}
+    Click Element    ${wood_文件_choices}[2]
+    Element Should Be Visible    ${save_toast}
+    # 校验toast取消按钮功能
+    Click Element    ${save_toast_cancle}
+    Element Should Not Be Visible    ${save_toast}
+    # 再次触发保存toast
+    Mouse Over   ${wood_文件}
+    Click Element    ${wood_文件_choices}[2]
+    Element Should Be Visible    ${save_toast}
+    # 校验toast确认按钮
+    Click Element    ${save_toast_sure}
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    新的作品
 
 
+button_file_save_as
+    [tags]    save_as
+    ${Current_URL}    Set Variable    Get Location
+    Mouse Over    ${wood_文件}
+    ${num1}    Set Variable    [1]
+    ${num2}    Set Variable    [2]
+    ${num3}    Set Variable    [3]
+    # 未登录点击另存为选项弹出登录框
+    Click Element    ${wood_文件_choices}${num3}
+    assert_login_exist
+    # 使用常用账号登录
+    login     ${wood_username2}    ${wood_password}
+    Click Element    ${login_我的作品}
+    Select Window    NEW
+    Title Should Be    海龟编辑器官方下载_Python编辑器_少儿编程编辑器_图形化编程编辑器-编程猫
+    Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${myfile_URL_dev}
+    ...    ELSE IF    '${Current_URL}' == 'https://test-wood.codemao.cn/'    Location Should Be    ${myfile_URL_test}
+    ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${myfile_URL}
+    ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${myfile_URL_staging}
+    ${python_frame_name1}    Get Text    ${python_frame1}>div>div+div>p
+    Close Window
+    Select Window    title=编程猫海龟编辑器
+    Mouse Over   ${wood_文件}
+    Click Element    ${wood_文件_choices}${num1}
+    # 打开本地已保存的作品,该作品在积木模式下打开会自动修改
+    Element Should Be Visible    ${wood_打开文件页面}
+    Click Element    ${cloud_frame}[1]
+    Win Wait    打开    \    2
+    Win Activate    打开
+    Control Set Text    \    \    Edit1    ${hex_auto_change}
+    Control Click    \    \    Button1
+    Sleep    1
+    Element Should Not Be Visible    ${wood_打开文件页面}
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change
+    Mouse Over   ${wood_文件}
+    # 点击另存为按钮
+    Click Element    ${wood_文件_choices}${num3}
+    Wait Until Element Is Visible    ${save_succeed_hint}
+    Element Text Should Be    ${save_succeed_hint}>div+div    保存成功
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change-副本
+    Mouse Over    ${wood_文件}
+    # 校验另存为成功后点击新建无保存toast弹窗
+    Click Element    ${wood_文件_choices}${num2}
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    新的作品
+    # 验证登录状态下修改作品名称会进行保存操作
+    Execute Javascript    document.getElementsByClassName('style__project_name__input__4kDDB')[0].value='SaveTo'
+    Click Element    ${wood_input_file_name}
+    # 第一次点击另存为操作
+    Mouse Over    ${wood_文件}
+    Click Element   ${wood_文件}
+    Sleep    1
+    Click Element    ${wood_文件_choices}${num3}
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    SaveTo-副本
+    # 再次点击另存为操作
+    Mouse Over   ${wood_文件}
+    Click Element    ${wood_文件_choices}${num3}
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    SaveTo-副本-副本
+    # 删除垃圾数据
+    Mouse Over    ${login_入口}
+    Click Element    ${login_我的作品}
+    Sleep    1
+    Select Window    NEW
+    Element Text Should Be    //a[text()='我的作品']    我的作品
+    Mouse Over    ${python_frame1}
+    :FOR    ${i}    IN RANGE    ${4}
+    \    Mouse Over    ${python_frame1}
+    \    Click Element    ${python_frame1}>div+div>span
+    \    Click Element    ${python_delete}
+    Sleep    1
+    Element Text Should Be    ${python_frame1}>div>div+div>p    ${python_frame_name1}
+    # 关闭当前窗口
+    Close Window
+    Sleep    0.5
+    Select Window    title=编程猫海龟编辑器
+
+
+
+button_file_save_local
+    Login    ${wood_username2}    ${wood_password}
+    ${USER}    Get User
+    ${files_download}    Set Variable    C:\\Users\\${USER}\\Downloads
+    File Should Not Exist    ${files_download}\\Auto_change.hex
+    ${num1}    Set Variable    [1]
+    ${num2}    Set Variable    [2]
+    ${num5}    Set Variable    [5]
+    Mouse Over   ${wood_文件}
+    Click Element    ${wood_文件_choices}${num1}
+    # 打开本地已保存的作品,该作品在积木模式下打开会自动修改
+    Element Should Be Visible    ${wood_打开文件页面}
+    Click Element    ${cloud_frame}[1]
+    Win Wait    打开    \    2
+    Win Activate    打开
+    Control Set Text    \    \    Edit1    ${hex_auto_change}
+    Control Click    \    \    Button1
+    Sleep    1
+    Element Should Not Be Visible    ${wood_打开文件页面}
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num5}
+    Sleep    2
+    File Should Exist    ${files_download}\\Auto_change.hex
+    Remove File    ${files_download}\\Auto_change.hex
+    File Should Not Exist    ${files_download}\\Auto_change.hex
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num2}
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    新的作品
+
+button_file_open_from_local_a
+    Login    ${wood_username2}    ${wood_password}
+    ${num1}    Set Variable    [1]
+    ${num2}    Set Variable    [2]
+    ${num5}    Set Variable    [5]
+    ${num6}    Set Variable    [6]
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num6}
+    Win Wait    打开    \    2
+    Win Activate    打开
+    Control Set Text    \    \    Edit1    ${hex_auto_change}
+    Control Click    \    \    Button1
+    Sleep    1
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change
+    # 积木模式下打开自动修改的作品后点击打开选项
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num1}
+    Element Should Be Visible    ${wood_打开文件页面}
+    # 选择打开本本地作品
+    Click Element    ${cloud_frame}[1]
+    Element Should Be Visible    ${save_toast}
+    Click Element    ${save_toast_close}
+    # 选择打开云端某个作品
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num1}
+    Element Should Be Visible    ${wood_打开文件页面}
+    # 选择云端作品
+    Click Element    ${cloud_frame}[2]
+    Element Should Be Visible    ${save_toast}
+    Click Element    ${save_toast_cancle}
+    # 点击新建选项
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num2}
+    Element Should Be Visible    ${save_toast}
+    Click Element    ${save_toast_cancle}
+    # 再次点击从本地打开选项
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num6}
+    Element Should Be Visible    ${save_toast}
+    Click Element    ${save_toast_cancle}
+
+button_file_open_from_local_b
+    Login    ${wood_username2}    ${wood_password}
+    ${num1}    Set Variable    [1]
+    ${num2}    Set Variable    [2]
+    ${num5}    Set Variable    [5]
+    ${num6}    Set Variable    [6]
+    Element Should Be Visible    ${wood_模式切换按钮}    代码模式
+    Click Element    ${wood_模式切换按钮}
+    Element Should Be Visible    ${wood_模式切换按钮}    积木模式
+    Mouse Over    ${wood_文件}
+    # 代码模式带下打开自动修改的作品
+    Click Element    ${wood_文件_choices}${num6}
+    Win Wait    打开    \    2
+    Win Activate    打开
+    Control Set Text    \    \    Edit1    ${hex_auto_change}
+    Control Click    \    \    Button1
+    Sleep    1
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change
+    Element Should Be Visible    ${wood_模式切换按钮}    积木模式
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num1}
+    Element Should Be Visible    ${wood_打开文件页面}
+    # 点击从本地打开
+    Click Element    ${cloud_frame}[1]
+    Win Wait    打开    \    2
+    Win Activate    打开
+    # 再次打开会自动修改的作品2
+    Control Set Text    \    \    Edit1    ${hex_auto_change2}
+    Control Click    \    \    Button1
+    Sleep    1
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change2
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num1}
+    Element Should Be Visible    ${wood_打开文件页面}
+    ${file_frame2_name}    Get Text    ${cloud_frame}[2]/div/span[1]
+    Click Element    ${cloud_frame}[2]
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    ${file_frame2_name}
+    # 再次打开自动修改的作品1
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num6}
+    Win Wait    打开    \    2
+    Win Activate    打开
+    Control Set Text    \    \    Edit1    ${hex_auto_change}
+    Control Click    \    \    Button1
+    Sleep    1
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change
+    # 点击新建选项
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num2}
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    新的作品
+    # 再次打开自动修改的作品1
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num6}
+    Win Wait    打开    \    2
+    Win Activate    打开
+    Control Set Text    \    \    Edit1    ${hex_auto_change}
+    Control Click    \    \    Button1
+    Sleep    1
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change
+    # 点击从本地打开选项
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num6}
+    Win Wait    打开    \    2
+    Win Activate    打开
+    Control Set Text    \    \    Edit1    ${hex_auto_change2}
+    Control Click    \    \    Button1
+    Sleep    1
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change2
+
+SaveTo_Cloud
+    ${num1}    Set Variable    [1]
+    ${num2}    Set Variable    [2]
+    ${num6}    Set Variable    [6]
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num6}
+    Win Wait    打开    \    2
+    Win Activate    打开
+    Control Set Text    \    \    Edit1    ${hex_auto_change}
+    Control Click    \    \    Button1
+    Sleep    1
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change
+    Click Element    ${wood_save_button}
+    Element Should Be Visible    ${wood_登录页面01}
+    Click Element    ${wood_01close}
+    Login    ${wood_username2}    ${wood_password}
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num2}
+    Element Should Be Visible    ${save_toast}
+    Click Element    ${save_toast_close}
+    Click Element    ${wood_save_button}
+    Wait Until Element Contains    ${wood_save_success}    保存成功
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num2}
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    新的作品
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num1}
+    ${frame2_file_name}    Get Text    ${cloud_frame}[2]/div/span[1]
+    Should Be Equal    ${frame2_file_name}    Auto_change
+    Click Element    ${cloud_close}
+    # 删除垃圾数据
+    Mouse Over    ${login_入口}
+    Click Element    ${login_我的作品}
+    Sleep    2
+    Select Window    NEW
+    Title Should Be    海龟编辑器官方下载_Python编辑器_少儿编程编辑器_图形化编程编辑器-编程猫
+    Mouse Over    ${python_frame1}
+    Element Should Contain    ${python_frame1}    Auto_change
+    Click Element    ${python_frame1}>div+div>span
+    Click Element    ${python_delete}
+    Close Window
+    Select Window    title=编程猫海龟编辑器
+    # 验证垃圾数据删除干净
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num1}
+    Element Text Should Not Be    ${cloud_frame}[2]/div/span[1]    Auto_change
+
+
+button_Microbit_18n
+    Mouse Over    ${wood_Microbit}
+    Element Should Be Visible    ${wood_Microbit}/div[3]

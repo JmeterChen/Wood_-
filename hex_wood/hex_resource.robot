@@ -3,13 +3,13 @@
 #测试地址
 # ${wood_hex_URL}     https://dev-wood.codemao.cn/?editor_mode=1
 # ${wood_hex_URL}     https://test-wood.codemao.cn/?editor_mode=1
-# ${wood_hex_URL}     https://staging-wood.codemao.cn/?editor_mode=1
-${wood_hex_URL}     https://wood.codemao.cn/?editor_mode=1
+${wood_hex_URL}     https://staging-wood.codemao.cn/?editor_mode=1
+# ${wood_hex_URL}     https://wood.codemao.cn/?editor_mode=1
 
 # ${shouye_URL}    https://dev-python.codemao.cn/
 # ${shouye_URL}    https://test-python.codemao.cn/
-# ${shouye_URL}    https://staging-python.codemao.cn/
-${shouye_URL}    https://python.codemao.cn/
+${shouye_URL}    https://staging-python.codemao.cn/
+# ${shouye_URL}    https://python.codemao.cn/
 
 ${help_URL_dev}             https://dev-wood.codemao.cn/docs/wood/
 ${help_URL_test}            https://test-wood.codemao.cn/docs/wood/
@@ -30,6 +30,8 @@ ${wood_username1}    18123874372
 ${wood_username2}    18682236985
 ${wood_password}     123456
 
+# ${wood_username2}    18339956220
+# ${wood_password}     qwe123
 #资源管理
 ${hex_normal1}                    ${CURDIR}\\AutomationFiles\\normal01.hex
 ${hex_normal2}                    ${CURDIR}\\AutomationFiles\\normal02.hex
@@ -37,6 +39,7 @@ ${hex_untrans}                    ${CURDIR}\\AutomationFiles\\decorator.hex
 ${py_normal3}                     ${CURDIR}\\AutomationFiles\\normal03.py
 ${py_untrans}                     ${CURDIR}\\AutomationFiles\\decorator.py
 ${hex_auto_change}                ${CURDIR}\\AutomationFiles\\Auto_change.hex
+${hex_auto_change2}                ${CURDIR}\\AutomationFiles\\Auto_change2.hex
 
 ${Microbit}                       xpath=//*[@id="tb_10"]/div[1]/span[2]
 ${hex_基本}                       xpath=//*[@id="tb_11"]/div/span[2]
@@ -51,7 +54,7 @@ ${wood_01close}                  css=.asset-style__icon__1TAph.asset-style__icon
 ${wood_01用户名}                  xpath=//input[@placeholder='用户名']
 ${wood_01密码}                    xpath=//input[@placeholder='密码']
 ${wood_01登录按钮}                css=div[class*='asset-style__base_button__2gZAA asset-style__orang']
-${wood_打开文件页面}               css=div[class^='style__dialog-wrap__'
+${wood_打开文件页面}               css=div[class^='style__dialog-wrap__']
 ${cloud_title}                   css=.style__title__Zu2yi
 ${cloud_search_text}             css=span[class^='style__input-client__2dfqF']>input
 ${cloud_close}                   css=span[class*='style__icon-client-close']
@@ -63,6 +66,20 @@ ${wood_模式切换按钮}               css=div[class^='style__switch-client-bt
 ${wood_untrans_toast}            css=div[class='midi-panel_RL1Pk']+div
 ${tgzy_跳过指引}                  css=div[class^='style__user-guide-cat-exit__']
 ${cloud_search_noresult}         css=span[class^='style__no_result__']
+${save_toast}                    css=div[class^='style__dialog-wrap__']
+${save_toast_close}              css=span[class^='style__close_btn__']
+${save_toast_text}               css=div[class='style__content__1D9A_']
+${save_toast_cancle}             css=div[class^='style__cancel__']
+${save_toast_sure}               css=div[class^='style__confirm__']
+${save_succeed_hint}             css=div[class*=' style__container-in-blockly__']
+${python_frame1}                 css=div[class='vh-center project-wrapper_uv7Es']>div:first-child
+${python_delete}                 xpath=//span[text()='删除']
+${wood_save_button}              xpath=//header/div[1]/div[3]
+${wood_save_success}             css=.style__container__1xk6B
+
+${wood_Microbit}                 xpath=//header/div[1]/div[4]
+
+
 
 *** Keywords ***
 open_bs
