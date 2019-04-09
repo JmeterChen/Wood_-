@@ -78,6 +78,19 @@ ${wood_save_button}              xpath=//header/div[1]/div[3]
 ${wood_save_success}             css=.style__container__1xk6B
 
 ${wood_Microbit}                 xpath=//header/div[1]/div[4]
+${wood_Microbit_hover}           ${wood_Microbit}/div[3]
+${Microbit_hover_text1}          css=div[class^='hardware_name_']>div+div
+${Microbit_hover_text2}          css=div[class^='link_btn_']
+${Microbit_hover_text3}          css=div[class^='hardware_expand_item_']
+${Microbit_hover_text4}          xpath=//div[contains(@class,'download_')]//parent::div
+
+${Microbit_connect}             css=div[class^='style__dialog-wrap__']
+${Microbit_down_hover}          css=div[class^='download_usb_2EXxs']
+${Microbit_close}               css=img[class^='close_btn_znfsf']
+${Microbit_ELF}                 css=div[class^='select_expand_dialog_3DyUi']
+${Microbit_ELF_close}           css=div[class^='close_btn_']
+${Microbit_ELF_add}             css=div[class^='add_btn_']
+${Microbit_ELF_toast}           css=.style__container__1xk6B
 
 
 

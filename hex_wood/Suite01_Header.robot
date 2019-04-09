@@ -681,4 +681,102 @@ SaveTo_Cloud
 
 button_Microbit_18n
     Mouse Over    ${wood_Microbit}
-    Element Should Be Visible    ${wood_Microbit}/div[3]
+    Element Text Should Be    ${Microbit_hover_text1}    microbit
+    Element Text Should Be    ${Microbit_hover_text2}    点击连接
+    Element Should Contain    ${Microbit_hover_text3}    添加扩展积木
+    Element Should Contain    ${Microbit_hover_text4}    下载编程猫硬件助手
+    Switch Language    zh-hant
+    Mouse Over    ${wood_Microbit}
+    Element Text Should Be    ${Microbit_hover_text1}    microbit
+    Element Text Should Be    ${Microbit_hover_text2}    點擊鏈接
+    Element Should Contain    ${Microbit_hover_text3}    添加擴展積木
+    Element Should Contain    ${Microbit_hover_text4}    下載編程貓硬件助手
+    Switch Language    en
+    Mouse Over    ${wood_Microbit}
+    Element Text Should Be    ${Microbit_hover_text1}    microbit
+    Element Text Should Be    ${Microbit_hover_text2}    Connect
+    Element Should Contain    ${Microbit_hover_text3}    Add extension
+    Element Should Contain    ${Microbit_hover_text4}    Download Hardware Assistant
+
+button_Microbit_function1
+    [tags]    bug
+    ${USER}    Get User
+    ${files_download}    Set Variable    C:\\Users\\${USER}\\Downloads
+    Mouse Over    ${wood_Microbit}
+    Element Should Not Be Visible    ${Microbit_connect}
+    Click Element    ${Microbit_hover_text2}
+    Element Should Be Visible    ${Microbit_connect}
+    Element Should Contain    ${Microbit_connect}    未检测到microbit
+    Element Should Contain    ${Microbit_connect}    请用USB线将它连接到电脑上
+    Mouse Over    ${Microbit_down_hover}
+    Element Text Should Be    ${Microbit_down_hover}>div    点击下载USB驱动
+    File Should Not Exist    ${files_download}\\win_driver.zip
+    Click Element    ${Microbit_down_hover}
+    Sleep    5
+    File Should Exist    ${files_download}\\win_driver.zip
+    Remove File    ${files_download}\\win_driver.zip
+    File Should Not Exist    ${files_download}\\win_driver.zip
+    Click Element    ${Microbit_close}
+    Element Should Not Be Visible    ${Microbit_connect}
+
+
+button_Microbit_function2
+    [tags]    bug
+    ${USER}    Get User
+    ${files_download}    Set Variable    C:\\Users\\${USER}\\Downloads
+    Page Should Not Contain    更多
+    Mouse Over    ${wood_Microbit}
+    Click Element    ${Microbit_hover_text3}
+    Element Should Be Visible    ${Microbit_ELF}
+    Click Element    ${Microbit_ELF_close}
+    Element Should Not Be Visible    ${Microbit_ELF}
+    Mouse Over    ${wood_Microbit}
+    Click Element    ${Microbit_hover_text3}
+    Element Should Be Visible    ${Microbit_ELF}
+    Click Element    ${Microbit_ELF_add}
+    Wait Until Element Is Visible    ${Microbit_ELF_toast}
+    Page Should Contain    更多
+    Mouse Over    ${wood_Microbit}
+    Element Should Contain    ${Microbit_hover_text3}     micro:bit - ELF扩展板
+    Element Text Should Be    ${Microbit_hover_text3}+span    已添加
+
+button_Microbit_function3
+    [tags]    bug
+    ${USER}    Get User
+    ${files_download}    Set Variable    C:\\Users\\${USER}\\Downloads
+    Mouse Over    ${wood_Microbit}
+    File Should Not Exist    ${files_download}\\编程猫硬件助手_windows_32.zip
+    Click Element    ${Microbit_hover_text4}
+    Sleep    15
+    File Should Exist    ${files_download}\\编程猫硬件助手_windows_32.zip
+    Remove File    ${files_download}\\编程猫硬件助手_windows_32.zip
+    File Should Not Exist    ${files_download}\\编程猫硬件助手_windows_32.zip
+
+
+file_input_frame
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    新的作品
+    Press Key    ${wood_input_file_name}    \\8
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    新的作
+    Mouse Over    ${wood_文件}
+    ${num}    Set Variable    [2]
+    Click Element    ${wood_文件_choices}${num}
+    Element Should Be Visible    ${save_toast}
+    Click Element    ${save_toast_close}
+    Login    ${wood_username2}    ${wood_password}
+    Click Element    ${wood_save_button}
+    Sleep    2
+    Mouse Over    ${wood_文件}
+    Click Element    ${wood_文件_choices}${num}
+    Sleep    1
+    Element Attribute Value Should Be    ${wood_input_file_name}    value    新的作品
+    # 删除垃圾数据
+    Mouse Over    ${login_入口}
+    Click Element    ${login_我的作品}
+    Select Window    New
+    Element Text Should Be    ${python_frame1}>div>div+div>p    新的作
+    Mouse Over    ${python_frame1}
+    Click Element    ${python_frame1}>div+div>span
+    Click Element    ${python_delete}
+    Close Window
+    Select Window    title=海龟编辑器
+
