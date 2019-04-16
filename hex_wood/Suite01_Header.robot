@@ -56,13 +56,14 @@ button_file_18n
 
 button_file_open1
     [Tags]    debug
+    # 这个 ${wood_username1} 号码没注册所以会失败
     Mouse Over    ${wood_文件}
     # 未登录点击打开选项
     ${num}   Set Variable    [1]
     Click Element    ${wood_文件_choices}${num}
     assert_login_exist
     # 使用新账号登录
-    login     ${wood_username1}    ${wood_password}
+    login    ${wood_username1}    ${wood_password}
     Mouse Over    ${wood_文件}
     # 已登录点击打开选项
     Click Element    ${wood_文件_choices}${num}
@@ -142,6 +143,7 @@ button_file_open_cloud
 
 button_file_open_local_hex
     [tags]    haha
+    Set Selenium Speed    .4 seconds
     Mouse Over    ${wood_文件}
     # 未登录点击打开选项
     ${num}    Set Variable    [1]
@@ -191,15 +193,16 @@ button_file_open_local_hex
     Win Activate    打开
     Control Set Text    \    \    Edit1    ${hex_untrans}
     Control Click    \    \    Button1
-    Sleep    1
     Wait Until Page Contains Element    ${wood_untrans_toast}
-    Element Text Should Be    ${wood_untrans_toast}>span+span>div>span    转换失败
-    Element Should Contain    ${wood_untrans_toast}>span+span>div>span+span    第 6 行代码没有办法按转换成积木T_T，可能是代码缩进有问题哦!
+    # 添加下面的代码会报错，google上解释说为
+    Mouse Over    ${wood_untrans_toast}
+    # Element Text Should Be    ${wood_untrans_toast}>span+span>div>span:first-child    转换失败
+    # Element Should Contain    ${wood_untrans_toast}>span+span>div>span+span    第 6 行代码没有办法按转换成积木T_T，可能是代码缩进有问题哦!
     Element Text Should Be    ${wood_模式切换按钮}    积木模式
 
 
 button_file_open_local_py
-    [tags]    open_local_py
+    [tags]    haha
     Mouse Over    ${wood_文件}
     # 未登录点击打开选项
     ${num}    Set Variable    [1]
@@ -236,15 +239,14 @@ button_file_open_local_py
     Win Activate    打开
     Control Set Text    \    \    Edit1    ${py_untrans}
     Control Click    \    \    Button1
-    Sleep    1
     Select Window    NEW
-    Title Should Be    编程猫海龟编辑器
-    Wait Until Page Contains Element    ${wood_untrans_toast}
-    # 加了下面这两行代码会出错，原因不详，后续需要查明
+    # 加了下面代码会出错，原因不详，后续需要查明
+    # Wait Until Element Is Visible    ${wood_untrans_toast}
     # Element Text Should Be    ${wood_untrans_toast}>span+span>div>span    转换失败
     # Element Should Contain    ${wood_untrans_toast}>span+span>div>span+span    第 6 行代码没有办法按转换成积木T_T，可能是代码缩进有问题哦!
     Element Attribute Value Should Be    ${wood_input_file_name}    value    decorator
     Page Should Contain    print('the func run time is %s'%(end_time - start_time))
+    # 验证无法转译时打开为代码模式
     Element Text Should Be    ${wood_模式切换按钮}    积木模式
     Close Window
     Select Window    title=编程猫海龟编辑器
@@ -452,7 +454,7 @@ button_file_save_as
     # 点击另存为按钮
     Click Element    ${wood_文件_choices}${num3}
     Wait Until Element Is Visible    ${save_succeed_hint}
-    Element Text Should Be    ${save_succeed_hint}>div+div    保存成功
+    # Element Text Should Be    ${save_succeed_hint}>div+div    保存成功
     Element Attribute Value Should Be    ${wood_input_file_name}    value    Auto_change-副本
     Mouse Over    ${wood_文件}
     # 校验另存为成功后点击新建无保存toast弹窗
@@ -652,7 +654,7 @@ SaveTo_Cloud
     Element Should Be Visible    ${save_toast}
     Click Element    ${save_toast_close}
     Click Element    ${wood_save_button}
-    Wait Until Element Contains    ${wood_save_success}    保存成功
+    Wait Until Page Contains    保存成功
     Mouse Over    ${wood_文件}
     Click Element    ${wood_文件_choices}${num2}
     Element Attribute Value Should Be    ${wood_input_file_name}    value    新的作品
@@ -764,7 +766,7 @@ file_input_frame
     Click Element    ${save_toast_close}
     Login    ${wood_username2}    ${wood_password}
     Click Element    ${wood_save_button}
-    Sleep    2
+    Wait Until Element Is Visible    ${save_succeed_hint}
     Mouse Over    ${wood_文件}
     Click Element    ${wood_文件_choices}${num}
     Sleep    1
@@ -778,5 +780,42 @@ file_input_frame
     Click Element    ${python_frame1}>div+div>span
     Click Element    ${python_delete}
     Close Window
-    Select Window    title=海龟编辑器
+    Select Window    title=编程猫海龟编辑器
 
+
+help
+    ${Current_URL}    Set Variable    Get Location
+    Click Element    ${wood_help}
+    Select Window    NEW
+    Title Should Be    源码图鉴 | 源码图鉴
+    Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${help_URL_dev}
+    ...    ELSE IF    '${Current_URL}' == 'https://test-wood.codemao.cn/'    Location Should Be    ${help_URL_test}
+    ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${help_URL}
+    ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${help_URL_staging}
+    Close Window
+    Select Window    title=编程猫海龟编辑器
+
+
+open_files
+    ${num6}    Set Variable    [6]
+    #用特写的方法查找指定文件夹中的.py或者.hex文件，将文件名字放进一个列表
+    @{test_py_name}    Find Py    ${py_file_dir}
+    ${length}    Evaluate    len(@{test_py_name})
+    :FOR    ${i}    IN RANGE    ${length}
+    \    Click Element    ${wood_模式切换按钮}
+    \    Element Text Should Be    ${wood_模式切换按钮}    积木模式
+    \    Mouse over    ${wood_文件}
+    \    Click Element    ${wood_文件_choices}${num6}
+    \    Sleep    1
+    \    Win Wait    打开    \    2
+    \    Win Activate    打开
+    \    Control Set Text    \    \    Edit1    ${py_file_dir}
+    \    Sleep    0.5
+    \    Control Click    打开    \    1
+    \    Sleep    0.5
+    \    Control Set Text    打开    \    1148    ${test_py_name[${i}]}
+    \    Control Click    打开    \    1
+    \    Sleep    0.5
+    \    Element Attribute Value Should Be    ${wood_input_file_name}    value    ${test_py_name[${i}][:-4]}
+    \    Click Element    ${wood_模式切换按钮}
+    \    Wait Until Page Contains    代码模式

@@ -2,7 +2,7 @@
 
 #测试地址
 # ${wood_hex_URL}     https://dev-wood.codemao.cn/?editor_mode=1
-# ${wood_hex_URL}     https://test-wood.codemao.cn/?editor_mode=1
+# ${wood_hex_URL}     https://set01-test-wood.codemao.cn/?editor_mode=1
 ${wood_hex_URL}     https://staging-wood.codemao.cn/?editor_mode=1
 # ${wood_hex_URL}     https://wood.codemao.cn/?editor_mode=1
 
@@ -11,10 +11,10 @@ ${wood_hex_URL}     https://staging-wood.codemao.cn/?editor_mode=1
 ${shouye_URL}    https://staging-python.codemao.cn/
 # ${shouye_URL}    https://python.codemao.cn/
 
-${help_URL_dev}             https://dev-wood.codemao.cn/docs/wood/
-${help_URL_test}            https://test-wood.codemao.cn/docs/wood/
-${help_URL_staging}         https://staging-wood.codemao.cn/docs/wood/
-${help_URL}                 https://wood.codemao.cn/docs/wood/
+${help_URL_dev}             https://dev-wood.codemao.cn/wood_docs/web/code/
+${help_URL_test}            https://test-wood.codemao.cn/wood_docs/web/code/
+${help_URL_staging}         https://staging-wood.codemao.cn/wood_docs/web/code/
+${help_URL}                 https://wood.codemao.cn/wood_docs/web/code/
 
 ${myfile_URL_dev}            https://dev-python.codemao.cn/work
 ${myfile_URL_test}           https://test-python.codemao.cn/work
@@ -39,7 +39,9 @@ ${hex_untrans}                    ${CURDIR}\\AutomationFiles\\decorator.hex
 ${py_normal3}                     ${CURDIR}\\AutomationFiles\\normal03.py
 ${py_untrans}                     ${CURDIR}\\AutomationFiles\\decorator.py
 ${hex_auto_change}                ${CURDIR}\\AutomationFiles\\Auto_change.hex
-${hex_auto_change2}                ${CURDIR}\\AutomationFiles\\Auto_change2.hex
+${hex_auto_change2}               ${CURDIR}\\AutomationFiles\\Auto_change2.hex
+${py_file_dir}                    ${CURDIR}\\open_files
+${py_file_dir_demo}               ${CURDIR}\\open_files_demo
 
 ${Microbit}                       xpath=//*[@id="tb_10"]/div[1]/span[2]
 ${hex_基本}                       xpath=//*[@id="tb_11"]/div/span[2]
@@ -75,7 +77,7 @@ ${save_succeed_hint}             css=div[class*=' style__container-in-blockly__'
 ${python_frame1}                 css=div[class='vh-center project-wrapper_uv7Es']>div:first-child
 ${python_delete}                 xpath=//span[text()='删除']
 ${wood_save_button}              xpath=//header/div[1]/div[3]
-${wood_save_success}             css=.style__container__1xk6B
+${wood_save_success}             css=div[class='style__container__1xk6B']
 
 ${wood_Microbit}                 xpath=//header/div[1]/div[4]
 ${wood_Microbit_hover}           ${wood_Microbit}/div[3]
@@ -92,14 +94,14 @@ ${Microbit_ELF_close}           css=div[class^='close_btn_']
 ${Microbit_ELF_add}             css=div[class^='add_btn_']
 ${Microbit_ELF_toast}           css=.style__container__1xk6B
 
-
+${wood_help}                    css=span[class*='style__icon-help-hardware_']
 
 *** Keywords ***
 open_bs
     #关键字管理
     Open browser    ${wood_hex_URL}    ${test_browser}
     Maximize Browser Window
-    Set Selenium Speed    .2 seconds
+    Set Selenium Speed    .6 seconds
     Set Browser Implicit Wait    10 seconds
     #确定是未登录
     Element Should Contain    ${login_入口}    未登录
