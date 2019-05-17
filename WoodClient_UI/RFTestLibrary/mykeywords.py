@@ -59,7 +59,6 @@ class Mykeywords:
             else:
                 tmp = random.randint(0, 9)
             checkcode += str(tmp)
-        
         return checkcode
 
     # def time_compare(self,*args):
