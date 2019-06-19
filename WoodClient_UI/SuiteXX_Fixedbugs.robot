@@ -7,6 +7,26 @@ Resource          wood_resource.robot
 # Test Teardown     Teardown
 
 *** Test Cases ***
+
+
+Open Client
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    ${options.binary_location}    Set Variable    ${wood_client_dir}
+    Create WebDriver    Chrome    chrome_options=${options}
+    Set Selenium Speed    0.5 seconds
+    Sleep    2
+    ${test_flag}    Get Element Count    ${wood_guide_next_button}
+    Run Keyword If    '${test_flag}' == '0'    Restart
+    Skip Guide
+    # # if Login state not exists login
+    Click Element    ${wood_trans_button}
+    # ${test_log_sign}    Get Text    ${wood_ue_nickname}
+    # Run Keyword If    '${test_log_sign}' != '未登录'    Logout
+    # Execute Javascript    indexedDB.deleteDatabase('snape_app')
+    Close Window
+    Close Process    chromedriver
+
+
 fixedbug1
     ${a}    Set variable    5
     ${b}    Evaluate    ${a}*2+2

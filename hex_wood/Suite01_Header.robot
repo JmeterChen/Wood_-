@@ -56,7 +56,6 @@ button_file_18n
 
 button_file_open1
     [Tags]    debug
-    # 这个 ${wood_username1} 号码没注册所以会失败
     Mouse Over    ${wood_文件}
     # 未登录点击打开选项
     ${num}   Set Variable    [1]
@@ -102,7 +101,7 @@ button_file_open1
     Element Should Not Be Visible    ${wood_打开文件页面}
     Mouse Over    ${login_入口}
     Click Element    ${login_退出登录}
-    Element Should Be Visible    ${wood_未登录}
+    Page Should Contain    Not login
 
 button_file_open_cloud
     Mouse Over    ${wood_文件}

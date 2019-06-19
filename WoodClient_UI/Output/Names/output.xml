@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190619 11:46:27.986" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
+<suite source="C:\Users\ChenBolin\Desktop\Wood_-\WoodClient_UI\SuiteXX_Fixedbugs.robot" id="s1" name="SuiteXX Fixedbugs">
+<test id="s1-t1" name="Open Client">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20190619 11:46:28.158" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000000043DFE48&gt;</msg>
+<status status="PASS" endtime="20190619 11:46:28.158" starttime="20190619 11:46:28.158"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${wood_client_dir}</arg>
+</arguments>
+<assign>
+<var>${options.binary_location}</var>
+</assign>
+<msg timestamp="20190619 11:46:28.158" level="INFO">${options.binary_location} = C:\Pyblock_dev\TurtleEditor-test.exe</msg>
+<status status="PASS" endtime="20190619 11:46:28.158" starttime="20190619 11:46:28.158"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20190619 11:46:28.158" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" endtime="20190619 11:46:34.641" starttime="20190619 11:46:28.158"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.5 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20190619 11:46:34.642" starttime="20190619 11:46:34.642"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190619 11:46:36.648" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20190619 11:46:36.648" starttime="20190619 11:46:34.642"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${wood_guide_next_button}</arg>
+</arguments>
+<assign>
+<var>${test_flag}</var>
+</assign>
+<msg timestamp="20190619 11:46:37.188" level="INFO">${test_flag} = 1</msg>
+<status status="PASS" endtime="20190619 11:46:37.188" starttime="20190619 11:46:36.648"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${test_flag}' == '0'</arg>
+<arg>Restart</arg>
+</arguments>
+<status status="PASS" endtime="20190619 11:46:37.188" starttime="20190619 11:46:37.188"></status>
+</kw>
+<kw name="Skip Guide" library="wood_resource">
+<kw name="Repeat Keyword" library="BuiltIn">
+<doc>Executes the specified keyword multiple times.</doc>
+<arguments>
+<arg>3 times</arg>
+<arg>Click Button</arg>
+<arg>${wood_guide_next_button}</arg>
+</arguments>
+<msg timestamp="20190619 11:46:37.188" level="INFO">Repeating keyword, round 1/3.</msg>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_guide_next_button}</arg>
+</arguments>
+<msg timestamp="20190619 11:46:37.188" level="INFO">Clicking button 'css: div[class^="vh-center style__footer"]&gt;button[class^="style__btn"]'.</msg>
+<status status="PASS" endtime="20190619 11:46:39.831" starttime="20190619 11:46:37.188"></status>
+</kw>
+<msg timestamp="20190619 11:46:39.831" level="INFO">Repeating keyword, round 2/3.</msg>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_guide_next_button}</arg>
+</arguments>
+<msg timestamp="20190619 11:46:39.832" level="INFO">Clicking button 'css: div[class^="vh-center style__footer"]&gt;button[class^="style__btn"]'.</msg>
+<status status="PASS" endtime="20190619 11:46:42.488" starttime="20190619 11:46:39.831"></status>
+</kw>
+<msg timestamp="20190619 11:46:42.488" level="INFO">Repeating keyword, round 3/3.</msg>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_guide_next_button}</arg>
+</arguments>
+<msg timestamp="20190619 11:46:42.488" level="INFO">Clicking button 'css: div[class^="vh-center style__footer"]&gt;button[class^="style__btn"]'.</msg>
+<status status="PASS" endtime="20190619 11:46:45.067" starttime="20190619 11:46:42.488"></status>
+</kw>
+<status status="PASS" endtime="20190619 11:46:45.067" starttime="20190619 11:46:37.188"></status>
+</kw>
+<status status="PASS" endtime="20190619 11:46:45.067" starttime="20190619 11:46:37.188"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_trans_button}</arg>
+</arguments>
+<msg timestamp="20190619 11:46:45.067" level="INFO">Clicking element 'css: div[class^="style__switch-client-btn"]'.</msg>
+<status status="PASS" endtime="20190619 11:46:46.248" starttime="20190619 11:46:45.067"></status>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened pop-up window.</doc>
+<status status="PASS" endtime="20190619 11:46:49.242" starttime="20190619 11:46:46.248"></status>
+</kw>
+<kw name="Close Process" library="RFTestLibrary">
+<doc>Close a process by process name.</doc>
+<arguments>
+<arg>chromedriver</arg>
+</arguments>
+<status status="PASS" endtime="20190619 11:46:49.335" starttime="20190619 11:46:49.242"></status>
+</kw>
+<status status="PASS" endtime="20190619 11:46:49.335" critical="yes" starttime="20190619 11:46:28.158"></status>
+</test>
+<status status="PASS" endtime="20190619 11:46:49.335" starttime="20190619 11:46:28.002"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="SuiteXX Fixedbugs" pass="1">SuiteXX Fixedbugs</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

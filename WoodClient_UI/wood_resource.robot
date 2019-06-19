@@ -1,8 +1,8 @@
 *** Variables ***
 # Client manage
-# ${wood_client_dir}               C:\\Users\\ChenBolin\\AppData\\Local\\Programs\\lizzy\\海龟编辑器.exe
-# ${wood_client_dir}               C:\\Pyblock_dev\\海龟编辑器-dev.exe
-${wood_client_dir}                 C:\\Pyblock_staging\\海龟编辑器-staging.exe
+# ${wood_client_dir}                   C:\\Pyblock\\海龟编辑器.exe
+${wood_client_dir}                 C:\\Pyblock_dev\\TurtleEditor-test.exe
+# ${wood_client_dir}                 C:\\Pyblock_staging\\海龟编辑器-staging.exe
 
 # data manage
 # ${test_username}                 czx-autotest-01
@@ -25,11 +25,11 @@ ${wood_third_login}              xpath=//span[@class='style__third_part__3zAMJ']
 ${wood_qq_icon}                  xpath=//span[@class='style__third_part__3zAMJ']/span[2]
 ${wood_wechat_icon}              xpath=//span[@class='style__third_part__3zAMJ']/span[3]
 ${wood_QQiframe}                 xpath=//*[@id="ptlogin_iframe"]
-${wood_QQ账号登录}               css=#switcher_plogin
-${wood_QQ账号框}                 xpath=//*[@id="u"]
-${wood_QQ密码框}                 xpath=//*[@id="p"]
-${wood_QQ登录按钮}               xpath=//*[@id="login_button"]
-${wood_微信登录}                 xpath=//span[text()='第三方登录']//following-sibling::span[2]
+${wood_QQ账号登录}                css=#switcher_plogin
+${wood_QQ账号框}                  xpath=//*[@id="u"]
+${wood_QQ密码框}                  xpath=//*[@id="p"]
+${wood_QQ登录按钮}                xpath=//*[@id="login_button"]
+${wood_微信登录}                  xpath=//span[text()='第三方登录']//following-sibling::span[2]
 
 ${wood_user_name}                xpath=//*[@id="header_click_area"]/div[1]/div[2]/div
 ${wood_ue_nickname}              ${wood_user_entrance}//div[contains(@class, "style__title")]
@@ -86,9 +86,9 @@ ${wood_setting_dropdown}         ${wood_setting_button}/div[3]
 ${wood_setting_language}         xpath: //*[@id="header_click_area"]/div[3]/div[3]/div/div[1]
 ${wood_setting_language_xpath}   //div[contains(@class,'style__sub')]//div[@class='style__item__32aYM']
 ${wood_setting_search}           ${wood_setting_dropdown}/div/div[3]
-${wood_search_pull_down}         css=.style__button__2nMMl.style__search-switch__1_n5D
-${wood_search_value}             css=#search-value
-${wood_replace_value}            css=#replace-value
+${wood_search_pull_down}         css=div[class^='editor-widget f']>div:nth-child(1)
+${wood_search_value}             css=div[class='find-part']>div>div>div>input
+${wood_replace_value}            css=div[class='replace-part']>div>div>div>input
 
 ${wood_hex_button}               xpath=//*[@id="header_click_area"]/div[4]
 ${wood_hex_button_name}          ${wood_hex_button}/div[2]/div

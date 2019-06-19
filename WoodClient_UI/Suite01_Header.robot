@@ -8,7 +8,7 @@ Library           OperatingSystem
 Resource          wood_resource.robot
 
 *** Test Cases ***
-new built
+new_built
     New Built
     Page Should Contain Element    ${wood_tabs_num}    limit=2
     Element Text Should Be    ${wood_tab_cur_name}    新的作品
@@ -319,11 +319,11 @@ cloud_icon_search
 
 i18n_block_headline_UI
     @{eng_block}    Create List    Events    Control    Operators    Strings    Variables
-    ...    Lists    Dictionary    Functions    Turtle Library    Advance    Spider
+    ...    Lists    Dictionary    Functions    Turtle Library    Advance    Spider    GUI
     @{com_font_block}    Create List    事件    控制    運算    字符串    變量
-    ...    列表    字典    函數    海龜庫    高級    爬蟲
+    ...    列表    字典    函數    海龜庫    高級    爬蟲    界面
     @{china_block}    Create List    事件    控制    运算    字符串    变量
-    ...    列表    字典    函数    海龟库    高级    爬虫
+    ...    列表    字典    函数    海龟库    高级    爬虫    界面
     ${len_block_list}    Get Length    ${com_font_block}
     Setting Language
     Page Should Contain    文件
@@ -417,10 +417,10 @@ search_function
     Element Text Should Be    ${wood_setting_search}    搜索
     Click Element    ${wood_setting_search}
     ${search_value}    Get Value    ${wood_search_value}
-    Should Be Equal    ${search_value}    输入搜索内容
+    Should Be Equal    ${search_value}    Find
     Click Element    ${wood_search_pull_down}
     ${replace_value}    Get Value    ${wood_replace_value}
-    Should Be Equal    ${replace_value}    输入替换内容
+    Should Be Equal    ${replace_value}    Replace
     Element Should Be Visible    ${wood_replace_value}
 
 library_manage
@@ -428,7 +428,7 @@ library_manage
     Element Should Contain    ${wood_library_manage_button}    库管理
     Click Element    ${wood_library_manage_button}
     Element Should Be Visible    ${wood_library_frame_库管理}    库管理
-    Page Should Contain Element    ${wood_library_xpath}    limit=24
+    Page Should Contain Element    ${wood_library_xpath}    limit=26
     Execute Javascript    document.getElementsByClassName('style__libs-item-wrap__1xnIf')[0].scrollTop=2400
     Sleep    1
     Element Text Should Be    ${wood_install_third_lib}    安装其他第三方库
@@ -452,7 +452,8 @@ library_search
     Input Text    ${wood_library_search}    pygame
     Sleep    1
     ${wood_library_num}    Get Element Count    ${wood_library_xpath}
-    Should Be Equal As Integers    ${wood_library_num}    1
+    # 这里有pygame和新增的pygame Zero
+    Should Be Equal As Integers    ${wood_library_num}    2
     Page Should Contain    已安装
     Sleep    1
     Input Text    ${wood_library_search}    py
