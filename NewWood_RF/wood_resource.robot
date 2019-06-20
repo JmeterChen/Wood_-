@@ -3,14 +3,14 @@
 
 # ${wood_URL}     https://dev-wood.codemao.cn/
 # ${wood_URL}     https://test-wood.codemao.cn/
-# ${wood_URL}     https://staging-wood.codemao.cn/
-${wood_URL}     https://wood.codemao.cn/
+${wood_URL}     https://staging-wood.codemao.cn/
+# ${wood_URL}     https://wood.codemao.cn/
 
 
 # ${shouye_URL}    https://dev-python.codemao.cn/
 # ${shouye_URL}    https://test-python.codemao.cn/
-# ${shouye_URL}    https://staging-python.codemao.cn/
-${shouye_URL}    https://python.codemao.cn/
+${shouye_URL}    https://staging-python.codemao.cn/
+# ${shouye_URL}    https://python.codemao.cn/
 
 ${help_URL_dev}             https://dev-wood.codemao.cn/docs/wood/
 ${help_URL_test}            https://test-wood.codemao.cn/docs/wood/

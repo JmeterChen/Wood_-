@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20190619 11:46:27.986" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
-<suite source="C:\Users\ChenBolin\Desktop\Wood_-\WoodClient_UI\SuiteXX_Fixedbugs.robot" id="s1" name="SuiteXX Fixedbugs">
-<test id="s1-t1" name="Open Client">
+<robot generated="20190620 14:48:52.801" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
+<suite source="C:\Users\ChenBolin\Desktop\Wood_-\WoodClient_UI\Suite01_Header.robot" id="s1" name="Suite01 Header">
+<test id="s1-t1" name="i18n_block_headline_UI">
+<kw type="setup" name="Open Client" library="wood_resource">
 <kw name="Evaluate" library="BuiltIn">
 <doc>Evaluates the given expression in Python and returns the results.</doc>
 <arguments>
@@ -11,8 +12,8 @@
 <assign>
 <var>${options}</var>
 </assign>
-<msg timestamp="20190619 11:46:28.158" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000000043DFE48&gt;</msg>
-<status status="PASS" endtime="20190619 11:46:28.158" starttime="20190619 11:46:28.158"></status>
+<msg timestamp="20190620 14:48:53.004" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000000047D0CC0&gt;</msg>
+<status status="PASS" endtime="20190620 14:48:53.004" starttime="20190620 14:48:53.004"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -22,8 +23,8 @@
 <assign>
 <var>${options.binary_location}</var>
 </assign>
-<msg timestamp="20190619 11:46:28.158" level="INFO">${options.binary_location} = C:\Pyblock_dev\TurtleEditor-test.exe</msg>
-<status status="PASS" endtime="20190619 11:46:28.158" starttime="20190619 11:46:28.158"></status>
+<msg timestamp="20190620 14:48:53.004" level="INFO">${options.binary_location} = C:\Pyblock_staging\TurtleEditor-staging.exe</msg>
+<status status="PASS" endtime="20190620 14:48:53.004" starttime="20190620 14:48:53.004"></status>
 </kw>
 <kw name="Create Webdriver" library="SeleniumLibrary">
 <doc>Creates an instance of Selenium WebDriver.</doc>
@@ -31,23 +32,23 @@
 <arg>Chrome</arg>
 <arg>chrome_options=${options}</arg>
 </arguments>
-<msg timestamp="20190619 11:46:28.158" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" endtime="20190619 11:46:34.641" starttime="20190619 11:46:28.158"></status>
+<msg timestamp="20190620 14:48:53.004" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" endtime="20190620 14:48:59.550" starttime="20190620 14:48:53.004"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>0.5 seconds</arg>
 </arguments>
-<status status="PASS" endtime="20190619 11:46:34.642" starttime="20190619 11:46:34.642"></status>
+<status status="PASS" endtime="20190620 14:48:59.551" starttime="20190620 14:48:59.551"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2</arg>
 </arguments>
-<msg timestamp="20190619 11:46:36.648" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20190619 11:46:36.648" starttime="20190619 11:46:34.642"></status>
+<msg timestamp="20190620 14:49:01.552" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20190620 14:49:01.552" starttime="20190620 14:48:59.551"></status>
 </kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
 <doc>Returns number of elements matching ``locator``.</doc>
@@ -57,8 +58,8 @@
 <assign>
 <var>${test_flag}</var>
 </assign>
-<msg timestamp="20190619 11:46:37.188" level="INFO">${test_flag} = 1</msg>
-<status status="PASS" endtime="20190619 11:46:37.188" starttime="20190619 11:46:36.648"></status>
+<msg timestamp="20190620 14:49:02.093" level="INFO">${test_flag} = 1</msg>
+<status status="PASS" endtime="20190620 14:49:02.093" starttime="20190620 14:49:01.552"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -66,7 +67,7 @@
 <arg>'${test_flag}' == '0'</arg>
 <arg>Restart</arg>
 </arguments>
-<status status="PASS" endtime="20190619 11:46:37.188" starttime="20190619 11:46:37.188"></status>
+<status status="PASS" endtime="20190620 14:49:02.093" starttime="20190620 14:49:02.093"></status>
 </kw>
 <kw name="Skip Guide" library="wood_resource">
 <kw name="Repeat Keyword" library="BuiltIn">
@@ -76,59 +77,591 @@
 <arg>Click Button</arg>
 <arg>${wood_guide_next_button}</arg>
 </arguments>
-<msg timestamp="20190619 11:46:37.188" level="INFO">Repeating keyword, round 1/3.</msg>
+<msg timestamp="20190620 14:49:02.093" level="INFO">Repeating keyword, round 1/3.</msg>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${wood_guide_next_button}</arg>
 </arguments>
-<msg timestamp="20190619 11:46:37.188" level="INFO">Clicking button 'css: div[class^="vh-center style__footer"]&gt;button[class^="style__btn"]'.</msg>
-<status status="PASS" endtime="20190619 11:46:39.831" starttime="20190619 11:46:37.188"></status>
+<msg timestamp="20190620 14:49:02.093" level="INFO">Clicking button 'css: div[class^="vh-center style__footer"]&gt;button[class^="style__btn"]'.</msg>
+<status status="PASS" endtime="20190620 14:49:04.714" starttime="20190620 14:49:02.093"></status>
 </kw>
-<msg timestamp="20190619 11:46:39.831" level="INFO">Repeating keyword, round 2/3.</msg>
+<msg timestamp="20190620 14:49:04.714" level="INFO">Repeating keyword, round 2/3.</msg>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${wood_guide_next_button}</arg>
 </arguments>
-<msg timestamp="20190619 11:46:39.832" level="INFO">Clicking button 'css: div[class^="vh-center style__footer"]&gt;button[class^="style__btn"]'.</msg>
-<status status="PASS" endtime="20190619 11:46:42.488" starttime="20190619 11:46:39.831"></status>
+<msg timestamp="20190620 14:49:04.714" level="INFO">Clicking button 'css: div[class^="vh-center style__footer"]&gt;button[class^="style__btn"]'.</msg>
+<status status="PASS" endtime="20190620 14:49:07.293" starttime="20190620 14:49:04.714"></status>
 </kw>
-<msg timestamp="20190619 11:46:42.488" level="INFO">Repeating keyword, round 3/3.</msg>
+<msg timestamp="20190620 14:49:07.293" level="INFO">Repeating keyword, round 3/3.</msg>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${wood_guide_next_button}</arg>
 </arguments>
-<msg timestamp="20190619 11:46:42.488" level="INFO">Clicking button 'css: div[class^="vh-center style__footer"]&gt;button[class^="style__btn"]'.</msg>
-<status status="PASS" endtime="20190619 11:46:45.067" starttime="20190619 11:46:42.488"></status>
+<msg timestamp="20190620 14:49:07.294" level="INFO">Clicking button 'css: div[class^="vh-center style__footer"]&gt;button[class^="style__btn"]'.</msg>
+<status status="PASS" endtime="20190620 14:49:09.883" starttime="20190620 14:49:07.294"></status>
 </kw>
-<status status="PASS" endtime="20190619 11:46:45.067" starttime="20190619 11:46:37.188"></status>
+<status status="PASS" endtime="20190620 14:49:09.883" starttime="20190620 14:49:02.093"></status>
 </kw>
-<status status="PASS" endtime="20190619 11:46:45.067" starttime="20190619 11:46:37.188"></status>
+<status status="PASS" endtime="20190620 14:49:09.883" starttime="20190620 14:49:02.093"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_ue_nickname}</arg>
+</arguments>
+<assign>
+<var>${test_log_sign}</var>
+</assign>
+<msg timestamp="20190620 14:49:10.933" level="INFO">${test_log_sign} = 未登录</msg>
+<status status="PASS" endtime="20190620 14:49:10.934" starttime="20190620 14:49:09.883"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${test_log_sign}' != '未登录'</arg>
+<arg>Logout</arg>
+</arguments>
+<status status="PASS" endtime="20190620 14:49:10.935" starttime="20190620 14:49:10.934"></status>
+</kw>
+<status status="PASS" endtime="20190620 14:49:10.935" starttime="20190620 14:48:53.004"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>Events</arg>
+<arg>Control</arg>
+<arg>Operators</arg>
+<arg>Strings</arg>
+<arg>Variables</arg>
+<arg>Lists</arg>
+<arg>Dictionary</arg>
+<arg>Functions</arg>
+<arg>Turtle Library</arg>
+<arg>Advance</arg>
+<arg>Spider</arg>
+<arg>GUI</arg>
+</arguments>
+<assign>
+<var>@{eng_block}</var>
+</assign>
+<msg timestamp="20190620 14:49:10.935" level="INFO">@{eng_block} = [ Events | Control | Operators | Strings | Variables | Lists | Dictionary | Functions | Turtle Library | Advance | Spider | GUI ]</msg>
+<status status="PASS" endtime="20190620 14:49:10.935" starttime="20190620 14:49:10.935"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>事件</arg>
+<arg>控制</arg>
+<arg>運算</arg>
+<arg>字符串</arg>
+<arg>變量</arg>
+<arg>列表</arg>
+<arg>字典</arg>
+<arg>函數</arg>
+<arg>海龜庫</arg>
+<arg>高級</arg>
+<arg>爬蟲</arg>
+<arg>界面</arg>
+</arguments>
+<assign>
+<var>@{com_font_block}</var>
+</assign>
+<msg timestamp="20190620 14:49:10.936" level="INFO">@{com_font_block} = [ 事件 | 控制 | 運算 | 字符串 | 變量 | 列表 | 字典 | 函數 | 海龜庫 | 高級 | 爬蟲 | 界面 ]</msg>
+<status status="PASS" endtime="20190620 14:49:10.936" starttime="20190620 14:49:10.935"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>事件</arg>
+<arg>控制</arg>
+<arg>运算</arg>
+<arg>字符串</arg>
+<arg>变量</arg>
+<arg>列表</arg>
+<arg>字典</arg>
+<arg>函数</arg>
+<arg>海龟库</arg>
+<arg>高级</arg>
+<arg>爬虫</arg>
+<arg>界面</arg>
+</arguments>
+<assign>
+<var>@{china_block}</var>
+</assign>
+<msg timestamp="20190620 14:49:10.936" level="INFO">@{china_block} = [ 事件 | 控制 | 运算 | 字符串 | 变量 | 列表 | 字典 | 函数 | 海龟库 | 高级 | 爬虫 | 界面 ]</msg>
+<status status="PASS" endtime="20190620 14:49:10.936" starttime="20190620 14:49:10.936"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${com_font_block}</arg>
+</arguments>
+<assign>
+<var>${len_block_list}</var>
+</assign>
+<msg timestamp="20190620 14:49:10.937" level="INFO">Length is 12</msg>
+<msg timestamp="20190620 14:49:10.937" level="INFO">${len_block_list} = 12</msg>
+<status status="PASS" endtime="20190620 14:49:10.937" starttime="20190620 14:49:10.937"></status>
+</kw>
+<kw name="Setting Language" library="wood_resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_setting_button}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:10.938" level="INFO">Clicking element 'xpath: //div[@id="header_click_area"]/div[3]'.</msg>
+<status status="PASS" endtime="20190620 14:49:12.045" starttime="20190620 14:49:10.938"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_setting_language}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:12.045" level="INFO">Simulating Mouse Over on element 'xpath: //*[@id="header_click_area"]/div[3]/div[3]/div/div[1]'.</msg>
+<status status="PASS" endtime="20190620 14:49:13.103" starttime="20190620 14:49:12.045"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${wood_setting_language_xpath}</arg>
+</arguments>
+<assign>
+<var>${language_num}</var>
+</assign>
+<msg timestamp="20190620 14:49:13.633" level="INFO">${language_num} = 4</msg>
+<status status="PASS" endtime="20190620 14:49:13.633" starttime="20190620 14:49:13.103"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${language_num}</arg>
+<arg>3</arg>
+</arguments>
+<status status="PASS" endtime="20190620 14:49:13.634" starttime="20190620 14:49:13.634"></status>
+</kw>
+<status status="PASS" endtime="20190620 14:49:13.634" starttime="20190620 14:49:10.937"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>文件</arg>
+</arguments>
+<msg timestamp="20190620 14:49:14.683" level="INFO">Current page contains text '文件'.</msg>
+<status status="PASS" endtime="20190620 14:49:14.683" starttime="20190620 14:49:13.634"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>${wood_trans_button}</arg>
+<arg>${wood_setting_language_xpath}[3]</arg>
 </arguments>
-<msg timestamp="20190619 11:46:45.067" level="INFO">Clicking element 'css: div[class^="style__switch-client-btn"]'.</msg>
-<status status="PASS" endtime="20190619 11:46:46.248" starttime="20190619 11:46:45.067"></status>
+<msg timestamp="20190620 14:49:14.684" level="INFO">Clicking element '//div[contains(@class,'style__sub')]//div[@class='style__item__32aYM'][3]'.</msg>
+<status status="PASS" endtime="20190620 14:49:16.043" starttime="20190620 14:49:14.684"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_file_icon}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:16.043" level="INFO">Simulating Mouse Over on element 'xpath: //div[@id="header_click_area"]/div[2]'.</msg>
+<status status="PASS" endtime="20190620 14:49:17.073" starttime="20190620 14:49:16.043"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_file_icon}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:17.074" level="INFO">Clicking element 'xpath: //div[@id="header_click_area"]/div[2]'.</msg>
+<status status="PASS" endtime="20190620 14:49:18.153" starttime="20190620 14:49:17.073"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_file_icon}</arg>
+<arg>File</arg>
+</arguments>
+<msg timestamp="20190620 14:49:19.213" level="INFO">Element 'xpath: //div[@id="header_click_area"]/div[2]' contains text 'File'.</msg>
+<status status="PASS" endtime="20190620 14:49:19.213" starttime="20190620 14:49:18.153"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_file_dropdown}</arg>
+<arg>New</arg>
+</arguments>
+<msg timestamp="20190620 14:49:20.296" level="INFO">Element 'xpath: //div[@id="header_click_area"]/div[2]/div[3]' contains text 'New'.</msg>
+<status status="PASS" endtime="20190620 14:49:20.296" starttime="20190620 14:49:19.213"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_setting_button}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:20.296" level="INFO">Simulating Mouse Over on element 'xpath: //div[@id="header_click_area"]/div[3]'.</msg>
+<status status="PASS" endtime="20190620 14:49:21.353" starttime="20190620 14:49:20.296"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_setting_button_name}</arg>
+<arg>Setting</arg>
+</arguments>
+<msg timestamp="20190620 14:49:22.423" level="INFO">Element 'xpath: //div[@id="header_click_area"]/div[3]/div[2]/div' is displayed.</msg>
+<status status="PASS" endtime="20190620 14:49:22.423" starttime="20190620 14:49:21.353"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_setting_dropdown}</arg>
+<arg>Language</arg>
+</arguments>
+<msg timestamp="20190620 14:49:23.463" level="INFO">Element 'xpath: //div[@id="header_click_area"]/div[3]/div[3]' contains text 'Language'.</msg>
+<status status="PASS" endtime="20190620 14:49:23.463" starttime="20190620 14:49:22.423"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>latest</arg>
+</arguments>
+<msg timestamp="20190620 14:49:24.503" level="INFO">Current page contains text 'latest'.</msg>
+<status status="PASS" endtime="20190620 14:49:24.503" starttime="20190620 14:49:23.464"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_hex_button}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:24.503" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="header_click_area"]/div[4]'.</msg>
+<status status="PASS" endtime="20190620 14:49:25.573" starttime="20190620 14:49:24.503"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
+<arguments>
+<arg>${wood_hex_button_name}</arg>
+<arg>Hardware</arg>
+</arguments>
+<msg timestamp="20190620 14:49:25.573" level="INFO">Verifying element 'xpath=//*[@id="header_click_area"]/div[4]/div[2]/div' contains exact text 'Hardware'.</msg>
+<status status="PASS" endtime="20190620 14:49:26.633" starttime="20190620 14:49:25.573"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_hex_dropdown}/div/div</arg>
+<arg>New hardware project</arg>
+</arguments>
+<msg timestamp="20190620 14:49:27.683" level="INFO">Element 'xpath=//*[@id="header_click_area"]/div[4]/div[3]/div/div' contains text 'New hardware project'.</msg>
+<status status="PASS" endtime="20190620 14:49:27.683" starttime="20190620 14:49:26.634"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_library_manage_button}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:27.684" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="header_click_area"]/div[5]'.</msg>
+<status status="PASS" endtime="20190620 14:49:28.753" starttime="20190620 14:49:27.684"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_library_manage_button}</arg>
+<arg>Library Management</arg>
+</arguments>
+<msg timestamp="20190620 14:49:29.803" level="INFO">Element 'xpath=//*[@id="header_click_area"]/div[5]' contains text 'Library Management'.</msg>
+<status status="PASS" endtime="20190620 14:49:29.803" starttime="20190620 14:49:28.753"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_run_button}</arg>
+<arg>Run</arg>
+</arguments>
+<msg timestamp="20190620 14:49:30.893" level="INFO">Element 'xpath=//*[@id="header_click_area"]/div[7]' contains text 'Run'.</msg>
+<status status="PASS" endtime="20190620 14:49:30.893" starttime="20190620 14:49:29.803"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
+<arguments>
+<arg>${wood_workspace_run_button}</arg>
+<arg>Run</arg>
+</arguments>
+<msg timestamp="20190620 14:49:30.893" level="INFO">Verifying element 'css=.style__button-wrapper__1dYDp' contains exact text 'Run'.</msg>
+<status status="PASS" endtime="20190620 14:49:31.943" starttime="20190620 14:49:30.893"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_trans_button}</arg>
+<arg>Code</arg>
+</arguments>
+<msg timestamp="20190620 14:49:32.993" level="INFO">Element 'css: div[class^="style__switch-client-btn"]' is displayed.</msg>
+<status status="PASS" endtime="20190620 14:49:32.993" starttime="20190620 14:49:31.943"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${wood_toolbox_xpath}/div</arg>
+<arg>limit=${len_block_list}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:33.513" level="INFO">Current page contains 12 element(s).</msg>
+<status status="PASS" endtime="20190620 14:49:33.513" starttime="20190620 14:49:32.993"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_toolbox_events}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:34.582" level="INFO">Element '//div[@class="blocklyToolboxDiv"]/div[1]/div[1]' is displayed.</msg>
+<status status="PASS" endtime="20190620 14:49:34.582" starttime="20190620 14:49:33.513"></status>
+</kw>
+<kw type="for" name="${i} IN RANGE [ ${len_block_list} | 10 ]">
+<status status="PASS" endtime="20190620 14:49:34.582" starttime="20190620 14:49:34.582"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_toolbox_xpath}/div[10]</arg>
+</arguments>
+<msg timestamp="20190620 14:49:34.582" level="INFO">Clicking element 'xpath=//div[@class="blocklyToolboxDiv"]/div[1]/div[10]'.</msg>
+<status status="PASS" endtime="20190620 14:49:35.650" starttime="20190620 14:49:34.582"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_toolbox_xpath}/div[11]/div/span[2]</arg>
+<arg>@{eng_block}[10]</arg>
+</arguments>
+<msg timestamp="20190620 14:49:36.684" level="INFO">Element 'xpath=//div[@class="blocklyToolboxDiv"]/div[1]/div[11]/div/span[2]' is displayed.</msg>
+<status status="PASS" endtime="20190620 14:49:36.684" starttime="20190620 14:49:35.650"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_setting_button}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:36.684" level="INFO">Simulating Mouse Over on element 'xpath: //div[@id="header_click_area"]/div[3]'.</msg>
+<status status="PASS" endtime="20190620 14:49:37.723" starttime="20190620 14:49:36.684"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_setting_language}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:37.724" level="INFO">Simulating Mouse Over on element 'xpath: //*[@id="header_click_area"]/div[3]/div[3]/div/div[1]'.</msg>
+<status status="PASS" endtime="20190620 14:49:38.763" starttime="20190620 14:49:37.724"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_setting_language_xpath}[2]</arg>
+</arguments>
+<msg timestamp="20190620 14:49:38.763" level="INFO">Clicking element '//div[contains(@class,'style__sub')]//div[@class='style__item__32aYM'][2]'.</msg>
+<status status="PASS" endtime="20190620 14:49:40.070" starttime="20190620 14:49:38.763"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_file_icon}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:40.070" level="INFO">Simulating Mouse Over on element 'xpath: //div[@id="header_click_area"]/div[2]'.</msg>
+<status status="PASS" endtime="20190620 14:49:41.097" starttime="20190620 14:49:40.070"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_file_icon}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:41.097" level="INFO">Clicking element 'xpath: //div[@id="header_click_area"]/div[2]'.</msg>
+<status status="PASS" endtime="20190620 14:49:42.163" starttime="20190620 14:49:41.097"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_file_icon}</arg>
+<arg>文件</arg>
+</arguments>
+<msg timestamp="20190620 14:49:43.183" level="INFO">Element 'xpath: //div[@id="header_click_area"]/div[2]' contains text '文件'.</msg>
+<status status="PASS" endtime="20190620 14:49:43.183" starttime="20190620 14:49:42.163"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_file_dropdown}</arg>
+<arg>新建</arg>
+</arguments>
+<msg timestamp="20190620 14:49:44.223" level="INFO">Element 'xpath: //div[@id="header_click_area"]/div[2]/div[3]' contains text '新建'.</msg>
+<status status="PASS" endtime="20190620 14:49:44.223" starttime="20190620 14:49:43.183"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_setting_button}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:44.223" level="INFO">Simulating Mouse Over on element 'xpath: //div[@id="header_click_area"]/div[3]'.</msg>
+<status status="PASS" endtime="20190620 14:49:45.273" starttime="20190620 14:49:44.223"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_setting_button_name}</arg>
+<arg>設置</arg>
+</arguments>
+<msg timestamp="20190620 14:49:46.293" level="INFO">Element 'xpath: //div[@id="header_click_area"]/div[3]/div[2]/div' is displayed.</msg>
+<status status="PASS" endtime="20190620 14:49:46.293" starttime="20190620 14:49:45.273"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_setting_dropdown}</arg>
+<arg>語言</arg>
+</arguments>
+<msg timestamp="20190620 14:49:47.303" level="INFO">Element 'xpath: //div[@id="header_click_area"]/div[3]/div[3]' contains text '語言'.</msg>
+<status status="PASS" endtime="20190620 14:49:47.303" starttime="20190620 14:49:46.293"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>最新</arg>
+</arguments>
+<msg timestamp="20190620 14:49:48.333" level="INFO">Current page contains text '最新'.</msg>
+<status status="PASS" endtime="20190620 14:49:48.333" starttime="20190620 14:49:47.303"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_hex_button}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:48.333" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="header_click_area"]/div[4]'.</msg>
+<status status="PASS" endtime="20190620 14:49:49.383" starttime="20190620 14:49:48.333"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
+<arguments>
+<arg>${wood_hex_button_name}</arg>
+<arg>硬件</arg>
+</arguments>
+<msg timestamp="20190620 14:49:49.384" level="INFO">Verifying element 'xpath=//*[@id="header_click_area"]/div[4]/div[2]/div' contains exact text '硬件'.</msg>
+<status status="PASS" endtime="20190620 14:49:50.433" starttime="20190620 14:49:49.383"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_hex_dropdown}/div/div</arg>
+<arg>新建硬件作品</arg>
+</arguments>
+<msg timestamp="20190620 14:49:51.493" level="INFO">Element 'xpath=//*[@id="header_click_area"]/div[4]/div[3]/div/div' contains text '新建硬件作品'.</msg>
+<status status="PASS" endtime="20190620 14:49:51.493" starttime="20190620 14:49:50.433"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${wood_library_manage_button}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:51.493" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="header_click_area"]/div[5]'.</msg>
+<status status="PASS" endtime="20190620 14:49:52.553" starttime="20190620 14:49:51.493"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_library_manage_button}</arg>
+<arg>庫管理</arg>
+</arguments>
+<msg timestamp="20190620 14:49:53.603" level="INFO">Element 'xpath=//*[@id="header_click_area"]/div[5]' contains text '庫管理'.</msg>
+<status status="PASS" endtime="20190620 14:49:53.603" starttime="20190620 14:49:52.553"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${wood_run_button}</arg>
+<arg>運行</arg>
+</arguments>
+<msg timestamp="20190620 14:49:54.643" level="INFO">Element 'xpath=//*[@id="header_click_area"]/div[7]' contains text '運行'.</msg>
+<status status="PASS" endtime="20190620 14:49:54.643" starttime="20190620 14:49:53.603"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
+<arguments>
+<arg>${wood_workspace_run_button}</arg>
+<arg>運行</arg>
+</arguments>
+<msg timestamp="20190620 14:49:54.643" level="INFO">Verifying element 'css=.style__button-wrapper__1dYDp' contains exact text '運行'.</msg>
+<status status="PASS" endtime="20190620 14:49:55.713" starttime="20190620 14:49:54.643"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_trans_button}</arg>
+<arg>代碼模式</arg>
+</arguments>
+<msg timestamp="20190620 14:49:56.766" level="INFO">Element 'css: div[class^="style__switch-client-btn"]' is displayed.</msg>
+<status status="PASS" endtime="20190620 14:49:56.766" starttime="20190620 14:49:55.715"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${wood_toolbox_xpath}/div</arg>
+<arg>limit=12</arg>
+</arguments>
+<msg timestamp="20190620 14:49:57.293" level="INFO">Current page contains 12 element(s).</msg>
+<status status="PASS" endtime="20190620 14:49:57.293" starttime="20190620 14:49:56.766"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_toolbox_events}</arg>
+</arguments>
+<msg timestamp="20190620 14:49:58.363" level="INFO">Element '//div[@class="blocklyToolboxDiv"]/div[1]/div[1]' is displayed.</msg>
+<status status="PASS" endtime="20190620 14:49:58.363" starttime="20190620 14:49:57.293"></status>
+</kw>
+<kw type="for" name="${i} IN RANGE [ ${len_block_list} | 10 ]">
+<status status="PASS" endtime="20190620 14:49:58.363" starttime="20190620 14:49:58.363"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${wood_toolbox_xpath}/div[10]</arg>
+</arguments>
+<msg timestamp="20190620 14:49:58.363" level="INFO">Clicking element 'xpath=//div[@class="blocklyToolboxDiv"]/div[1]/div[10]'.</msg>
+<status status="PASS" endtime="20190620 14:49:59.443" starttime="20190620 14:49:58.363"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${wood_toolbox_xpath}/div[11]/div/span[2]</arg>
+<arg>@{com_font_block}[10]</arg>
+</arguments>
+<msg timestamp="20190620 14:50:00.483" level="INFO">Element 'xpath=//div[@class="blocklyToolboxDiv"]/div[1]/div[11]/div/span[2]' is displayed.</msg>
+<status status="PASS" endtime="20190620 14:50:00.483" starttime="20190620 14:49:59.443"></status>
+</kw>
+<kw type="teardown" name="Teardown" library="wood_resource">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>indexedDB.deleteDatabase('snape_app')</arg>
+</arguments>
+<msg timestamp="20190620 14:50:00.483" level="INFO">Executing JavaScript:
+indexedDB.deleteDatabase('snape_app')
+Without any arguments.</msg>
+<status status="PASS" endtime="20190620 14:50:00.984" starttime="20190620 14:50:00.483"></status>
 </kw>
 <kw name="Close Window" library="SeleniumLibrary">
 <doc>Closes currently opened pop-up window.</doc>
-<status status="PASS" endtime="20190619 11:46:49.242" starttime="20190619 11:46:46.248"></status>
+<status status="PASS" endtime="20190620 14:50:04.044" starttime="20190620 14:50:00.984"></status>
 </kw>
 <kw name="Close Process" library="RFTestLibrary">
 <doc>Close a process by process name.</doc>
 <arguments>
 <arg>chromedriver</arg>
 </arguments>
-<status status="PASS" endtime="20190619 11:46:49.335" starttime="20190619 11:46:49.242"></status>
+<status status="PASS" endtime="20190620 14:50:04.137" starttime="20190620 14:50:04.044"></status>
 </kw>
-<status status="PASS" endtime="20190619 11:46:49.335" critical="yes" starttime="20190619 11:46:28.158"></status>
+<status status="PASS" endtime="20190620 14:50:04.137" starttime="20190620 14:50:00.483"></status>
+</kw>
+<status status="PASS" endtime="20190620 14:50:04.137" critical="yes" starttime="20190620 14:48:53.004"></status>
 </test>
-<status status="PASS" endtime="20190619 11:46:49.335" starttime="20190619 11:46:28.002"></status>
+<status status="PASS" endtime="20190620 14:50:04.137" starttime="20190620 14:48:52.801"></status>
 </suite>
 <statistics>
 <total>
@@ -138,7 +671,7 @@
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="SuiteXX Fixedbugs" pass="1">SuiteXX Fixedbugs</stat>
+<stat fail="0" id="s1" name="Suite01 Header" pass="1">Suite01 Header</stat>
 </suite>
 </statistics>
 <errors>

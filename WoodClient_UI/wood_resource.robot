@@ -1,8 +1,8 @@
 *** Variables ***
 # Client manage
-# ${wood_client_dir}                   C:\\Pyblock\\海龟编辑器.exe
-${wood_client_dir}                 C:\\Pyblock_dev\\TurtleEditor-test.exe
-# ${wood_client_dir}                 C:\\Pyblock_staging\\海龟编辑器-staging.exe
+# ${wood_client_dir}                 C:\\Pyblock\\TurtleEditor.exe
+# ${wood_client_dir}                 C:\\Pyblock_dev\\TurtleEditor-test.exe
+# ${wood_client_dir}                 C:\\Pyblock_staging\\TurtleEditor-staging.exe
 
 # data manage
 # ${test_username}                 czx-autotest-01

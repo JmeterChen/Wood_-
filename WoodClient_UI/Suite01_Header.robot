@@ -345,7 +345,7 @@ i18n_block_headline_UI
     Element Should Contain    ${wood_run_button}    Run
     Element Text Should Be    ${wood_workspace_run_button}    Run
     Element Should Be Visible    ${wood_trans_button}    Code
-    Page Should Contain Element    ${wood_toolbox_xpath}/div    limit=11
+    Page Should Contain Element    ${wood_toolbox_xpath}/div    limit=${len_block_list}
     Element Should Be Visible    ${wood_toolbox_events}
     : FOR    ${i}    IN RANGE    ${len_block_list}    10
     \    Mouse Over    ${wood_toolbox_xpath}/div[${i+1}]
@@ -372,7 +372,7 @@ i18n_block_headline_UI
     Element Should Contain    ${wood_run_button}    運行
     Element Text Should Be    ${wood_workspace_run_button}    運行
     Element Should Be Visible    ${wood_trans_button}    代碼模式
-    Page Should Contain Element    ${wood_toolbox_xpath}/div    limit=11
+    Page Should Contain Element    ${wood_toolbox_xpath}/div    limit=12
     Element Should Be Visible    ${wood_toolbox_events}
     : FOR    ${i}    IN RANGE    ${len_block_list}    10
     \    Mouse Over    ${wood_toolbox_xpath}/div[${i+1}]
@@ -416,10 +416,10 @@ search_function
     Click Element    ${wood_setting_button}
     Element Text Should Be    ${wood_setting_search}    搜索
     Click Element    ${wood_setting_search}
-    ${search_value}    Get Value    ${wood_search_value}
+    ${search_value}    Get Element Attribute    ${wood_search_value}    attribute=placeholder
     Should Be Equal    ${search_value}    Find
     Click Element    ${wood_search_pull_down}
-    ${replace_value}    Get Value    ${wood_replace_value}
+    ${replace_value}    Get Element Attribute    ${wood_replace_value}    attribute=placeholder
     Should Be Equal    ${replace_value}    Replace
     Element Should Be Visible    ${wood_replace_value}
 
@@ -462,7 +462,7 @@ library_search
     Element Text Should Be    ${wood_third_noresult}    无搜索结果
     Press Key    ${wood_library_search}    \\8
     Press Key    ${wood_library_search}    \\8
-    Page Should Contain Element    ${wood_library_xpath}    limit=24
+    Page Should Contain Element    ${wood_library_xpath}    limit=26
     Execute Javascript    document.getElementsByClassName('style__libs-item-wrap__1xnIf')[0].scrollTop=2400
     Click Element    ${wood_install_third_lib}
     Page Should Contain    返回
