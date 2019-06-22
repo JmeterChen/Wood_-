@@ -136,4 +136,3 @@ fixedbug20
     ${a}    Set Variable    陈柏霖
     Run Keyword If    '${a}' == '陈柏霖'    log    ok
         ...   ELSE    log    gg
-

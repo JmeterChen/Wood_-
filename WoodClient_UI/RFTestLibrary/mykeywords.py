@@ -81,5 +81,25 @@ class Mykeywords:
         date = time_today.replace('-', string)
         return date
 
-    
-
+    def del_library(self, library_name):
+        """
+        to del the Library of the path(.wood\libs\) you give
+        """
+        user = os.path.expanduser('~')
+        cd_root = os.popen('cd c:')
+        path = user + '\\' + '.wood\\libs'
+        # 改变工作目录到.wood\libs路径下
+        os.chdir(path)
+        files_list = []
+        for root, dirs, files in os.walk(path):
+            if dirs and '_' not in dirs:
+                empty_list.append(dirs)
+        for i in files_list:
+            if library_name in i:   
+                try:
+                    rm_lib = os.popen('rm -rf %s*' % library_name)
+                except:
+                    pass
+                return yes
+            else:
+                return no       

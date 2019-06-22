@@ -9,21 +9,22 @@ __Pen = turtle.Pen()
 # “画树”函数
 # 参数分别是树枝长度、画笔
 
-def tree(branchLen,t):
+def tree(branchLen, t):
+
     if (branchLen > 3):
-        if (8 <= branchLen and branchLen <= 12) :
-            if (random.randint(0, 2) == 0) :
+        if (8 <= branchLen and branchLen <= 12):
+            if (random.randint(0, 2) == 0):
                 t.pencolor('snow')
-            else :
+            else:
                 t.pencolor('lightcoral')
             t.pensize((branchLen / 3))
-        elif (branchLen < 8) :
-            if (random.randint(0, 1) == 0) :
+        elif (branchLen < 8):
+            if (random.randint(0, 1) == 0):
                 t.pencolor('snow')
-            else :
+            else:
                 t.pencolor('lightcoral')
             t.pensize((branchLen / 2))
-        else :
+        else:
             t.pencolor('sienna')
             t.pensize((branchLen / 10))
         t.forward(branchLen)
@@ -42,7 +43,8 @@ def tree(branchLen,t):
 
 # 绘制树下花瓣，参数分别是画板数、画笔
 
-def petal(m,t):
+def petal(m, t):
+
     for i in range(m):
         a = (200 - 400 * (random.random()))
         b = (10 - 20 * (random.random()))
@@ -59,6 +61,7 @@ def petal(m,t):
         t.backward(b)
 
 def main():
+
     t = turtle.Pen()
     __Pen.hideturtle()
     t.speed(0)

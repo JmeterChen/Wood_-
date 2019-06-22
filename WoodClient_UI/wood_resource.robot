@@ -1,6 +1,6 @@
 *** Variables ***
 # Client manage
-# ${wood_client_dir}                 C:\\Pyblock\\TurtleEditor.exe
+${wood_client_dir}                 C:\\Pyblock\\TurtleEditor.exe
 # ${wood_client_dir}                 C:\\Pyblock_dev\\TurtleEditor-test.exe
 # ${wood_client_dir}                 C:\\Pyblock_staging\\TurtleEditor-staging.exe
 
@@ -19,8 +19,8 @@ ${Save_to_cloud}                 ${CURDIR}\\ResourceFile\\Save_to_cloud
 ${file_to_update}                ${CURDIR}\\ResourceFile\\updateFile
 
 # UI manage
-${wood_guide_next_button}        css:   div[class^="vh-center style__footer"]>button[class^="style__btn"]
-${wood_user_entrance}            xpath: //div[@id="header_click_area"]/div[1]
+${wood_guide_next_button}        css=div[class^="vh-center style__footer"]>button[class^="style__btn"]
+${wood_user_entrance}            xpath=//div[@id="header_click_area"]/div[1]
 ${wood_third_login}              xpath=//span[@class='style__third_part__3zAMJ']/span[1]
 ${wood_qq_icon}                  xpath=//span[@class='style__third_part__3zAMJ']/span[2]
 ${wood_wechat_icon}              xpath=//span[@class='style__third_part__3zAMJ']/span[3]
@@ -30,29 +30,28 @@ ${wood_QQ账号框}                  xpath=//*[@id="u"]
 ${wood_QQ密码框}                  xpath=//*[@id="p"]
 ${wood_QQ登录按钮}                xpath=//*[@id="login_button"]
 ${wood_微信登录}                  xpath=//span[text()='第三方登录']//following-sibling::span[2]
-
 ${wood_user_name}                xpath=//*[@id="header_click_area"]/div[1]/div[2]/div
 ${wood_ue_nickname}              ${wood_user_entrance}//div[contains(@class, "style__title")]
-${wood_login_dialog}             css:   div[class^="asset-style__dialog-wrap"]
-${wood_ue_logout_button}         xpath: //div[contains(@class, "style__dropdown_content")]/div
-${wood_ld_username}              css:   input[placeholder="用户名"]
-${wood_ld_password}              css:   input[placeholder="密码"]
-${wood_ld_login_button}          xpath: //span[text()="登录"]
-${wood_ld_signup_button}         xpath: //span[text()="注册"]
-${wood_ld_close}                 css:   span[class^="style__close_btn"]
-${wood_ld_err_text}              css:   div[id="status_msg"]>span>span[class^="style__text"]
-${wood_logout_dialog}            css:   div[class^="style__dialog-wrap"]
-${wood_lod_close}                css:   span[class^="style__close_btn"]
-${wood_lod_cancel}               css:   div[class^="style__cancel"]
-${wood_lod_confirm}              css:   div[class^="style__confirm"]
-${wood_signup_dialog}            css:   div[class^="asset-style__dialog-wrap"]
-${wood_sd_phonenum}              css:   input[placeholder="手机号"]
-${wood_sd_password}              css:   input[placeholder="密码"]
-${wood_sd_vircode_text}          css:   input[placeholder="验证码"]
-${wood_sd_get_vircode}           xpath: //span[text()="获取验证码"]
-${wood_sd_signup_button}         xpath: //span[text()="注册"]
-${wood_sd_err_text}              css:   div[id="status_msg"]>span>span[class^="style__text"]
-${wood_file_icon}                xpath: //div[@id="header_click_area"]/div[2]
+${wood_login_dialog}             css=div[class^="asset-style__dialog-wrap"]
+${wood_ue_logout_button}         xpath=//div[contains(@class, "style__dropdown_content")]/div
+${wood_ld_username}              css=input[placeholder="用户名"]
+${wood_ld_password}              css=input[placeholder="密码"]
+${wood_ld_login_button}          xpath=//span[text()="登录"]
+${wood_ld_signup_button}         xpath=//span[text()="注册"]
+${wood_ld_close}                 css=span[class^="style__close_btn"]
+${wood_ld_err_text}              css=div[id="status_msg"]>span>span[class^="style__text"]
+${wood_logout_dialog}            css=div[class^="style__dialog-wrap"]
+${wood_lod_close}                css=span[class^="style__close_btn"]
+${wood_lod_cancel}               css=div[class^="style__cancel"]
+${wood_lod_confirm}              css=div[class^="style__confirm"]
+${wood_signup_dialog}            css=div[class^="asset-style__dialog-wrap"]
+${wood_sd_phonenum}              css=input[placeholder="手机号"]
+${wood_sd_password}              css=input[placeholder="密码"]
+${wood_sd_vircode_text}          css=input[placeholder="验证码"]
+${wood_sd_get_vircode}           xpath=//span[text()="获取验证码"]
+${wood_sd_signup_button}         xpath=//span[text()="注册"]
+${wood_sd_err_text}              css=div[id="status_msg"]>span>span[class^="style__text"]
+${wood_file_icon}                xpath=//div[@id="header_click_area"]/div[2]
 ${wood_file_dropdown}            ${wood_file_icon}/div[3]
 ${wood_file_newbuilt}            ${wood_file_dropdown}/div[1]/div[1]
 ${wood_file_open}                ${wood_file_dropdown}/div[1]/div[2]
@@ -61,47 +60,45 @@ ${wood_file_save_as}             ${wood_file_dropdown}/div[1]/div[4]
 ${wood_file_template}            ${wood_file_dropdown}/div[1]/div[5]
 ${wood_file_open_cloud}          ${wood_file_dropdown}/div[1]/div[6]
 ${wood_file_save_to_cloud}       ${wood_file_dropdown}/div[1]/div[7]
-${wood_ft_dialog}                css:   div[class^="style__dialog-wrap"]
-${wood_ftd_title}                xpath:    //span[text()='模板作品']
+${wood_ft_dialog}                css=div[class^="style__dialog-wrap"]
+${wood_ftd_title}                xpath=//span[text()='模板作品']
 ${wood_template_num}             xpath=//div[contains(@class, "style__item-wrapper")]/div
-${wood_ftd_close}                css:   span[class*="style__icon-client-close"]
-
-${wood_cloud_list_title}         xpath:    //span[text()='打开文件']
-${wood_cfd_list}                 xpath:  //div[contains(@class, "style__client-container")]
-${wood_cloud_file_dialog}        css:   div[class*="style__dialog-wrap"]
-${wood_cloud_py_icon}            css:   .style__python__YSwEL
-${wood_cloud_hex_icon}           css:   .style__hardware__1MVNo
-${wood_cloud_file_frame1}         //div[contains(@class, "style__client-container")]/div
+${wood_ftd_close}                css=span[class*="style__icon-client-close"]
+${wood_cloud_list_title}         xpath=//span[text()='打开文件']
+${wood_cfd_list}                 xpath=//div[contains(@class, "style__client-container")]
+${wood_cloud_file_dialog}        css=div[class*="style__dialog-wrap"]
+${wood_cloud_py_icon}            css=.style__python__YSwEL
+${wood_cloud_hex_icon}           css=.style__hardware__1MVNo
+${wood_cloud_file_frame1}        //div[contains(@class, "style__client-container")]/div
 ${wood_cloud_search}             xpath=//input[@placeholder='关键词搜索作品']
 ${wood_cloud_file_name}          ${wood_cloud_file_frame1}/div[1]/span[1]
 ${wood_cloud_file_date}          ${wood_cloud_file_frame1}/div[1]/span[2]
 ${wood_cloud_unfind}             xpath=//span[text()='无搜索结果']
-${wood_cloud_file_close}         css:   span[class*='style__icon__1O_ez style__icon-client-close']
-
-${wood_save_success}             css:    .style__container__VJrU4
-
-${wood_setting_button}           xpath: //div[@id="header_click_area"]/div[3]
+${wood_cloud_file_close}         css=span[class*='style__icon__1O_ez style__icon-client-close']
+${wood_save_success}             css=.style__container__VJrU4
+${wood_setting_button}           xpath=//div[@id="header_click_area"]/div[3]
 ${wood_setting_button_name}      ${wood_setting_button}/div[2]/div
 ${wood_setting_dropdown}         ${wood_setting_button}/div[3]
 ${wood_setting_language}         xpath: //*[@id="header_click_area"]/div[3]/div[3]/div/div[1]
 ${wood_setting_language_xpath}   //div[contains(@class,'style__sub')]//div[@class='style__item__32aYM']
 ${wood_setting_search}           ${wood_setting_dropdown}/div/div[3]
+${wood_search_area}              xpath=//*[@id="SNAPE"]/div/div[1]/div[5]/div[2]
+${wood_search_No_result}         css=div[class='matchesCount']
+${wood_search_close}             css=div[title='Close (Escape)']
 ${wood_search_pull_down}         css=div[class^='editor-widget f']>div:nth-child(1)
 ${wood_search_value}             css=div[class='find-part']>div>div>div>input
 ${wood_replace_value}            css=div[class='replace-part']>div>div>div>input
-
 ${wood_hex_button}               xpath=//*[@id="header_click_area"]/div[4]
 ${wood_hex_button_name}          ${wood_hex_button}/div[2]/div
 ${wood_hex_dropdown}             ${wood_hex_button}/div[3]
 ${wood_new_hex}                  ${wood_hex_button}/div[3]
-${wood_选择设备}                 css:   title_3WQkc
-${wood_hex_device_connect}       xpath: //div[text()='Microbit']
-${wood_hex_device_cancle}        css:    .cancel_btn_3P1AG
-${wood_hex_device_confirm}       css:    .confirm_btn_2ZLKR.active_1j6cO
+${wood_选择设备}                  css=title_3WQkc
+${wood_hex_device_connect}       xpath=//div[text()='Microbit']
+${wood_hex_device_cancle}        css=.cancel_btn_3P1AG
+${wood_hex_device_confirm}       css=.confirm_btn_2ZLKR.active_1j6cO
 ${wood_new_microbit}             ${wood_hex_button}//div[@class='style__item__32aYM'][2]
-
 ${wood_library_manage_button}    xpath=//*[@id="header_click_area"]/div[5]
-${wood_library_frame_库管理}     css=.vh-center.style__title__3YDUV
+${wood_library_frame_库管理}      css=.vh-center.style__title__3YDUV
 ${wood_library_xpath}            //div[@class='vh-center style__lib-item-wrap__PqO2B']
 ${wood_library_search}           xpath=//i[@class='style__kw-search-icon__1SE_5']//following-sibling::input
 ${wood_install_third_lib}        xpath=//div[@class='vh-center style__install-others__2H3gu']/span
@@ -113,27 +110,21 @@ ${wood_library_others_close}     css=.style__close-icon__3FHHd
 ${wood_third_search_result}      xpath=//div[@class='style__result__3pWPo']
 ${wood_lib_install_button}       ${wood_third_search_result}/button
 ${wood_lib_install_cancle}       ${wood_third_search_result}/div[3]
+
 ${wood_third_search_icon}        css=.style__search-icon__spYSO
 ${wood_third_search_toast}       css=.style__notice-text__W7f9D
-
 ${wood_run_button}               xpath=//*[@id="header_click_area"]/div[7]
 ${wood_workspace_run_button}     css=.style__button-wrapper__1dYDp
-
-${wood_trans_button}             css:   div[class^="style__switch-client-btn"]
-
-
+${wood_trans_button}             css=div[class^="style__switch-client-btn"]
 ${wood_tabs_num}                 //div[contains(@class,"tabs_container")]/span[@class='style__fullname_container__222jR']
-
-
-${wood_tabs_container}           css:   div[class^=tabs_container]
+${wood_tabs_container}           css=div[class^=tabs_container]
 ${wood_tab_current}              ${wood_tabs_container}>span[class*="style__current"]
 ${wood_tab_cur_close}            ${wood_tab_current}>span[class*="style__close-icon"]
 ${wood_tab_cur_name}             ${wood_tab_current}>span[class^="style__text"]
-${wood_toast_file}               //div[@class='style__container__VJrU4']
-${wood_tab_file_name}            css:   .style__text_input__1egqJ
+${wood_toast_file}               css=div[class^='style__notice']
+${wood_tab_file_name}            css=.style__text_input__1egqJ
 ${wood_tab_cur_textarea}         ${wood_tab_current}>input
 ${wood_tab_cur_name_hover}       ${wood_tab_current}>span[class*="fullname_container"]
-
 ${wood_toolbox_list}             //div[@class="blocklyToolboxDiv"]/div[1]
 ${wood_toolbox_xpath}            xpath=//div[@class="blocklyToolboxDiv"]/div[1]
 ${wood_toolbox_events}           ${wood_toolbox_list}/div[1]
@@ -145,16 +136,15 @@ ${wood_toolbox_lists}            ${wood_toolbox_list}/div[6]
 ${wood_toolbox_dictionary}       ${wood_toolbox_list}/div[7]
 ${wood_toolbox_functions}        ${wood_toolbox_list}/div[8]
 ${wood_toolbox_turtle}           ${wood_toolbox_list}/div[9]
-${wood_box_var}                  xpath: //div[@class="blocklyToolboxDiv"]/div/div[5]
-${wood_box_list}                 xpath: //div[@class="blocklyToolboxDiv"]/div/div[6]
-${wood_box_addvar}               css:   g.blocklyAddVariableButton
-${wood_flyout_block_num}         xpath: //*[@class="blocklyBlockCanvas"]/*[@class="blocklyDraggable"]
-${wood_addvar_dialog}            css:   div[class^="style__dialog-wrap"]
-${wood_ad_text}                  id:    snape-variable-input
-${wood_ad_cancel_button}         css:   span[class*=style__cancel-btn]
-${wood_ad_confirm_button}        css:   span[class*=style__confirm-btn]
-${wood_ad_close_button}          css:   span[class^=style__close_btn]
-
+${wood_box_var}                  xpath=//div[@class="blocklyToolboxDiv"]/div/div[5]
+${wood_box_list}                 xpath=//div[@class="blocklyToolboxDiv"]/div/div[6]
+${wood_box_addvar}               css=g.blocklyAddVariableButton
+${wood_flyout_block_num}         xpath=//*[@class="blocklyBlockCanvas"]/*[@class="blocklyDraggable"]
+${wood_addvar_dialog}            css=div[class^="style__dialog-wrap"]
+${wood_ad_text}                  id= snape-variable-input
+${wood_ad_cancel_button}         css=span[class*=style__cancel-btn]
+${wood_ad_confirm_button}        css=span[class*=style__confirm-btn]
+${wood_ad_close_button}          css=span[class^=style__close_btn]
 ${wood_blocks_num}               //*[@class="blocklyDraggable"]
 ${wood_blocks_line}              xpath=//*[@class='blocklyLine']
 ${wood_blocks_time库}            xpath=//*[@class='blocklyUploadText']
@@ -166,12 +156,11 @@ ${wood_creat_var_close}          xpath=//*[@class="style__close_btn__2RsCq"]
 ${wood_creat_var_cancle}         xpath=//div[@class='style__btn-wrap__WnlnY']/span[1]
 ${wood_input_var_name}           xpath=//*[@class="style__input_element__4yD-w"]
 ${wood_creat_var_sure}           xpath=//div[@class='style__btn-wrap__WnlnY']/span[2]
-${wood_workspace_textarea}       id:    SNAPE
-
-${python_我的作品}               xpath=//a[text()='我的作品']
-${python_login用户名}            xpath://input[@placeholder='用户名']
-${python_login密码}              xpath://input[@placeholder='密码']
-${python_登录按钮}               xpath://span[text()='登录']
+${wood_workspace_textarea}       id=SNAPE
+${python_我的作品}                xpath=//a[text()='我的作品']
+${python_login用户名}             xpath://input[@placeholder='用户名']
+${python_login密码}               xpath://input[@placeholder='密码']
+${python_登录按钮}                xpath://span[text()='登录']
 ${python_frame[1]}               xpath=//div[@class='vh-center project-wrapper_uv7Es']/div[1]
 ${python_delete_sure}            xpath=//span[text()='删除']
 
@@ -411,3 +400,6 @@ Delete_python_files
     # 删除确认
     \    Click Element    ${python_delete_sure}
     Close Window
+
+
+

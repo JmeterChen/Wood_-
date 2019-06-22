@@ -9,11 +9,14 @@ Resource          wood_resource.robot
 
 *** Test Cases ***
 new_built
+    [tags]    pass
     New Built
     Page Should Contain Element    ${wood_tabs_num}    limit=2
     Element Text Should Be    ${wood_tab_cur_name}    新的作品
 
 open_file
+    [tags]    bug
+    # 目前这里有个bug，打开硬件模式会强制性变为未保存状态
     @{test_py_name}    Find Py    ${py_file_normal}
     ${length1}    Evaluate    len(@{test_py_name})
     : FOR    ${i}    IN RANGE    ${length1}
@@ -49,8 +52,8 @@ open_file
     \    Element Text Should Be    //*[@id="root"]/div/div[2]/div[2]/span[${y}]/span    ${tab_name}
 
 open_untrans_file
-    [Tags]    faile
-    # 目前这里有个bug,转换模式后，手动打开不能转译的积木时，toast就消失了
+    [Tags]    bug
+    # 目前这里有个bug，打开硬件模式会强制性变为未保存状态
     Open_file
     Win Wait    打开    \    2
     Win Activate    打开
@@ -78,12 +81,13 @@ open_untrans_file
     Element Text Should Be    ${wood_toast_file}    请打开 .py 或 .hex 后缀的文件
 
 save_file
+    [tags]    pass
     # when save to local rename the file_name
+    ${name_code}    Creat Code    5
+    ${file_name}    Add    ${name_code}    .py
     Save To Local
     Win Wait    另存为    \    2
     Win Activate    另存为
-    ${name_code}    Creat Code    5
-    ${file_name}    Add    ${name_code}    .py
     Control Set Text    \    \    Edit1    ${download_file}\\${file_name}
     # 因为win7和win10的控件按钮不一致，所以这里使用下面的通用写法
     # Control Click    \    \    Button2
@@ -111,6 +115,7 @@ save_file
     \    Remove File    ${download_file}\\${test_py_name[${i}]}
 
 save_file_name
+    [tags]    pass
     # update_tab_name_save_to_local
     Double Click Element    ${wood_tab_current}
     ${name_code}    Creat Code    5
@@ -126,6 +131,7 @@ save_file_name
     Wait Until Page Contains Element    ${wood_toast_file}
     Element Text Should Be    ${wood_toast_file}    保存成功
     File Should Exist    ${download_file}\\${file_name}
+    #新建hex文件进行保存
     New Built_hex
     Double Click Element    ${wood_tab_current}
     ${name_code}    Creat Code    5
@@ -148,6 +154,7 @@ save_file_name
     \    Remove File    ${download_file}\\${test_py_name[${i}]}
 
 save_as
+    [tags]    pass
     # after save as other file to checkout the name_suffix
     ${cur_tab_name}    Get Text    ${wood_tab_cur_name}
     Save As
@@ -192,6 +199,7 @@ save_as
     \    Remove File    ${download_file}\\${test_py_name[${i}]}
 
 sample_works
+    [tags]    pass
     Click Element    ${wood_file_icon}
     Click Element    ${wood_file_template}
     Element Should Be Visible    ${wood_ft_dialog}
@@ -206,6 +214,7 @@ sample_works
     Element Should Be Visible    ${wood_trans_button}    代码模式
 
 open_cloud_file
+    [tags]    pass
     Page Should Contain    未登录
     Click Element    ${wood_file_icon}
     Click Element    ${wood_file_open_cloud}
@@ -221,7 +230,8 @@ open_cloud_file
     Page Should Not Contain    hex_file
 
 save_to_cloud
-    [Tags]    faile
+    [Tags]    bug
+    # 问题要同
     # 这里现在有bug，保存的hex文件，客户端云端列表不会显示
     Page Should Contain    未登录
     Click Element    ${wood_file_icon}
@@ -246,12 +256,12 @@ save_to_cloud
     \    Control Set Text    打开    \    1148    ${test_py_name[${i}]}
     \    Sleep    0.5
     \    Control Click    打开    \    1
-    # 这里客户端目前存在bug，所以这条用例是跑不通的
     \    Wait Until Page Contains    ${test_py_name[${i}][:-4]}
     \    Click Element    ${wood_file_icon}
     \    Click Element    ${wood_file_save_to_cloud}
     \    Log    保存作品${i}：${test_py_name[${i}]}
     \    Wait Until Element Is Visible    ${wood_save_success}
+    # 硬件作品目前保存是存在问题的！！！导致用例在这里会失败！
     \    Click Element    ${wood_tab_cur_close}
     \    Click Element    ${wood_file_icon}
     \    Click Element    ${wood_file_open_cloud}
@@ -274,6 +284,7 @@ save_to_cloud
     # Page Should Contain    hex_file
 
 cloud_file_scroll
+    [tags]   pass
     Login
     Click Element    ${wood_file_icon}
     Click Element    ${wood_file_open_cloud}
@@ -287,7 +298,7 @@ cloud_file_scroll
     Page Should Contain Element    ${wood_cloud_file_frame1}    limit>${num_list}
 
 cloud_icon_search
-    [Tags]    faile
+    [Tags]    pass
     Login
     Click Element    ${wood_file_icon}
     Click Element    ${wood_file_open_cloud}
@@ -318,6 +329,7 @@ cloud_icon_search
     Log    'The function of Icons is Normal!'
 
 i18n_block_headline_UI
+    [tags]    pass
     @{eng_block}    Create List    Events    Control    Operators    Strings    Variables
     ...    Lists    Dictionary    Functions    Turtle Library    Advance    Spider    GUI
     @{com_font_block}    Create List    事件    控制    運算    字符串    變量
@@ -381,6 +393,7 @@ i18n_block_headline_UI
     Element Should Be Visible    ${wood_toolbox_xpath}/div[11]/div/span[2]    @{com_font_block}[10]
 
 i18n_tab_name
+    [tags]    pass
     ${tab_name}    Get Text    ${wood_tab_cur_name}
     Should Be Equal As Strings    ${tab_name}    新的作品
     Setting Language
@@ -407,23 +420,39 @@ i18n_tab_name
     Should Be Equal As Strings    ${tab_name}    microbit作品
 
 search_function
+    [tags]    pass
     Mouse Over    ${wood_setting_button}
     Click Element    ${wood_setting_button}
     Element Should Be Visible    ${wood_setting_search}    意见反馈
+    # 只有代码模式下才会有search功能
     Click Element    ${wood_trans_button}
     Element Should Be Visible    ${wood_trans_button}    积木模式
     Mouse Over    ${wood_setting_button}
     Click Element    ${wood_setting_button}
     Element Text Should Be    ${wood_setting_search}    搜索
     Click Element    ${wood_setting_search}
+    # 对搜索区域的UI文案进行校验
     ${search_value}    Get Element Attribute    ${wood_search_value}    attribute=placeholder
     Should Be Equal    ${search_value}    Find
+    Element Text Should Be    ${wood_search_No_result}    No Results
     Click Element    ${wood_search_pull_down}
     ${replace_value}    Get Element Attribute    ${wood_replace_value}    attribute=placeholder
     Should Be Equal    ${replace_value}    Replace
     Element Should Be Visible    ${wood_replace_value}
+    # 调用search功能后切换到积木模式
+    Click Element    ${wood_trans_button}
+    # 积木模式下应该看不见，虽然此时给定的xpath元素在DOM中存在，但是出于隐藏状态
+    Element Should Not Be Visible    ${wood_search_area}
+    # 再次切换回积木模式。search区域应该是存在的
+    Click Element    ${wood_trans_button}
+    Element Should Be Visible    ${wood_search_area}
+    # 点击关闭按钮，搜索框应该再次被隐藏
+    Click Element    ${wood_search_close}
+    Element Should Not Be Visible    ${wood_search_area}
+
 
 library_manage
+    [tags]    pass
     Mouse Over    ${wood_library_manage_button}
     Element Should Contain    ${wood_library_manage_button}    库管理
     Click Element    ${wood_library_manage_button}
@@ -466,6 +495,7 @@ library_search
     Execute Javascript    document.getElementsByClassName('style__libs-item-wrap__1xnIf')[0].scrollTop=2400
     Click Element    ${wood_install_third_lib}
     Page Should Contain    返回
+    ${result}    Del Library    ty
     Input Text    ${wood_library_third_search}    ty
     Click Element    ${wood_third_search_icon}
     Wait Until Element Contains    ${wood_third_search_result}    ty     15
@@ -476,10 +506,11 @@ library_search
     Wait Until Element Contains    ${wood_lib_install_cancle}    已安装     5
     Input Text    ${wood_library_third_search}    pygame
     Click Element    ${wood_third_search_icon}
-    Wait Until Element Contains    ${wood_third_search_toast}    Pygame已在库列表中，请返回上一页安装！    5
+    Wait Until Element Contains    ${wood_toast_file}    Pygame已在库列表中，请返回上一页安装！    10
     Input Text    ${wood_library_third_search}    ...
     Press Key    ${wood_library_third_search}    \\13
     Wait Until Page Contains    未找到名为
     Input Text    ${wood_library_third_search}    ty
     Press Key    ${wood_library_third_search}    \\13
     Wait Until Element Contains    ${wood_third_search_toast}    ty已安装，请直接使用！    10
+
