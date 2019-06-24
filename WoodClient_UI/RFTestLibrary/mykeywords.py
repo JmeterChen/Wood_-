@@ -81,25 +81,24 @@ class Mykeywords:
         date = time_today.replace('-', string)
         return date
 
-    def del_library(self, library_name):
+    def get_library_ver(self, library):
         """
-        to del the Library of the path(.wood\libs\) you give
+        before delete lib to get info 
+        """
+        with os.popen('C:\\Pyblock\\resources\\app\\Python-win32\\python.exe -m pip show %s' % library) as f:
+            message = f.readlines()
+            if not len(message):
+                return None
+            else:
+                ver = message[1].strip()
+                ver_list = ver.split(':')
+                ver_num = ver_list[-1]
+                return ver_num.strip()
+
+    def get_path_wood_lib(self):
+        """
+        to get the path of the current Users in the Computer
         """
         user = os.path.expanduser('~')
-        cd_root = os.popen('cd c:')
-        path = user + '\\' + '.wood\\libs'
-        # 改变工作目录到.wood\libs路径下
-        os.chdir(path)
-        files_list = []
-        for root, dirs, files in os.walk(path):
-            if dirs and '_' not in dirs:
-                empty_list.append(dirs)
-        for i in files_list:
-            if library_name in i:   
-                try:
-                    rm_lib = os.popen('rm -rf %s*' % library_name)
-                except:
-                    pass
-                return yes
-            else:
-                return no       
+        path = user + '\\' + '.wood\libs'
+        return path

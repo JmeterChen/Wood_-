@@ -110,7 +110,6 @@ ${wood_library_others_close}     css=.style__close-icon__3FHHd
 ${wood_third_search_result}      xpath=//div[@class='style__result__3pWPo']
 ${wood_lib_install_button}       ${wood_third_search_result}/button
 ${wood_lib_install_cancle}       ${wood_third_search_result}/div[3]
-
 ${wood_third_search_icon}        css=.style__search-icon__spYSO
 ${wood_third_search_toast}       css=.style__notice-text__W7f9D
 ${wood_run_button}               xpath=//*[@id="header_click_area"]/div[7]
