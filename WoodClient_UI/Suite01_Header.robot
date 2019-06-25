@@ -1,6 +1,6 @@
 *** Settings ***
-# Test Setup        Open Client
-# Test Teardown     Teardown
+Test Setup        Open Client
+Test Teardown     Teardown
 Library           SeleniumLibrary
 Library           AutoItLibrary
 Library           RFTestLibrary
@@ -483,44 +483,45 @@ library_search
     ${path}     get_path_wood_lib
     ${test_path}    Set Variable    ${path}${/}${lib_files}
     Log    ${test_path}
-    Run Keyword If    '${lib_ver_num}' != 'None'     Remove Directory    ${path}${/}${lib_name}${/}
-    Run Keyword If    '${lib_ver_num}' != 'None'     Remove Directory    ${path}${/}${lib_files}${/}
-
-    # Mouse Over    ${wood_library_manage_button}
-    # Click Element    ${wood_library_manage_button}
-    # Input Text    ${wood_library_search}    pygame
-    # Sleep    1
-    # ${wood_library_num}    Get Element Count    ${wood_library_xpath}
-    # # 这里有pygame和新增的pygame Zero
-    # Should Be Equal As Integers    ${wood_library_num}    2
-    # Page Should Contain    已安装
-    # Sleep    1
-    # Input Text    ${wood_library_search}    py
-    # Page Should Contain Element    ${wood_library_xpath}    limit > ${wood_library_num}
-    # Input Text    ${wood_library_search}    ty
-    # Element Text Should Be    ${wood_third_noresult}    无搜索结果
-    # Press Key    ${wood_library_search}    \\8
-    # Press Key    ${wood_library_search}    \\8
-    # Page Should Contain Element    ${wood_library_xpath}    limit=26
-    # Execute Javascript    document.getElementsByClassName('style__libs-item-wrap__1xnIf')[0].scrollTop=2400
-    # Click Element    ${wood_install_third_lib}
-    # Page Should Contain    返回
-    # Input Text    ${wood_library_third_search}    ty
-    # Click Element    ${wood_third_search_icon}
-    # Wait Until Element Contains    ${wood_third_search_result}    ty     15
-    # Element Text Should Be    ${wood_lib_install_button}    安装
-    # Click Element    ${wood_lib_install_button}
-    # Mouse Over    ${wood_lib_install_cancle}
-    # Element Should Contain    ${wood_lib_install_cancle}    取消
-    # Wait Until Element Contains    ${wood_lib_install_cancle}    已安装     10
-    # Input Text    ${wood_library_third_search}    pygame
-    # Click Element    ${wood_third_search_icon}
-    # # 搜索库列表中的库
-    # Wait Until Element Is Visible    ${wood_toast_file}    5
-    # Input Text    ${wood_library_third_search}    ...
-    # Press Key    ${wood_library_third_search}    \\13
-    # Wait Until Page Contains    未找到名为
-    # Input Text    ${wood_library_third_search}    ty
-    # Press Key    ${wood_library_third_search}    \\13
-    # Wait Until Element Contains    ${wood_third_search_toast}    ty已安装，请直接使用！    10
-
+    Run Keyword If    '${lib_ver_num}' != 'None'     Remove Directory    ${path}${/}${lib_name}${/}    True
+    Run Keyword If    '${lib_ver_num}' != 'None'     Remove Directory    ${path}${/}${lib_files}${/}    True
+    Mouse Over    ${wood_library_manage_button}
+    Click Element    ${wood_library_manage_button}
+    Input Text    ${wood_library_search}    pygame
+    Sleep    1
+    ${wood_library_num}    Get Element Count    ${wood_library_xpath}
+    # 这里有pygame和新增的pygame Zero
+    Should Be Equal As Integers    ${wood_library_num}    2
+    Page Should Contain    已安装
+    Sleep    1
+    Input Text    ${wood_library_search}    py
+    Page Should Contain Element    ${wood_library_xpath}    limit > ${wood_library_num}
+    Input Text    ${wood_library_search}    ty
+    Element Text Should Be    ${wood_third_noresult}    无搜索结果
+    Press Key    ${wood_library_search}    \\8
+    Press Key    ${wood_library_search}    \\8
+    Page Should Contain Element    ${wood_library_xpath}    limit=26
+    Execute Javascript    document.getElementsByClassName('style__libs-item-wrap__1xnIf')[0].scrollTop=2400
+    Click Element    ${wood_install_third_lib}
+    Page Should Contain    返回
+    Input Text    ${wood_library_third_search}    ty
+    Click Element    ${wood_third_search_icon}
+    Wait Until Element Contains    ${wood_third_search_result}    ty     15
+    Element Text Should Be    ${wood_lib_install_button}    安装
+    Click Element    ${wood_lib_install_button}
+    Mouse Over    ${wood_lib_install_cancle}
+    Element Should Contain    ${wood_lib_install_cancle}    取消
+    Wait Until Element Contains    ${wood_lib_install_cancle}    已安装     10
+    Input Text    ${wood_library_third_search}    pygame
+    Click Element    ${wood_third_search_icon}
+    # 搜索库列表中的库
+    Wait Until Element Is Visible    ${wood_toast_file}    5
+    Input Text    ${wood_library_third_search}    ...
+    Press Key    ${wood_library_third_search}    \\13
+    Wait Until Page Contains    未找到名为
+    Input Text    ${wood_library_third_search}    ty
+    Press Key    ${wood_library_third_search}    \\13
+    Wait Until Element Contains    ${wood_third_search_toast}    ty已安装，请直接使用！    10
+    # 如果一开始电脑上未安装该库，最后一步帮助删除测试
+    Run Keyword If    '${lib_ver_num}' != 'None'     Remove Directory    ${path}${/}${lib_name}${/}    True
+    Run Keyword If    '${lib_ver_num}' != 'None'     Remove Directory    ${path}${/}${lib_files}${/}    True
