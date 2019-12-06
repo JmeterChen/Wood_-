@@ -1,27 +1,27 @@
 *** Variables ***
 #测试地址
 
-# ${wood_URL}     https://dev-wood.codemao.cn/
-# ${wood_URL}     https://test-wood.codemao.cn/
-${wood_URL}     https://staging-wood.codemao.cn/
-# ${wood_URL}     https://wood.codemao.cn/
+# ${wood_URL}     https://dev-wood.maocode.cn/
+# ${wood_URL}     https://test-wood.maocode.cn/
+${wood_URL}     https://staging-wood.maocode.cn/
+# ${wood_URL}     https://wood.maocode.cn/
 
 
-# ${shouye_URL}    https://dev-python.codemao.cn/
-# ${shouye_URL}    https://test-python.codemao.cn/
-${shouye_URL}    https://staging-python.codemao.cn/
-# ${shouye_URL}    https://python.codemao.cn/
+# ${shouye_URL}    https://dev-python.maocode.cn/
+# ${shouye_URL}    https://test-python.maocode.cn/
+${shouye_URL}    https://staging-python.maocode.cn/
+# ${shouye_URL}    https://python.maocode.cn/
 
-${help_URL_dev}             https://dev-wood.codemao.cn/docs/wood/
-${help_URL_test}            https://test-wood.codemao.cn/docs/wood/
-${help_URL_staging}         https://staging-wood.codemao.cn/docs/wood/
-${help_URL}                 https://wood.codemao.cn/docs/wood/
+${help_URL_dev}             https://dev-wood.maocode.cn/docs/wood/
+${help_URL_test}            https://test-wood.maocode.cn/docs/wood/
+${help_URL_staging}         https://staging-wood.maocode.cn/docs/wood/
+${help_URL}                 https://wood.maocode.cn/docs/wood/
 
 
-${myfile_URL_dev}            https://dev-python.codemao.cn/work
-${myfile_URL_test}           https://test-python.codemao.cn/work
-${myfile_URL}                https://python.codemao.cn/work
-${myfile_URL_staging}        https://staging-python.codemao.cn/work
+${myfile_URL_dev}            https://dev-python.maocode.cn/work
+${myfile_URL_test}           https://test-python.maocode.cn/work
+${myfile_URL}                https://python.maocode.cn/work
+${myfile_URL_staging}        https://staging-python.maocode.cn/work
 #浏览器
 ${test_browser}    chrome
 ${test_browserdriver}    chromedriver

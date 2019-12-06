@@ -10,7 +10,7 @@
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:13:37.335" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:13:37.335" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:13:42.169" starttime="20190620 10:13:37.335"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -92,7 +92,7 @@
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:13:54.002" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:13:54.002" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:13:57.944" starttime="20190620 10:13:54.002"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -348,7 +348,7 @@
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:14:28.624" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:14:28.624" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:14:32.918" starttime="20190620 10:14:28.624"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -421,24 +421,24 @@
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>'${wood_URL}' == 'https://wood.codemao.cn/'</arg>
+<arg>'${wood_URL}' == 'https://wood.maocode.cn/'</arg>
 <arg>Location Should Contain</arg>
-<arg>https://python.codemao.cn/</arg>
+<arg>https://python.maocode.cn/</arg>
 <arg>ELSE IF</arg>
-<arg>'${wood_URL}' == 'https://dev-wood.codemao.cn/'</arg>
+<arg>'${wood_URL}' == 'https://dev-wood.maocode.cn/'</arg>
 <arg>Location Should Contain</arg>
-<arg>https://dev-python.codemao.cn/</arg>
+<arg>https://dev-python.maocode.cn/</arg>
 <arg>ELSE IF</arg>
-<arg>'${wood_URL}' == 'https://staging-wood.codemao.cn/'</arg>
+<arg>'${wood_URL}' == 'https://staging-wood.maocode.cn/'</arg>
 <arg>Location Should Contain</arg>
-<arg>https://staging-python.codemao.cn/</arg>
+<arg>https://staging-python.maocode.cn/</arg>
 </arguments>
 <kw name="Location Should Contain" library="Selenium2Library">
 <doc>Verifies that current URL contains ``expected``.</doc>
 <arguments>
-<arg>https://staging-python.codemao.cn/</arg>
+<arg>https://staging-python.maocode.cn/</arg>
 </arguments>
-<msg timestamp="20190620 10:14:47.565" level="INFO">Current location contains 'https://staging-python.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:14:47.565" level="INFO">Current location contains 'https://staging-python.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:14:47.565" starttime="20190620 10:14:46.944"></status>
 </kw>
 <status status="PASS" endtime="20190620 10:14:47.565" starttime="20190620 10:14:46.942"></status>
@@ -479,7 +479,7 @@
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:14:55.132" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:14:55.132" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:14:59.229" starttime="20190620 10:14:55.132"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -678,7 +678,7 @@
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:15:38.428" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:15:38.428" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:15:42.745" starttime="20190620 10:15:38.428"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -1028,7 +1028,7 @@
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:16:56.053" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:16:56.053" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:17:00.713" starttime="20190620 10:16:56.053"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -1452,7 +1452,7 @@
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:17:54.459" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:17:54.459" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:17:58.951" starttime="20190620 10:17:54.459"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -1578,7 +1578,7 @@
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:18:16.762" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:18:16.762" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:18:21.198" starttime="20190620 10:18:16.762"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -1883,7 +1883,7 @@
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:19:18.000" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:19:18.000" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:19:22.546" starttime="20190620 10:19:18.000"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -2281,19 +2281,19 @@ Without any arguments.</msg>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>'${Current_URL}' == 'https://dev-wood.codemao.cn/'</arg>
+<arg>'${Current_URL}' == 'https://dev-wood.maocode.cn/'</arg>
 <arg>Location Should Be</arg>
 <arg>${myfile_URL_dev}</arg>
 <arg>ELSE IF</arg>
-<arg>'${Current_URL}' == 'https://test-wood.codemao.cn/'</arg>
+<arg>'${Current_URL}' == 'https://test-wood.maocode.cn/'</arg>
 <arg>Location Should Be</arg>
 <arg>${myfile_URL_test}</arg>
 <arg>ELSE IF</arg>
-<arg>'${Current_URL}' == 'https://wood.codemao.cn/'</arg>
+<arg>'${Current_URL}' == 'https://wood.maocode.cn/'</arg>
 <arg>Location Should Be</arg>
 <arg>${myfile_URL}</arg>
 <arg>ELSE IF</arg>
-<arg>'${Current_URL}' == 'https://staging-wood.codemao.cn/'</arg>
+<arg>'${Current_URL}' == 'https://staging-wood.maocode.cn/'</arg>
 <arg>Location Should Browser</arg>
 <arg>${myfile_URL_staging}</arg>
 </arguments>
@@ -2558,7 +2558,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:21:51.296" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:21:51.296" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:21:56.165" starttime="20190620 10:21:51.296"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -5335,7 +5335,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:25:15.802" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:25:15.802" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:25:20.034" starttime="20190620 10:25:15.802"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -5719,7 +5719,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:25:57.948" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:25:57.948" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:26:02.429" starttime="20190620 10:25:57.948"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -6039,7 +6039,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:26:54.585" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:26:54.585" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:26:59.189" starttime="20190620 10:26:54.585"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -6431,7 +6431,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:27:43.170" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:27:43.170" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:27:47.274" starttime="20190620 10:27:43.170"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -6515,19 +6515,19 @@ Without any arguments.</msg>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>'${Current_URL}' == 'https://dev-wood.codemao.cn/'</arg>
+<arg>'${Current_URL}' == 'https://dev-wood.maocode.cn/'</arg>
 <arg>Location Should Be</arg>
 <arg>${help_URL_dev}</arg>
 <arg>ELSE IF</arg>
-<arg>'${Current_URL}' == 'https://test-wood.codemao.cn/'</arg>
+<arg>'${Current_URL}' == 'https://test-wood.maocode.cn/'</arg>
 <arg>Location Should Be</arg>
 <arg>${help_URL_test}</arg>
 <arg>ELSE IF</arg>
-<arg>'${Current_URL}' == 'https://wood.codemao.cn/'</arg>
+<arg>'${Current_URL}' == 'https://wood.maocode.cn/'</arg>
 <arg>Location Should Be</arg>
 <arg>${help_URL}</arg>
 <arg>ELSE IF</arg>
-<arg>'${Current_URL}' == 'https://staging-wood.codemao.cn/'</arg>
+<arg>'${Current_URL}' == 'https://staging-wood.maocode.cn/'</arg>
 <arg>Location Should Browser</arg>
 <arg>${help_URL_staging}</arg>
 </arguments>
@@ -6612,7 +6612,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:28:20.271" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:28:20.271" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:28:24.797" starttime="20190620 10:28:20.271"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -7043,7 +7043,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:29:24.027" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:29:24.027" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:29:28.613" starttime="20190620 10:29:24.027"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -7155,7 +7155,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:29:45.786" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:29:45.786" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:29:50.259" starttime="20190620 10:29:45.786"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -7301,19 +7301,19 @@ Without any arguments.</msg>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>'${Current_URL}' == 'https://dev-wood.codemao.cn/'</arg>
+<arg>'${Current_URL}' == 'https://dev-wood.maocode.cn/'</arg>
 <arg>Location Should Be</arg>
 <arg>${myfile_URL_dev}</arg>
 <arg>ELSE IF</arg>
-<arg>'${Current_URL}' == 'https://test-wood.codemao.cn/'</arg>
+<arg>'${Current_URL}' == 'https://test-wood.maocode.cn/'</arg>
 <arg>Location Should Be</arg>
 <arg>${myfile_URL_test}</arg>
 <arg>ELSE IF</arg>
-<arg>'${Current_URL}' == 'https://wood.codemao.cn/'</arg>
+<arg>'${Current_URL}' == 'https://wood.maocode.cn/'</arg>
 <arg>Location Should Be</arg>
 <arg>${myfile_URL}</arg>
 <arg>ELSE IF</arg>
-<arg>'${Current_URL}' == 'https://staging-wood.codemao.cn/'</arg>
+<arg>'${Current_URL}' == 'https://staging-wood.maocode.cn/'</arg>
 <arg>Location Should Browser</arg>
 <arg>${myfile_URL_staging}</arg>
 </arguments>
@@ -7421,7 +7421,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:30:39.629" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:30:39.629" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:30:44.277" starttime="20190620 10:30:39.629"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -7739,7 +7739,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:31:58.966" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:31:58.966" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:32:03.285" starttime="20190620 10:31:58.966"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -7911,7 +7911,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:32:36.971" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:32:36.971" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:32:41.162" starttime="20190620 10:32:36.971"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -8093,7 +8093,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:33:25.836" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:33:25.836" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:33:29.783" starttime="20190620 10:33:25.836"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -8467,7 +8467,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:34:30.558" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:34:30.558" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:34:34.629" starttime="20190620 10:34:30.558"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -8661,7 +8661,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:35:29.012" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:35:29.012" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:35:33.358" starttime="20190620 10:35:29.012"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
@@ -8835,7 +8835,7 @@ Without any arguments.</msg>
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190620 10:35:58.368" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190620 10:35:58.368" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" endtime="20190620 10:36:02.345" starttime="20190620 10:35:58.368"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">

@@ -85,7 +85,7 @@ ver_unsave_state_display
 
    # # 清楚垃圾数据 clear_rubblish_file
    #  ${user_name}    Get Text    ${wood_user_name}
-   #  ${url}=    Set Variable If    '${user_name}' == '陈柏霖'    https://python.codemao.cn
-   #  ...    '${user_name}' != '陈柏霖'    https://test-python.codemao.cn
+   #  ${url}=    Set Variable If    '${user_name}' == '陈柏霖'    https://python.maocode.cn
+   #  ...    '${user_name}' != '陈柏霖'    https://test-python.maocode.cn
    #  Delete_python_files    1    ${url}
    #  Select Window    title='海龟编辑器'

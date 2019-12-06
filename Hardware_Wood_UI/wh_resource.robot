@@ -1,10 +1,10 @@
 *** Settings ***
 
 *** Variables ***
-# ${url}           https://dev-wood.codemao.cn/?editor_mode=1
-# ${url}           https://test-wood.codemao.cn/?editor_mode=1
-# ${url}           https://staging-wood.codemao.cn/?editor_mode=1
-${url}            https://wood.codemao.cn/?editor_mode=1
+# ${url}           https://dev-wood.maocode.cn/?editor_mode=1
+# ${url}           https://test-wood.maocode.cn/?editor_mode=1
+# ${url}           https://staging-wood.maocode.cn/?editor_mode=1
+${url}            https://wood.maocode.cn/?editor_mode=1
 
 ${broswer}        chrome
 
@@ -111,10 +111,10 @@ ${wood_硬件助手未开启_img}    //img[@src='asset/whblocks_pic_win.6e2c355.
 ${wood_硬件助手未开启_下载}    //div[@class='download_btn_17PAl']
 ${wood_硬件助手未开启_下载massage}    //div[@class='download_message_zuDK4 web_26M3h']
 ${wood_硬件助手未开启_关闭}    //img[@class='close_btn_2qq6Y']
-${wood_硬件助手路径}    C:\\Program Files (x86)\\codemao-hardware-agent\\编程猫硬件助手.exe
+${wood_硬件助手路径}    C:\\Program Files (x86)\\maocode-hardware-agent\\编程猫硬件助手.exe
 ${wood_硬件助手未开启_下载英文massage}    //div[@class='download_message_zuDK4 web_26M3h english_1-qJC']
 ${wood_未检测到设备弹窗}    //div[@class='style__dialog__3IAhA']/div[1]
-${wood_硬件助手下载地址}    http://static.codemao.cn/hardware/
+${wood_硬件助手下载地址}    http://static.maocode.cn/hardware/
 ${wood_硬件助手未开启_下载英文}    //div[@class='download_btn_17PAl english_1-qJC']
 ${wood_未检测到设备_img}    //img[@src='asset/whblocks_cannot_find.c99d670.gif']
 ${wood_未检测到设备_驱动下载}    //div[@class='download_usb_2EXxs']

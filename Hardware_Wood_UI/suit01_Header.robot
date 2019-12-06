@@ -11,9 +11,9 @@ Library           OperatingSystem
 Website
     Click Element    ${wood_官网}
     Select Window    NEW
-    Run Keyword If    '${url}'=='https://test-wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://test-python.codemao.cn/
-    ...    ELSE IF    '${url}'=='https://staging-wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://staging-python.codemao.cn/
-    ...    ELSE IF    '${url}'=='https://wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://python.codemao.cn/
+    Run Keyword If    '${url}'=='https://test-wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://test-python.maocode.cn/
+    ...    ELSE IF    '${url}'=='https://staging-wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://staging-python.maocode.cn/
+    ...    ELSE IF    '${url}'=='https://wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://python.maocode.cn/
 
 
 i18n_default
@@ -103,10 +103,10 @@ Open_local_files
     Wait Until Keyword Succeeds    2 min    5 sec    Title Should Be    编程猫海龟编辑器
     Sleep    2
     Select Window    CURRENT
-    Run Keyword If    '${url}'=='https://dev-wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://dev-wood.codemao.cn
-    ...    ELSE IF    '${url}'=='https://test-wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://test-wood.codemao.cn
-    ...    ELSE IF    '${url}'=='https://staging-wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://staging-wood.codemao.cn
-    ...    ELSE IF    '${url}'=='https://wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://wood.codemao.cn
+    Run Keyword If    '${url}'=='https://dev-wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://dev-wood.maocode.cn
+    ...    ELSE IF    '${url}'=='https://test-wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://test-wood.maocode.cn
+    ...    ELSE IF    '${url}'=='https://staging-wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://staging-wood.maocode.cn
+    ...    ELSE IF    '${url}'=='https://wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://wood.maocode.cn
     Sleep    1
     #Close Window
     Select Window    url=${url}
@@ -153,10 +153,10 @@ Open_local_files
     Control Click    \    \    Button1
     Wait Until Keyword Succeeds    2 min    5 sec    Title Should Be    编程猫海龟编辑器
     Select Window    CURRENT
-    Run Keyword If    '${url}'=='https://dev-wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://dev-wood.codemao.cn
-    ...    ELSE IF    '${url}'=='https://test-wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://test-wood.codemao.cn
-    ...    ELSE IF    '${url}'=='https://staging-wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://staging-wood.codemao.cn
-    ...    ELSE IF    '${url}'=='https://wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://wood.codemao.cn
+    Run Keyword If    '${url}'=='https://dev-wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://dev-wood.maocode.cn
+    ...    ELSE IF    '${url}'=='https://test-wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://test-wood.maocode.cn
+    ...    ELSE IF    '${url}'=='https://staging-wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://staging-wood.maocode.cn
+    ...    ELSE IF    '${url}'=='https://wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://wood.maocode.cn
     Sleep    1
     Select Window    url=${url}
     #登录打开非hex和py文件
@@ -355,7 +355,7 @@ Docs
     #验证源码图鉴功能
     Click Element    ${wood_源码图鉴}
     Select Window    NEW
-    Run Keyword If    '${url}'=='https://dev-wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://dev-wood.codemao.cn/wood_docs/web/
-    ...    ELSE IF    '${url}'=='https://test-wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://test-wood.codemao.cn/wood_docs/web/
-    ...    ELSE IF    '${url}'=='https://staging-wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://staging-wood.codemao.cn/wood_docs/web/
-    ...    ELSE IF    '${url}'=='https://wood.codemao.cn/?editor_mode=1'    Location Should Contain    https://wood.codemao.cn/wood_docs/web/
+    Run Keyword If    '${url}'=='https://dev-wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://dev-wood.maocode.cn/wood_docs/web/
+    ...    ELSE IF    '${url}'=='https://test-wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://test-wood.maocode.cn/wood_docs/web/
+    ...    ELSE IF    '${url}'=='https://staging-wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://staging-wood.maocode.cn/wood_docs/web/
+    ...    ELSE IF    '${url}'=='https://wood.maocode.cn/?editor_mode=1'    Location Should Contain    https://wood.maocode.cn/wood_docs/web/

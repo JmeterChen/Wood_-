@@ -9,7 +9,7 @@
 <arg>${wood_URL}</arg>
 <arg>${test_browser}</arg>
 </arguments>
-<msg timestamp="20190331 13:01:42.953" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.codemao.cn/'.</msg>
+<msg timestamp="20190331 13:01:42.953" level="INFO">Opening browser 'chrome' to base url 'https://staging-wood.maocode.cn/'.</msg>
 <status status="PASS" starttime="20190331 13:01:42.952" endtime="20190331 13:01:45.807"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">

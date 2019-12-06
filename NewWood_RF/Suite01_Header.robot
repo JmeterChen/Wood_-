@@ -58,9 +58,9 @@ home_003
     #验证能够正常进入到首页
     Select Window    NEW
     Title Should Be    海龟编辑器官方下载_Python编辑器_少儿编程编辑器_图形化编程编辑器-编程猫
-    Run Keyword If    '${wood_URL}' == 'https://wood.codemao.cn/'    Location Should Contain    https://python.codemao.cn/
-    ...    ELSE IF    '${wood_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Contain    https://dev-python.codemao.cn/
-    ...    ELSE IF    '${wood_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Contain    https://staging-python.codemao.cn/
+    Run Keyword If    '${wood_URL}' == 'https://wood.maocode.cn/'    Location Should Contain    https://python.maocode.cn/
+    ...    ELSE IF    '${wood_URL}' == 'https://dev-wood.maocode.cn/'    Location Should Contain    https://dev-python.maocode.cn/
+    ...    ELSE IF    '${wood_URL}' == 'https://staging-wood.maocode.cn/'    Location Should Contain    https://staging-python.maocode.cn/
     Close Window
     Select Window    title=编程猫海龟编辑器
     Title Should Be    编程猫海龟编辑器
@@ -306,10 +306,10 @@ file_save_as
     Click Element    ${wood_我的作品}
     Sleep    3
     Select Window    title=海龟编辑器官方下载_Python编辑器_少儿编程编辑器_图形化编程编辑器-编程猫
-    Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${myfile_URL_dev}
-    ...    ELSE IF    '${Current_URL}' == 'https://test-wood.codemao.cn/'    Location Should Be    ${myfile_URL_test}
-    ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${myfile_URL}
-    ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${myfile_URL_staging}
+    Run Keyword If    '${Current_URL}' == 'https://dev-wood.maocode.cn/'    Location Should Be    ${myfile_URL_dev}
+    ...    ELSE IF    '${Current_URL}' == 'https://test-wood.maocode.cn/'    Location Should Be    ${myfile_URL_test}
+    ...    ELSE IF    '${Current_URL}' == 'https://wood.maocode.cn/'    Location Should Be    ${myfile_URL}
+    ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.maocode.cn/'    Location Should Browser    ${myfile_URL_staging}
     Element Text Should Be    //a[text()='我的作品']    我的作品
     Mouse Over    ${python_我的作品_框框4}
     Click Element    ${python_我的作品_框框4_删除}
@@ -542,10 +542,10 @@ help
     #点击帮助，进入到帮助页面
     Sleep    3
     Select Window    title=源码图鉴 | 源码图鉴
-    Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${help_URL_dev}
-    ...    ELSE IF    '${Current_URL}' == 'https://test-wood.codemao.cn/'    Location Should Be    ${help_URL_test}
-    ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${help_URL}
-    ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${help_URL_staging}
+    Run Keyword If    '${Current_URL}' == 'https://dev-wood.maocode.cn/'    Location Should Be    ${help_URL_dev}
+    ...    ELSE IF    '${Current_URL}' == 'https://test-wood.maocode.cn/'    Location Should Be    ${help_URL_test}
+    ...    ELSE IF    '${Current_URL}' == 'https://wood.maocode.cn/'    Location Should Be    ${help_URL}
+    ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.maocode.cn/'    Location Should Browser    ${help_URL_staging}
     ${wood_introduce}    Get Text    //*[@id="_1-认识wood编辑器"]
     should Contain    ${wood_introduce}    1. 认识Wood编辑器
     #关闭帮助窗口
@@ -634,10 +634,10 @@ loginout
     Click Element    ${wood_我的作品}
     Sleep    2
     Select Window    海龟编辑器官方下载_Python编辑器_少儿编程编辑器_图形化编程编辑器-编程猫
-    Run Keyword If    '${Current_URL}' == 'https://dev-wood.codemao.cn/'    Location Should Be    ${myfile_URL_dev}
-    ...    ELSE IF    '${Current_URL}' == 'https://test-wood.codemao.cn/'    Location Should Be    ${myfile_URL_test}
-    ...    ELSE IF    '${Current_URL}' == 'https://wood.codemao.cn/'    Location Should Be    ${myfile_URL}
-    ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.codemao.cn/'    Location Should Browser    ${myfile_URL_staging}
+    Run Keyword If    '${Current_URL}' == 'https://dev-wood.maocode.cn/'    Location Should Be    ${myfile_URL_dev}
+    ...    ELSE IF    '${Current_URL}' == 'https://test-wood.maocode.cn/'    Location Should Be    ${myfile_URL_test}
+    ...    ELSE IF    '${Current_URL}' == 'https://wood.maocode.cn/'    Location Should Be    ${myfile_URL}
+    ...    ELSE IF    '${Current_URL}' == 'https://staging-wood.maocode.cn/'    Location Should Browser    ${myfile_URL_staging}
     Element Text Should Be    //a[text()='我的作品']    我的作品    我的作品
     #关闭官网我的作品
     Close Window
