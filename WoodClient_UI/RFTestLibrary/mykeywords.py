@@ -59,7 +59,6 @@ class Mykeywords:
             else:
                 tmp = random.randint(0, 9)
             checkcode += str(tmp)
-        
         return checkcode
 
     # def time_compare(self,*args):
@@ -82,5 +81,24 @@ class Mykeywords:
         date = time_today.replace('-', string)
         return date
 
-    
+    def get_library_ver(self, library):
+        """
+        before delete lib to get info 
+        """
+        with os.popen('C:\\Pyblock\\resources\\app\\Python-win32\\python.exe -m pip show %s' % library) as f:
+            message = f.readlines()
+            if not len(message):
+                return None
+            else:
+                ver = message[1].strip()
+                ver_list = ver.split(':')
+                ver_num = ver_list[-1]
+                return ver_num.strip()
 
+    def get_path_wood_lib(self):
+        """
+        to get the path of the current Users in the Computer
+        """
+        user = os.path.expanduser('~')
+        path = user + '\\' + '.wood\libs'
+        return path
